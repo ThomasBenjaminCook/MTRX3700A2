@@ -1,5 +1,5 @@
 `timescale 1 ps / 1 ps
-module top_level (
+module top_level_LCD (
 		input  wire       CLOCK_50,         //                clk.clk
 		inout  wire [7:0] LCD_DATA,    // external_interface.DATA
 		output wire       LCD_ON,      //                   .ON
