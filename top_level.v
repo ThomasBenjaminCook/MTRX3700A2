@@ -17,10 +17,17 @@ module top_level (
 	wire [7:0] writedata;   //                   .writedata
 	wire [7:0] readdata;    //                   .readdata
 	wire       waitrequest; //                   .waitrequest
+	wire 		  button_value;
+	
+	debounce u_debounce (
+		.clk(CLOCK_50),
+		.button(KEY[0]),
+		.button_pressed(button_value)
+	);
 	
 	hello_lcd (
 		 .clk(CLOCK_50),
-		 .reset(~KEY[0]),
+		 .button_right(~button_value),
 		 // Avalon-MM signals to LCD_Controller slave
 		 .address(address),          // Address line for LCD controller
 		 .chipselect(chipselect),
