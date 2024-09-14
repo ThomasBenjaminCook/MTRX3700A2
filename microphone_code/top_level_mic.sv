@@ -1,4 +1,4 @@
-module top_level (
+module top_level_mic (
 	input CLOCK_50,
 	output	I2C_SCLK,
 	inout		I2C_SDAT,
