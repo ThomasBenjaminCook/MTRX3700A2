@@ -1,42 +1,9 @@
-// File digital_cam_impl1/top_level.vhd translated with vhd2vl v3.0 VHDL to Verilog RTL translator
-// vhd2vl settings:
-//  * Verilog Module Declaration Style: 2001
+`timescale 1 ps / 1 ps
 
-// vhd2vl is Free (libre) Software:
-//   Copyright (C) 2001 Vincenzo Liguori - Ocean Logic Pty Ltd
-//     http://www.ocean-logic.com
-//   Modifications Copyright (C) 2006 Mark Gonzales - PMC Sierra Inc
-//   Modifications (C) 2010 Shankar Giri
-//   Modifications Copyright (C) 2002-2017 Larry Doolittle
-//     http://doolittle.icarus.com/~larry/vhd2vl/
-//   Modifications (C) 2017 Rodrigo A. Melo
-//
-//   vhd2vl comes with ABSOLUTELY NO WARRANTY.  Always check the resulting
-//   Verilog for correctness, ideally with a formal verification tool.
-//
-//   You are welcome to redistribute vhd2vl under certain conditions.
-//   See the license (GPLv2) file included with the source for details.
+module top_level(
 
-// The result of translation follows.  Its copyright status should be
-// considered unchanged from the original VHDL.
 
-// cristinel ababei; Jan.29.2015; CopyLeft (CL);
-// code name: "digital cam implementation #1";
-// project done using Quartus II 13.1 and tested on DE2-115;
-//
-// this design basically connects a CMOS camera (OV7670 module) to
-// DE2-115 board; video frames are picked up from camera, buffered
-// on the FPGA (using embedded RAM), and displayed on the VGA monitor,
-// which is also connected to the board; clock signals generated
-// inside FPGA using ALTPLL's that take as input the board's 50MHz signal
-// from on-board oscillator; 
-//
-// this whole project is an adaptation of Mike Field's original implementation 
-// that can be found here:
-// http://hamsterworks.co.nz/mediawiki/index.php/OV7670_camera
-// no timescale needed
-
-module digital_cam_impl1(
+//Camera ports
 input wire clk_50,
 input wire btn_resend,
 output wire led_config_finished,
@@ -56,7 +23,17 @@ input wire [7:0] ov7670_data,
 output wire ov7670_sioc,
 inout wire ov7670_siod,
 output wire ov7670_pwdn,
-output wire ov7670_reset
+output wire ov7670_reset,
+
+
+//LCD ports
+inout  wire [7:0] LCD_DATA,    // external_interface.DATA
+output wire       LCD_ON,      //                   .ON
+output wire       LCD_BLON,    //                   .BLON
+output wire       LCD_EN,      //                   .EN
+output wire       LCD_RS,      //                   .RS
+output wire       LCD_RW     //                   .RW
+//input  wire [3:0] KEY        //              reset.reset
 );
 
 
@@ -75,6 +52,16 @@ wire [16:0] rdaddress;
 wire [11:0] rddata;
 wire [7:0] red; wire [7:0] green; wire [7:0] blue;
 wire activeArea;
+
+wire       address;     //   avalon_lcd_slave.address
+wire       chipselect;  //                   .chipselect
+wire       read;        //                   .read
+wire       write;       //                   .write
+wire [7:0] writedata;   //                   .writedata
+wire [7:0] readdata;    //                   .readdata
+wire       waitrequest; //                   .waitrequest
+wire 		  button_value;
+wire reset;
 
   assign vga_r = red[7:0];
   assign vga_g = green[7:0];
@@ -138,6 +125,50 @@ wire activeArea;
     .enable(activeArea),
     .vsync(vSync),
     .address(rdaddress));
+	 
+	 
+	 //----------LCD MODULES----------
+	 
+	 
+	debounce u_debounce (
+		.clk(clk_50),
+		.button(btn_resend),
+		.button_pressed(button_value)
+	);
+	
+	hello_lcd (
+		 .clk(clk_50),
+		 .button_right(~button_value),
+		 // Avalon-MM signals to LCD_Controller slave
+		 .address(address),          // Address line for LCD controller
+		 .chipselect(chipselect),
+		 .byteenable(),
+		 .read(),
+		 .write(write),
+		 .waitrequest(waitrequest),
+		 .readdata(),
+		 .response(),
+		 .writedata(writedata),
+		 .reset(reset)
+	);
+
+	LCD_IP u_LCD_IP (
+		.clk         (clk_50),         //                clk.clk
+		.reset       (reset),       //              reset.reset
+		.address     (address),     //   avalon_lcd_slave.address
+		.chipselect  (chipselect),  //                   .chipselect
+		.read        (read),        //                   .read
+		.write       (write),       //                   .write
+		.writedata   (writedata),   //                   .writedata
+		.readdata    (readdata),    //                   .readdata
+		.waitrequest (waitrequest), //                   .waitrequest
+		.LCD_DATA    (LCD_DATA),    // external_interface.export
+		.LCD_ON      (LCD_ON),      //                   .export
+		.LCD_BLON    (LCD_BLON),    //                   .export
+		.LCD_EN      (LCD_EN),      //                   .export
+		.LCD_RS      (LCD_RS),      //                   .export
+		.LCD_RW      (LCD_RW)       //                   .export
+	);
 
 
 endmodule
