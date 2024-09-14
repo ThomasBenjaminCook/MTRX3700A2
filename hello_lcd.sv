@@ -2,7 +2,7 @@ import lcd_inst_pkg::*;
 	
 module hello_lcd (
     input  logic clk,
-    input  logic reset,
+    input  logic button_right,
     // Avalon-MM signals to LCD_Controller slave:
     output logic address,
     output logic chipselect,
@@ -14,24 +14,32 @@ module hello_lcd (
     input  logic [1:0] response,
     output logic [7:0] writedata
 );
+
+	 logic button_edge;
+
+	 button_edge_module u_button_edge_module (
+		 .clk(clk),
+		 .button_pressed(button_right),
+		 .button_edge(button_edge)
+    ); 
+
+	 logic reset = 0;
+
     // State encoding for FSM
     typedef enum logic [1:0] {IDLE, WRITE_OP} state_t;
     state_t current_state, next_state;
 
-    localparam N_INSTRS = 13; // Change this to the number of instructions you have below:
-    logic [8:0] instructions [N_INSTRS] = '{CLEAR_DISPLAY, _H, _e, _l, _l, _o, _SPACE, _W, _o, _r, _l, _d, _EXCLAMATION}; // Clear display then display "Hi".
+    localparam N_INSTRS = 9; // Change this to the number of instructions you have below:
+    logic [8:0] instructions [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _1}; 
+	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _2};
+	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _3};
+	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _4};
     // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data.
 
     integer instruction_index = 0, next_instruction_index; // You can use these to count.
 
-    // Your code here! (FSM always_ff, always_comb, etc).
-
-    /* Recommendation */
-    //TODO Create a FSM with two states IDLE and WRITE_OP.
-    // IDLE:     Nothing is asserted - go to WRITE_OP if instruction_index < N_INSTRS.
-    // WRITE_OP: Assert the appropriate signals to write `writedata` to `address`.
-    //           Wait in this state until `waitrequest` is LOW. Increment instruction index (hint: next_instruction_index).
     
+	 
     always_comb begin
         next_state = IDLE;
         case(current_state)
