@@ -18,6 +18,7 @@ module top_level (
 	wire [7:0] readdata;    //                   .readdata
 	wire       waitrequest; //                   .waitrequest
 	wire 		  button_value;
+	wire reset;
 	
 	debounce u_debounce (
 		.clk(CLOCK_50),
@@ -37,12 +38,13 @@ module top_level (
 		 .waitrequest(waitrequest),
 		 .readdata(),
 		 .response(),
-		 .writedata(writedata)
+		 .writedata(writedata),
+		 .reset(reset)
 	);
 
 	LCD_IP u_LCD_IP (
 		.clk         (CLOCK_50),         //                clk.clk
-		.reset       (~KEY[0]),       //              reset.reset
+		.reset       (reset),       //              reset.reset
 		.address     (address),     //   avalon_lcd_slave.address
 		.chipselect  (chipselect),  //                   .chipselect
 		.read        (read),        //                   .read

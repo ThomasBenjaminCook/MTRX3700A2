@@ -12,7 +12,8 @@ module hello_lcd (
     input  logic waitrequest,
     input  logic [7:0] readdata,
     input  logic [1:0] response,
-    output logic [7:0] writedata
+    output logic [7:0] writedata,
+	 output logic reset
 );
 
 	 logic button_edge;
@@ -23,7 +24,7 @@ module hello_lcd (
 		 .button_edge(button_edge)
     ); 
 
-	 logic reset = 0;
+	 assign reset = 0;
 
     // State encoding for FSM
     typedef enum logic [1:0] {IDLE, WRITE_OP} state_t;
