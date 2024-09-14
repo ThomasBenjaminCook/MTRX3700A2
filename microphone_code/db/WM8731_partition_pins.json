@@ -76,11 +76,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_ADCDAT",
+					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{
-					"name" : "AUD_BCLK",
+					"name" : "AUD_ADCDAT",
 					"strict" : false
 				},
 				{

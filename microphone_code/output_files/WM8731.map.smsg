@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at i2c_master.sv(12): object "reg_addr" differs only in case from object "REG_ADDR" in the same scope File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/microphone_code/i2c_master.sv Line: 12

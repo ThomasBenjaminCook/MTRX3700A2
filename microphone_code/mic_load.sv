@@ -32,6 +32,13 @@ module mic_load #(parameter N=16) (
      logic [N-1:0] bit_index;
      logic flag;
      always_ff @(posedge bclk) begin
+	
+		  if (redge_adclrc) begin
+          flag <= 1;
+          bit_index <= 0;
+        end
+	  
+	  
         valid <= 0;
         if (flag) begin
             temp_rx_data[(N-1)-bit_index] <= adcdat;
@@ -50,10 +57,10 @@ module mic_load #(parameter N=16) (
         end
      end
 
-     always_ff @(posedge redge_adclrc) begin
-        flag <= 1;
-        bit_index <= 0;
-     end
+//     always_ff @(posedge redge_adclrc) begin
+//        flag <= 1;
+//        bit_index <= 0;
+//     end
 
 endmodule
 

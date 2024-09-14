@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 14 21:21:10 2024
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : WM8731
+Top-level Entity Name : top_level
+Family : Cyclone IV E
+Total logic elements : 186
+    Total combinational functions : 156
+    Dedicated logic registers : 93
+Total registers : 93
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 2
