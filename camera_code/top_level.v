@@ -36,7 +36,7 @@
 // http://hamsterworks.co.nz/mediawiki/index.php/OV7670_camera
 // no timescale needed
 
-module digital_cam_impl1(
+module top_level(
 input wire clk_50,
 input wire btn_resend,
 output wire led_config_finished,
