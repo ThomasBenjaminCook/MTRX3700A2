@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\61411\OneDrive\Desktop\Uni_Classes\MTRX3700\Assignment 2\MTRX3700A2Local\LCD_IP.qsys" --block-symbol-file --output-directory="C:\Users\61411\OneDrive\Desktop\Uni_Classes\MTRX3700\Assignment 2\MTRX3700A2Local\LCD_IP" --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading MTRX3700A2Local/LCD_IP.qsys
+Progress: Reading input file
+Progress: Adding character_lcd_0 [altera_up_avalon_character_lcd 18.0]
+Progress: Parameterizing module character_lcd_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\61411\OneDrive\Desktop\Uni_Classes\MTRX3700\Assignment 2\MTRX3700A2Local\LCD_IP.qsys" --synthesis=VERILOG --output-directory="C:\Users\61411\OneDrive\Desktop\Uni_Classes\MTRX3700\Assignment 2\MTRX3700A2Local\LCD_IP\synthesis" --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading MTRX3700A2Local/LCD_IP.qsys
+Progress: Reading input file
+Progress: Adding character_lcd_0 [altera_up_avalon_character_lcd 18.0]
+Progress: Parameterizing module character_lcd_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: LCD_IP: Generating LCD_IP "LCD_IP" for QUARTUS_SYNTH
+Info: character_lcd_0: Starting Generation of Character LCD
+Info: character_lcd_0: "LCD_IP" instantiated altera_up_avalon_character_lcd "character_lcd_0"
+Info: LCD_IP: Done "LCD_IP" with 2 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
