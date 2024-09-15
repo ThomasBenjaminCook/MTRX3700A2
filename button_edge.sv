@@ -1,4 +1,4 @@
-module button_edge_module (
+module button_edge (
     input                             clk,
 	 input 									button_pressed,
 	 output logic 							button_edge
