@@ -74,6 +74,15 @@ wire       waitrequest; //                   .waitrequest
 wire 		  button_value;
 wire reset;
 
+//FFT signals
+wire [15:0] fft_input;
+wire fft_input_valid;
+wire [33:0] mag_sq;  
+wire mag_valid;
+wire [15:0] peak;
+wire [9:0] peak_k;   
+wire peak_valid;
+
   assign vga_r = red[7:0];
   assign vga_g = green[7:0];
   assign vga_b = blue[7:0];
@@ -200,13 +209,58 @@ wire reset;
     .sample_data(data)
    );
 	
+	//instantiate FFT input buffer (3.1a)
+	fft_input_buffer #(
+    .W(16),
+    .NSamples(1024)
+) 
+	u_fft_input_buffer (
+    .clk(clk_50),
+    .reset(reset),
+    .audio_clk(adc_clk),
+    .audio_input({data, 1'b1}), 
+    .fft_input(fft_input),
+    .fft_input_valid(fft_input_valid)
+);
+
+	//instantiate the FFT magnitude^2 (3.1b)
+	//also not sure what the module is called so i just called is fft_mag_sq
+	fft_mag_sq #(
+    .W(16)
+) u_fft_mag_sq (
+    .clk(clk_50),
+    .reset(reset),
+    .fft_valid(fft_input_valid),
+    .fft_imag(0),       // not sure where to connect this one :/
+    .fft_real(fft_input),
+    .mag_sq(mag_sq),
+    .mag_valid(mag_valid)
+);
+	//instantiate 3.1c
+	//again, not sure what the module is actually called
+	fft_find_peak #(
+    .NSamples(1024),
+    .W(33)
+) u_fft_find_peak (
+    .clk(clk_50),
+    .reset(reset),
+    .mag(mag_sq),
+    .mag_valid(mag_valid),
+    .peak(peak),
+    .peak_k(peak_k),
+    .peak_valid(peak_valid)
+);
+	
 	assign AUD_XCK = adc_clk;
 		
-	always_comb begin
-		if (data[15]) LEDR[15:0] <= (~data[15:0]+1); // magnitude of a negative number (2's complement)
-		else LEDR[15:0] <= data[15:0];
-	end
-
+always_comb begin
+    if (peak_valid) begin
+        LEDR[15:0] <= peak[15:0]; // Display peak magnitude or other relevant info
+    end
+    else begin
+        LEDR[15:0] <= 16'b0; // Default state when not valid
+    end
+end
 
 
 endmodule
