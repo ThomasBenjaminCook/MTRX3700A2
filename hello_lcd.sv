@@ -31,13 +31,15 @@ module hello_lcd (
     state_t current_state, next_state;
 
     localparam N_INSTRS = 9; // Change this to the number of instructions you have below:
-    logic [8:0] instructions [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _1}; 
-	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _2};
-	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _3};
-	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _o, _p, _t, _i, _o, _n, _SPACE, _4};
+    logic [8:0] instructions [N_INSTRS] = '{CLEAR_DISPLAY, _O, _p, _t, _i, _o, _n, _SPACE, _1}; 
+	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _O, _p, _t, _i, _o, _n, _SPACE, _2};
+	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _O, _p, _t, _i, _o, _n, _SPACE, _3};
+	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _O, _p, _t, _i, _o, _n, _SPACE, _4};
     // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data.
 
     integer instruction_index = 0, next_instruction_index; // You can use these to count.
+	 
+	 logic [4:0] button_press_count = 0;
 
     
 	 
@@ -58,6 +60,12 @@ module hello_lcd (
         end
         current_state <= next_state;
     end
+	 
+	 always_ff @(posedge clk) begin
+		 if (button_edge) begin
+			button_press_count <= (button_press_count+1)%4;
+		 end
+	 end
 
     assign write = (current_state == WRITE_OP);
     assign byteenable = 1;
