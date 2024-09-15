@@ -6,6 +6,7 @@ module top_level(
 //Camera ports
 input wire clk_50,
 input wire btn_resend,
+input wire [3:1] KEY,
 output wire led_config_finished,
 output wire vga_hsync,
 output wire vga_vsync,
@@ -149,6 +150,7 @@ wire reset;
 	hello_lcd (
 		 .clk(clk_50),
 		 .button_right(~button_value),
+		 .button_left(~KEY[1]),
 		 // Avalon-MM signals to LCD_Controller slave
 		 .address(address),          // Address line for LCD controller
 		 .chipselect(chipselect),
