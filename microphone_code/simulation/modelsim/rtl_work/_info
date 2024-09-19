@@ -1,0 +1,619 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/simulation/modelsim
+vadc_pll
+Z1 !s110 1726709720
+!i10b 1
+!s100 0S>C[^42j:Fn<MPPkb^351
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8T112bDVOSel7T_J4LCP51
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1726480455
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v
+!i122 1
+Z5 L0 40 124
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1726709720.000000
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v|
+!i113 1
+Z8 o-vlog01compat -work work
+Z9 !s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic
+Z10 tCvgOpt 0
+vadc_pll_altpll
+R1
+!i10b 1
+!s100 1D5A018;X@68g?C@m:^Be0
+R2
+I?zNUz1bV=bOWoN8A:V3DE3
+R3
+R0
+Z11 w1726480688
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v
+!i122 3
+Z12 L0 31 79
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v|
+!i113 1
+R8
+Z13 !s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db
+R10
+vasync_fifo
+R1
+!i10b 1
+!s100 YOPJF8=iHjQRbK[jPmMDV2
+R2
+I1364m7QLn3zWckA8R:OF92
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v
+!i122 2
+L0 40 67
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v|
+!i113 1
+R8
+!s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch
+R10
+vButterfly
+R1
+!i10b 1
+!s100 mD9[K_6J2jaEozc9DnS<n1
+R2
+Ino8BJgkUhlLN:Pb<L<GF<2
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v
+!i122 7
+Z14 L0 4 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v|
+!i113 1
+R8
+Z15 !s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf
+R10
+n@butterfly
+vDelayBuffer
+R1
+!i10b 1
+!s100 _gZ`L@Y_[IYVb_4>B44Dk1
+R2
+IMoAO4MRhP:jI5bQSRiSCi3
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v
+!i122 8
+R14
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v|
+!i113 1
+R8
+R15
+R10
+n@delay@buffer
+vdisplay
+Z16 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+R1
+!i10b 1
+!s100 ^n@8zJ6X8?U=JJ2`X>=kF0
+R2
+IVhYYAV9dojRYgS3Lz9aG62
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv
+!i122 13
+L0 1 92
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv|
+!i113 1
+Z17 o-sv -work work
+Z18 !s92 -sv -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch
+R10
+Ydstream
+R16
+R1
+!i10b 1
+!s100 WZWVJBZ7c7h3kG6SgNGiP0
+R2
+I[VXJDEPmTTQ3M]<Ba0JW<2
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv
+!i122 11
+L0 1 0
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv|
+!i113 1
+R17
+R18
+R10
+vFFT
+R1
+!i10b 1
+!s100 Wo4C_QZnU?k8]HdWFd0;Z0
+R2
+Io4dBY`bbEIe_CU]Sdd9FR1
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v
+!i122 5
+L0 4 86
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v|
+!i113 1
+R8
+R15
+R10
+n@f@f@t
+vfft_find_peak
+R16
+R1
+!i10b 1
+!s100 UgA;IzEi2<XGNU6Ac@OMg2
+R2
+IT2iASfe=SADVZh@2E8UZ;1
+R3
+S1
+R0
+w1726705978
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv
+!i122 14
+Z19 L0 1 45
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv|
+!i113 1
+R17
+R18
+R10
+vfft_input_buffer
+R16
+Z20 !s110 1726709721
+!i10b 1
+!s100 fKR6ie>6Ud[al=fFQd1>S3
+R2
+IHOGlO5m1@LLGWj388^iAM0
+R3
+S1
+R0
+w1726707605
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv
+!i122 21
+L0 1 35
+R6
+r1
+!s85 0
+31
+Z21 !s108 1726709721.000000
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv|
+!i113 1
+R17
+R18
+R10
+vfft_mag_sq
+R16
+R1
+!i10b 1
+!s100 5QjVfSPX4eM01IzPB]3AH2
+R2
+IVkT8h8d?D^zD3M53H:@1D0
+R3
+S1
+R0
+w1726707779
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv
+!i122 15
+R19
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv|
+!i113 1
+R17
+R18
+R10
+vfft_pitch_detect
+R16
+R20
+!i10b 1
+!s100 De]Un=HmAEazKUiQnmNEo0
+R2
+I5IScX?RO]NBSb?of^^@O11
+R3
+S1
+R0
+w1726705800
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv
+!i122 19
+L0 1 91
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv|
+!i113 1
+R17
+R18
+R10
+vfft_pitch_detect_tb
+R16
+R20
+!i10b 1
+!s100 z>bZS1ii`E4CV=H?Wel3D3
+R2
+I`03<dWfE=ZmQaW2Iz7oEN2
+R3
+S1
+R0
+w1726707875
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv
+!i122 23
+L0 2 64
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv|
+!i113 1
+R17
+R18
+R10
+vi2c_master
+R16
+R20
+!i10b 1
+!s100 L]ea@?;@N=Ve9aPKQV@Rf3
+R2
+IHe;Zl<DB7I9BPI=b?3l?I3
+R3
+S1
+R0
+w1726481165
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv
+!i122 17
+L0 32 140
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv|
+!i113 1
+R17
+Z22 !s92 -sv -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic
+R10
+vi2c_pll
+R1
+!i10b 1
+!s100 Vk9TfF@R;RMHD@^mOm0OO2
+R2
+IXd<5?DQY0H0_j:N:UQ55=3
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v
+!i122 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v|
+!i113 1
+R8
+R9
+R10
+vi2c_pll_altpll
+R1
+!i10b 1
+!s100 ?S>B5kH_OB`5LmF95Q<Xe2
+R2
+I8eaOYc?U71bWS5lT9KCMg0
+R3
+R0
+R11
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v
+!i122 4
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v|
+!i113 1
+R8
+R13
+R10
+vlow_pass_conv
+R16
+R20
+!i10b 1
+!s100 hO2C:daFWmCm6FgBbm44W3
+R2
+INWkk@>]hfUUPnTk3;53;C3
+R3
+S1
+R0
+w1726709716
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv
+!i122 22
+L0 1 57
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv|
+!i113 1
+R17
+R18
+R10
+vmic_load
+R16
+R20
+!i10b 1
+!s100 YZo^SNFP@9^Shn_:YOY273
+R2
+I5n3EchE=TULhmGWI<[EgI3
+R3
+S1
+R0
+w1726481159
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv
+!i122 18
+L0 2 47
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv|
+!i113 1
+R17
+R22
+R10
+vMultiply
+R1
+!i10b 1
+!s100 0R?lW[z@TZO1j7GeLBf:c0
+R2
+IZHH8fYDZ^SR5<Sf3dFQ1?3
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v
+!i122 10
+L0 4 32
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v|
+!i113 1
+R8
+R15
+R10
+n@multiply
+vSdfUnit
+R1
+!i10b 1
+!s100 [c]A0JM<bSobO[TghoBi@0
+R2
+I0dP`AFXiSgkeXG_UA6cLc2
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v
+!i122 6
+L0 4 274
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v|
+!i113 1
+R8
+R15
+R10
+n@sdf@unit
+vset_audio_encoder
+R16
+R20
+!i10b 1
+!s100 m^;NOeXEfc^RiiIidmhPB1
+R2
+IJ>IOkFGzo`?B;MgBkkR^C0
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv
+!i122 16
+L0 1 59
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv|
+!i113 1
+R17
+R22
+R10
+vseven_seg
+R16
+R1
+!i10b 1
+!s100 MBHFg6UghcTacA]LCgWL>2
+R2
+I6ehXS[SlJc6ZU@h@bd:;F3
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv
+!i122 12
+L0 1 22
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv|
+!i113 1
+R17
+R18
+R10
+vtop_level
+R16
+R20
+!i10b 1
+!s100 DKPR52RZeMPHcIG8HSW=83
+R2
+ITahR]>`kX1cUB7`akDd7>1
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv
+!i122 20
+L0 1 47
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv|
+!i113 1
+R17
+R18
+R10
+vTwiddle
+R1
+!i10b 1
+!s100 SzaA`;]cC62MNaJ:il<Eg0
+R2
+I<:4FY<BQK953K7mMWY?zV0
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v
+!i122 9
+L0 4 1060
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v|
+!i113 1
+R8
+R15
+R10
+n@twiddle
