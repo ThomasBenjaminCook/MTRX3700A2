@@ -28,7 +28,6 @@ module fft_pitch_detect_tb;
         $dumpfile("waveform.vcd");
         $dumpvars();
         reset = 1'b1;
-		  pitch_output.ready = 1;
         #(TCLK*5);
         reset = 1'b0;
         #(TCLK*5);
@@ -37,7 +36,6 @@ module fft_pitch_detect_tb;
         #(TCLK*100);
         $finish();
     end
-	 
 
     // Input Driver
     integer i = 0, next_i;

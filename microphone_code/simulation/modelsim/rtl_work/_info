@@ -8,334 +8,612 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/simulation/modelsim
+Z0 dC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/simulation/modelsim
+vadc_pll
+Z1 !s110 1726709720
+!i10b 1
+!s100 0S>C[^42j:Fn<MPPkb^351
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8T112bDVOSel7T_J4LCP51
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1726480455
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v
+!i122 1
+Z5 L0 40 124
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1726709720.000000
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/adc_pll.v|
+!i113 1
+Z8 o-vlog01compat -work work
+Z9 !s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic
+Z10 tCvgOpt 0
+vadc_pll_altpll
+R1
+!i10b 1
+!s100 1D5A018;X@68g?C@m:^Be0
+R2
+I?zNUz1bV=bOWoN8A:V3DE3
+R3
+R0
+Z11 w1726480688
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v
+!i122 3
+Z12 L0 31 79
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/adc_pll_altpll.v|
+!i113 1
+R8
+Z13 !s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db
+R10
 vasync_fifo
-!s110 1726890134
+R1
 !i10b 1
 !s100 YOPJF8=iHjQRbK[jPmMDV2
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I<B_?T<jmcMB04NV8nPT>U3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+R2
+I1364m7QLn3zWckA8R:OF92
+R3
 R0
-Z3 w1726885716
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/async_fifo.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/async_fifo.v
-!i122 0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v
+!i122 2
 L0 40 67
-Z4 OV;L;2020.1;71
+R6
 r1
 !s85 0
 31
-!s108 1726890134.000000
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/async_fifo.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/async_fifo.v|
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/async_fifo.v|
 !i113 1
-Z5 o-vlog01compat -work work
-!s92 -vlog01compat -work work +incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code
-Z6 tCvgOpt 0
+R8
+!s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch
+R10
 vButterfly
-Z7 !s110 1726890135
+R1
 !i10b 1
 !s100 mD9[K_6J2jaEozc9DnS<n1
-R1
-Im1DPOXE2S:FhEOX5CDH@`3
 R2
-R0
+Ino8BJgkUhlLN:Pb<L<GF<2
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/butterfly.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/butterfly.v
-!i122 3
-Z8 L0 4 29
+R0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v
+!i122 7
+Z14 L0 4 29
+R6
 r1
 !s85 0
 31
-Z9 !s108 1726890135.000000
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/butterfly.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/butterfly.v|
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/butterfly.v|
 !i113 1
-R5
-Z10 !s92 -vlog01compat -work work +incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf
-R6
+R8
+Z15 !s92 -vlog01compat -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf
+R10
 n@butterfly
 vDelayBuffer
-R7
+R1
 !i10b 1
 !s100 _gZ`L@Y_[IYVb_4>B44Dk1
-R1
-I@=mG32DBJ;J3CbPM`RI;e1
 R2
-R0
+IMoAO4MRhP:jI5bQSRiSCi3
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/delaybuffer.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/delaybuffer.v
-!i122 4
-R8
+R0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v
+!i122 8
+R14
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/delaybuffer.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/delaybuffer.v|
-!i113 1
-R5
-R10
-R6
-n@delay@buffer
-Ydstream
-Z11 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 R7
-!i10b 1
-!s100 T3SlU1^V[USXfFJY__HJ]2
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/delaybuffer.v|
+!i113 1
+R8
+R15
+R10
+n@delay@buffer
+vdisplay
+Z16 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 R1
-IiP2HThPlni6X7:;emjY3T2
+!i10b 1
+!s100 ^n@8zJ6X8?U=JJ2`X>=kF0
 R2
+IVhYYAV9dojRYgS3Lz9aG62
+R3
 S1
 R0
-w1726889591
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/dstream.sv
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/dstream.sv
-!i122 7
-L0 1 0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv
+!i122 13
+L0 1 92
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/dstream.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/dstream.sv|
-!i113 1
-Z12 o-sv -work work
-Z13 !s92 -sv -work work +incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code
-R6
-vFFT
 R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/display.sv|
+!i113 1
+Z17 o-sv -work work
+Z18 !s92 -sv -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch
+R10
+Ydstream
+R16
+R1
+!i10b 1
+!s100 WZWVJBZ7c7h3kG6SgNGiP0
+R2
+I[VXJDEPmTTQ3M]<Ba0JW<2
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv
+!i122 11
+L0 1 0
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/dstream.sv|
+!i113 1
+R17
+R18
+R10
+vFFT
+R1
 !i10b 1
 !s100 Wo4C_QZnU?k8]HdWFd0;Z0
-R1
-IgH<@Y8bI?Sg1WKX1:7OUc2
 R2
-R0
+Io4dBY`bbEIe_CU]Sdd9FR1
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/fft.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/fft.v
-!i122 1
-L0 4 86
+R0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v
+!i122 5
+L0 4 86
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/fft.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/fft.v|
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/fft.v|
 !i113 1
-R5
+R8
+R15
 R10
-R6
 n@f@f@t
 vfft_find_peak
-R11
-R7
+R16
+R1
 !i10b 1
 !s100 UgA;IzEi2<XGNU6Ac@OMg2
-R1
-I0:YCTl_2:[MF:lWfSc`dY0
 R2
+IT2iASfe=SADVZh@2E8UZ;1
+R3
 S1
 R0
-R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_find_peak.sv
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_find_peak.sv
-!i122 8
-Z14 L0 1 45
-R4
+w1726705978
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv
+!i122 14
+Z19 L0 1 45
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_find_peak.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_find_peak.sv|
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_find_peak.sv|
 !i113 1
-R12
-R13
-R6
+R17
+R18
+R10
 vfft_input_buffer
-R11
-Z15 !s110 1726890136
+R16
+Z20 !s110 1726709721
 !i10b 1
 !s100 fKR6ie>6Ud[al=fFQd1>S3
-R1
-IeSL<hFMSm7g`4^UPTg<@m1
 R2
+IHOGlO5m1@LLGWj388^iAM0
+R3
 S1
 R0
-R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_input_buffer.sv
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_input_buffer.sv
-!i122 11
+w1726707605
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv
+!i122 21
 L0 1 35
-R4
+R6
 r1
 !s85 0
 31
-Z16 !s108 1726890136.000000
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_input_buffer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_input_buffer.sv|
+Z21 !s108 1726709721.000000
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_input_buffer.sv|
 !i113 1
-R12
-R13
-R6
+R17
+R18
+R10
 vfft_mag_sq
-R11
-R7
+R16
+R1
 !i10b 1
 !s100 5QjVfSPX4eM01IzPB]3AH2
-R1
-I0R>Q1Hfgh]JL_Ak5C^zi;2
 R2
-S1
-R0
+IVkT8h8d?D^zD3M53H:@1D0
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_mag_sq.sv
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_mag_sq.sv
-!i122 9
-R14
-R4
-r1
-!s85 0
-31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_mag_sq.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_mag_sq.sv|
-!i113 1
-R12
-R13
-R6
-vfft_pitch_detect
-R11
-R15
-!i10b 1
-!s100 ISgMiG@hVDIa3jom[?obK0
-R1
-I^AR4XoCI;N:d;MDcFze2Q1
-R2
 S1
 R0
-w1726889932
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect.sv
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect.sv
-!i122 10
-L0 1 100
-R4
+w1726707779
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv
+!i122 15
+R19
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect.sv|
-!i113 1
-R12
-R13
-R6
-vfft_pitch_detect_tb
-R11
-R15
-!i10b 1
-!s100 iH<CG_=XdY9N1UBk6U@eY2
-R1
-Id?kRdR=>HRU1K5E2QjZ4i2
-R2
-S1
-R0
-w1726890129
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect_tb.sv
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect_tb.sv
-!i122 12
-L0 2 67
-R4
-r1
-!s85 0
-31
-R16
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/fft_pitch_detect_tb.sv|
-!i113 1
-R12
-R13
-R6
-vMultiply
 R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_mag_sq.sv|
+!i113 1
+R17
+R18
+R10
+vfft_pitch_detect
+R16
+R20
+!i10b 1
+!s100 De]Un=HmAEazKUiQnmNEo0
+R2
+I5IScX?RO]NBSb?of^^@O11
+R3
+S1
+R0
+w1726705800
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv
+!i122 19
+L0 1 91
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect.sv|
+!i113 1
+R17
+R18
+R10
+vfft_pitch_detect_tb
+R16
+R20
+!i10b 1
+!s100 z>bZS1ii`E4CV=H?Wel3D3
+R2
+I`03<dWfE=ZmQaW2Iz7oEN2
+R3
+S1
+R0
+w1726707875
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv
+!i122 23
+L0 2 64
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/fft_pitch_detect_tb.sv|
+!i113 1
+R17
+R18
+R10
+vi2c_master
+R16
+R20
+!i10b 1
+!s100 L]ea@?;@N=Ve9aPKQV@Rf3
+R2
+IHe;Zl<DB7I9BPI=b?3l?I3
+R3
+S1
+R0
+w1726481165
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv
+!i122 17
+L0 32 140
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_master.sv|
+!i113 1
+R17
+Z22 !s92 -sv -work work +incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic
+R10
+vi2c_pll
+R1
+!i10b 1
+!s100 Vk9TfF@R;RMHD@^mOm0OO2
+R2
+IXd<5?DQY0H0_j:N:UQ55=3
+R3
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v
+!i122 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/i2c_pll.v|
+!i113 1
+R8
+R9
+R10
+vi2c_pll_altpll
+R1
+!i10b 1
+!s100 ?S>B5kH_OB`5LmF95Q<Xe2
+R2
+I8eaOYc?U71bWS5lT9KCMg0
+R3
+R0
+R11
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v
+!i122 4
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/db/i2c_pll_altpll.v|
+!i113 1
+R8
+R13
+R10
+vlow_pass_conv
+R16
+R20
+!i10b 1
+!s100 hO2C:daFWmCm6FgBbm44W3
+R2
+INWkk@>]hfUUPnTk3;53;C3
+R3
+S1
+R0
+w1726709716
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv
+!i122 22
+L0 1 57
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/low_pass_conv.sv|
+!i113 1
+R17
+R18
+R10
+vmic_load
+R16
+R20
+!i10b 1
+!s100 YZo^SNFP@9^Shn_:YOY273
+R2
+I5n3EchE=TULhmGWI<[EgI3
+R3
+S1
+R0
+w1726481159
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv
+!i122 18
+L0 2 47
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/mic_load.sv|
+!i113 1
+R17
+R22
+R10
+vMultiply
+R1
 !i10b 1
 !s100 0R?lW[z@TZO1j7GeLBf:c0
-R1
-I7ck@9M;Fhf2HmRkfJz[Eo0
 R2
-R0
+IZHH8fYDZ^SR5<Sf3dFQ1?3
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/multiply.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/multiply.v
-!i122 6
-L0 4 32
+R0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v
+!i122 10
+L0 4 32
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/multiply.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/multiply.v|
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/multiply.v|
 !i113 1
-R5
+R8
+R15
 R10
-R6
 n@multiply
 vSdfUnit
-R7
+R1
 !i10b 1
 !s100 [c]A0JM<bSobO[TghoBi@0
-R1
-I:SWWE43cRJCJjIhCRoQ^I0
 R2
-R0
+I0dP`AFXiSgkeXG_UA6cLc2
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/sdfunit.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/sdfunit.v
-!i122 2
-L0 4 274
+R0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v
+!i122 6
+L0 4 274
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/sdfunit.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/sdfunit.v|
-!i113 1
-R5
-R10
-R6
-n@sdf@unit
-vTwiddle
 R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/sdfunit.v|
+!i113 1
+R8
+R15
+R10
+n@sdf@unit
+vset_audio_encoder
+R16
+R20
+!i10b 1
+!s100 m^;NOeXEfc^RiiIidmhPB1
+R2
+IJ>IOkFGzo`?B;MgBkkR^C0
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv
+!i122 16
+L0 1 59
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/mic/set_audio_encoder.sv|
+!i113 1
+R17
+R22
+R10
+vseven_seg
+R16
+R1
+!i10b 1
+!s100 MBHFg6UghcTacA]LCgWL>2
+R2
+I6ehXS[SlJc6ZU@h@bd:;F3
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv
+!i122 12
+L0 1 22
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/seven_seg.sv|
+!i113 1
+R17
+R18
+R10
+vtop_level
+R16
+R20
+!i10b 1
+!s100 DKPR52RZeMPHcIG8HSW=83
+R2
+ITahR]>`kX1cUB7`akDd7>1
+R3
+S1
+R0
+R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv
+!i122 20
+L0 1 47
+R6
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/top_level.sv|
+!i113 1
+R17
+R18
+R10
+vTwiddle
+R1
 !i10b 1
 !s100 SzaA`;]cC62MNaJ:il<Eg0
-R1
-I@;=BEnL0n`j1o68=f[DTk1
 R2
-R0
+I<:4FY<BQK953K7mMWY?zV0
 R3
-8C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/twiddle.v
-FC:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/twiddle.v
-!i122 5
-L0 4 1060
+R0
 R4
+8C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v
+FC:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v
+!i122 9
+L0 4 1060
+R6
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/twiddle.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf|C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/r22sdf/twiddle.v|
+R7
+!s107 C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf|C:/Users/lykan/MTRX3700_Assignment2/mic_find_pitch/r22sdf/twiddle.v|
 !i113 1
-R5
+R8
+R15
 R10
-R6
 n@twiddle
