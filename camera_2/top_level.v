@@ -172,16 +172,35 @@ always @(*) begin
  rdaddress = row*320 + col;
 end
 
+//always @(*) begin
+//// vga_data = {
+//// {row[7:0], 2'b00},
+//// {row[7:0], 2'b00},
+//// {row[7:0], 2'b00}
+//// };
+//	vga_data = {
+//	{rddata[11:8],rddata[11:8], 2'b00},
+//	{rddata[7:4],rddata[7:4], 2'b00},
+//	{rddata[3:0],rddata[3:0], 2'b00}
+//	};
+//end
+
+wire [9:0] temp_red, temp_green, temp_blue, gray_scaled;
+wire [17:0] gray;
+
+assign temp_red   = {rddata[11:8], rddata[11:8], 2'b00};
+assign temp_green = {rddata[7:4],  rddata[7:4],  2'b00};
+assign temp_blue  = {rddata[3:0],  rddata[3:0],  2'b00};
+
+assign gray = (temp_red * 77 + temp_green * 150 + temp_blue * 29);
+
+assign gray_scaled = gray >> 8;
+
 always @(*) begin
-// vga_data = {
-// {row[7:0], 2'b00},
-// {row[7:0], 2'b00},
-// {row[7:0], 2'b00}
-// };
 	vga_data = {
-	{rddata[11:8],rddata[11:8], 2'b00},
-	{rddata[7:4],rddata[7:4], 2'b00},
-	{rddata[3:0],rddata[3:0], 2'b00}
+		 gray_scaled,
+		 gray_scaled,
+		 gray_scaled
 	};
 end
 
