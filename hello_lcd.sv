@@ -44,7 +44,7 @@ module hello_lcd (
 
     localparam N_INSTRS = 16;
     logic [8:0] instructions0 [N_INSTRS] = '{CLEAR_DISPLAY, _O, _p, _t, _i, _o, _n, _SPACE, _1, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}; 
-	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _O, _p, _t, _i, _o, _n, _SPACE, _2, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
+	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _L, _o, _v, _e, _SPACE, _M, _o, _d, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
 	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _G, _r, _e, _y, _s, _c, _a, _l, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
 	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _R, _a, _g, _e, _SPACE, _M, _O, _D, _E, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
     // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data.

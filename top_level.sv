@@ -234,6 +234,8 @@ end
 //	};
 //end
 
+//---------
+
 wire [9:0] temp_red, temp_green, temp_blue, gray_scaled;
 wire [17:0] gray;
 
@@ -242,8 +244,22 @@ assign temp_green = {rddata[7:4],  rddata[7:4],  2'b00};
 assign temp_blue  = {rddata[3:0],  rddata[3:0],  2'b00};
 
 assign gray = (temp_red * 77 + temp_green * 150 + temp_blue * 29);
-
 assign gray_scaled = gray >> 8;
+
+//---------
+
+wire [9:0] temp_red_1, temp_green_1, temp_blue_1, pink_scaled;
+wire [17:0] pink;
+
+// Increase red contribution, decrease green and blue to create a pink tint
+assign temp_red_1   = {rddata[11:8], rddata[11:8], 2'b00};  // Keep red as is
+assign temp_green_1 = {rddata[7:4],  rddata[7:4],  2'b00};  // Reduce green by shifting right
+assign temp_blue_1  = {rddata[3:0],  rddata[3:0],  2'b00};  // Reduce blue slightly
+
+assign pink = (temp_red_1 * 120 + temp_green_1 * 60 + temp_blue_1 * 50);  // Adjust weights for pink
+assign pink_scaled = pink >> 8;
+
+//--------
 
 always @(*) begin
 	if(menu_choice == 2) begin
@@ -251,6 +267,13 @@ always @(*) begin
 			 gray_scaled,
 			 gray_scaled,
 			 gray_scaled
+		};
+	end
+	else if(menu_choice == 1) begin
+		vga_data = {
+			pink_scaled,             // Strong red channel
+			pink_scaled >> 2,        // Reduced green channel
+			pink_scaled >> 1         // Slightly reduced blue channel
 		};
 	end
 	else begin
@@ -270,7 +293,6 @@ vga_demo u_vga_demo(
 		.video_scaler_0_avalon_scaler_sink_valid(1'b1),         //                                          .valid
 		.video_scaler_0_avalon_scaler_sink_ready(vga_ready),         //                                          .ready
 		.video_scaler_0_avalon_scaler_sink_data(vga_data),          //                                          .data
-//		.video_scaler_0_avalon_scaler_sink_data(rddata),
 		.video_vga_controller_0_external_interface_CLK(vga_CLK),   // video_vga_controller_0_external_interface.CLK
 		.video_vga_controller_0_external_interface_HS(vga_hsync),    //                                          .HS
 		.video_vga_controller_0_external_interface_VS(vga_vsync),    //                                          .VS
