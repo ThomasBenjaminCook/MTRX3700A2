@@ -25,6 +25,7 @@ module fft_pitch_detect (
     assign  di_im = 0; // No imaginary parts (audio signal is purely real).
 
     logic           mag_valid;
+	 initial mag_valid <= 1;
     logic   [W*2:0] mag_sq  = '{default: 0};
 	 
 //    integer decimate_counter = 0;

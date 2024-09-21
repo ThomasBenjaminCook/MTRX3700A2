@@ -1,443 +1,4 @@
-|top_level
-CLOCK_50 => CLOCK_50.IN2
-I2C_SCLK << set_audio_encoder:set_codec_u.I2C_SCLK
-I2C_SDAT <> set_audio_encoder:set_codec_u.I2C_SDAT
-HEX0[0] << display:u_display.display0
-HEX0[1] << display:u_display.display0
-HEX0[2] << display:u_display.display0
-HEX0[3] << display:u_display.display0
-HEX0[4] << display:u_display.display0
-HEX0[5] << display:u_display.display0
-HEX0[6] << display:u_display.display0
-HEX1[0] << display:u_display.display1
-HEX1[1] << display:u_display.display1
-HEX1[2] << display:u_display.display1
-HEX1[3] << display:u_display.display1
-HEX1[4] << display:u_display.display1
-HEX1[5] << display:u_display.display1
-HEX1[6] << display:u_display.display1
-HEX2[0] << display:u_display.display2
-HEX2[1] << display:u_display.display2
-HEX2[2] << display:u_display.display2
-HEX2[3] << display:u_display.display2
-HEX2[4] << display:u_display.display2
-HEX2[5] << display:u_display.display2
-HEX2[6] << display:u_display.display2
-HEX3[0] << display:u_display.display3
-HEX3[1] << display:u_display.display3
-HEX3[2] << display:u_display.display3
-HEX3[3] << display:u_display.display3
-HEX3[4] << display:u_display.display3
-HEX3[5] << display:u_display.display3
-HEX3[6] << display:u_display.display3
-KEY[0] => fft_pitch_detect:DUT.reset
-KEY[1] => ~NO_FANOUT~
-KEY[2] => ~NO_FANOUT~
-KEY[3] => ~NO_FANOUT~
-AUD_ADCDAT => AUD_ADCDAT.IN1
-AUD_BCLK => AUD_BCLK.IN1
-AUD_XCK << adc_clk.DB_MAX_OUTPUT_PORT_TYPE
-AUD_ADCLRCK => AUD_ADCLRCK.IN1
-LEDR[0] << <GND>
-LEDR[1] << <GND>
-LEDR[2] << <GND>
-LEDR[3] << <GND>
-LEDR[4] << <GND>
-LEDR[5] << <GND>
-LEDR[6] << <GND>
-LEDR[7] << <GND>
-LEDR[8] << <GND>
-LEDR[9] << <GND>
-LEDR[10] << <GND>
-LEDR[11] << <GND>
-LEDR[12] << <GND>
-LEDR[13] << <GND>
-LEDR[14] << <GND>
-LEDR[15] << <GND>
-LEDR[16] << <GND>
-LEDR[17] << <GND>
-
-
-|top_level|adc_pll:adc_pll_u
-areset => areset.IN1
-inclk0 => sub_wire1[0].IN1
-c0 <= altpll:altpll_component.clk
-locked <= altpll:altpll_component.locked
-
-
-|top_level|adc_pll:adc_pll_u|altpll:altpll_component
-inclk[0] => adc_pll_altpll:auto_generated.inclk[0]
-inclk[1] => adc_pll_altpll:auto_generated.inclk[1]
-fbin => ~NO_FANOUT~
-pllena => ~NO_FANOUT~
-clkswitch => ~NO_FANOUT~
-areset => adc_pll_altpll:auto_generated.areset
-pfdena => ~NO_FANOUT~
-clkena[0] => ~NO_FANOUT~
-clkena[1] => ~NO_FANOUT~
-clkena[2] => ~NO_FANOUT~
-clkena[3] => ~NO_FANOUT~
-clkena[4] => ~NO_FANOUT~
-clkena[5] => ~NO_FANOUT~
-extclkena[0] => ~NO_FANOUT~
-extclkena[1] => ~NO_FANOUT~
-extclkena[2] => ~NO_FANOUT~
-extclkena[3] => ~NO_FANOUT~
-scanclk => ~NO_FANOUT~
-scanclkena => ~NO_FANOUT~
-scanaclr => ~NO_FANOUT~
-scanread => ~NO_FANOUT~
-scanwrite => ~NO_FANOUT~
-scandata => ~NO_FANOUT~
-phasecounterselect[0] => ~NO_FANOUT~
-phasecounterselect[1] => ~NO_FANOUT~
-phasecounterselect[2] => ~NO_FANOUT~
-phasecounterselect[3] => ~NO_FANOUT~
-phaseupdown => ~NO_FANOUT~
-phasestep => ~NO_FANOUT~
-configupdate => ~NO_FANOUT~
-fbmimicbidir <> <GND>
-clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
-clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
-clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
-clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
-clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
-extclk[0] <= <GND>
-extclk[1] <= <GND>
-extclk[2] <= <GND>
-extclk[3] <= <GND>
-clkbad[0] <= <GND>
-clkbad[1] <= <GND>
-enable1 <= <GND>
-enable0 <= <GND>
-activeclock <= <GND>
-clkloss <= <GND>
-locked <= adc_pll_altpll:auto_generated.locked
-scandataout <= <GND>
-scandone <= <GND>
-sclkout0 <= <GND>
-sclkout1 <= <GND>
-phasedone <= <GND>
-vcooverrange <= <GND>
-vcounderrange <= <GND>
-fbout <= <GND>
-fref <= <GND>
-icdrclk <= <GND>
-
-
-|top_level|adc_pll:adc_pll_u|altpll:altpll_component|adc_pll_altpll:auto_generated
-areset => pll_lock_sync.ACLR
-areset => pll1.ARESET
-clk[0] <= pll1.CLK
-clk[1] <= pll1.CLK1
-clk[2] <= pll1.CLK2
-clk[3] <= pll1.CLK3
-clk[4] <= pll1.CLK4
-inclk[0] => pll1.CLK
-inclk[1] => pll1.CLK1
-locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|i2c_pll:i2c_pll_u
-areset => areset.IN1
-inclk0 => sub_wire4[0].IN1
-c0 <= altpll:altpll_component.clk
-locked <= altpll:altpll_component.locked
-
-
-|top_level|i2c_pll:i2c_pll_u|altpll:altpll_component
-inclk[0] => i2c_pll_altpll:auto_generated.inclk[0]
-inclk[1] => i2c_pll_altpll:auto_generated.inclk[1]
-fbin => ~NO_FANOUT~
-pllena => ~NO_FANOUT~
-clkswitch => ~NO_FANOUT~
-areset => i2c_pll_altpll:auto_generated.areset
-pfdena => ~NO_FANOUT~
-clkena[0] => ~NO_FANOUT~
-clkena[1] => ~NO_FANOUT~
-clkena[2] => ~NO_FANOUT~
-clkena[3] => ~NO_FANOUT~
-clkena[4] => ~NO_FANOUT~
-clkena[5] => ~NO_FANOUT~
-extclkena[0] => ~NO_FANOUT~
-extclkena[1] => ~NO_FANOUT~
-extclkena[2] => ~NO_FANOUT~
-extclkena[3] => ~NO_FANOUT~
-scanclk => ~NO_FANOUT~
-scanclkena => ~NO_FANOUT~
-scanaclr => ~NO_FANOUT~
-scanread => ~NO_FANOUT~
-scanwrite => ~NO_FANOUT~
-scandata => ~NO_FANOUT~
-phasecounterselect[0] => ~NO_FANOUT~
-phasecounterselect[1] => ~NO_FANOUT~
-phasecounterselect[2] => ~NO_FANOUT~
-phasecounterselect[3] => ~NO_FANOUT~
-phaseupdown => ~NO_FANOUT~
-phasestep => ~NO_FANOUT~
-configupdate => ~NO_FANOUT~
-fbmimicbidir <> <GND>
-clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
-clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
-clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
-clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
-clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
-extclk[0] <= <GND>
-extclk[1] <= <GND>
-extclk[2] <= <GND>
-extclk[3] <= <GND>
-clkbad[0] <= <GND>
-clkbad[1] <= <GND>
-enable1 <= <GND>
-enable0 <= <GND>
-activeclock <= <GND>
-clkloss <= <GND>
-locked <= i2c_pll_altpll:auto_generated.locked
-scandataout <= <GND>
-scandone <= <GND>
-sclkout0 <= <GND>
-sclkout1 <= <GND>
-phasedone <= <GND>
-vcooverrange <= <GND>
-vcounderrange <= <GND>
-fbout <= <GND>
-fref <= <GND>
-icdrclk <= <GND>
-
-
-|top_level|i2c_pll:i2c_pll_u|altpll:altpll_component|i2c_pll_altpll:auto_generated
-areset => pll_lock_sync.ACLR
-areset => pll1.ARESET
-clk[0] <= pll1.CLK
-clk[1] <= pll1.CLK1
-clk[2] <= pll1.CLK2
-clk[3] <= pll1.CLK3
-clk[4] <= pll1.CLK4
-inclk[0] => pll1.CLK
-inclk[1] => pll1.CLK1
-locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|set_audio_encoder:set_codec_u
-i2c_clk => i2c_clk.IN1
-I2C_SCLK <= i2c_master:u1.i2c_scl
-I2C_SDAT <> i2c_master:u1.i2c_sda
-
-
-|top_level|set_audio_encoder:set_codec_u|i2c_master:u1
-clk => reg_addr_temp[0].CLK
-clk => reg_addr_temp[1].CLK
-clk => reg_addr_temp[2].CLK
-clk => reg_addr_temp[3].CLK
-clk => reg_addr_temp[4].CLK
-clk => reg_addr_temp[5].CLK
-clk => reg_addr_temp[6].CLK
-clk => reg_addr_temp[7].CLK
-clk => write_data_temp[0].CLK
-clk => write_data_temp[1].CLK
-clk => write_data_temp[2].CLK
-clk => write_data_temp[3].CLK
-clk => write_data_temp[4].CLK
-clk => write_data_temp[5].CLK
-clk => write_data_temp[6].CLK
-clk => write_data_temp[7].CLK
-clk => slav_addr_temp[0].CLK
-clk => slav_addr_temp[1].CLK
-clk => slav_addr_temp[2].CLK
-clk => slav_addr_temp[3].CLK
-clk => slav_addr_temp[4].CLK
-clk => slav_addr_temp[5].CLK
-clk => slav_addr_temp[6].CLK
-clk => counter[0].CLK
-clk => counter[1].CLK
-clk => counter[2].CLK
-clk => ack_3.CLK
-clk => ack_2.CLK
-clk => ack_1.CLK
-clk => state~1.DATAIN
-clk => i2c_scl.IN1
-i2c_scl <= i2c_scl.DB_MAX_OUTPUT_PORT_TYPE
-i2c_sda <> i2c_sda
-slav_addr[0] => slav_addr_temp[0].DATAIN
-slav_addr[1] => slav_addr_temp[1].DATAIN
-slav_addr[2] => slav_addr_temp[2].DATAIN
-slav_addr[3] => slav_addr_temp[3].DATAIN
-slav_addr[4] => slav_addr_temp[4].DATAIN
-slav_addr[5] => slav_addr_temp[5].DATAIN
-slav_addr[6] => slav_addr_temp[6].DATAIN
-read_not_write => ~NO_FANOUT~
-reg_addr[0] => reg_addr_temp[0].DATAIN
-reg_addr[1] => reg_addr_temp[1].DATAIN
-reg_addr[2] => reg_addr_temp[2].DATAIN
-reg_addr[3] => reg_addr_temp[3].DATAIN
-reg_addr[4] => reg_addr_temp[4].DATAIN
-reg_addr[5] => reg_addr_temp[5].DATAIN
-reg_addr[6] => reg_addr_temp[6].DATAIN
-reg_addr[7] => reg_addr_temp[7].DATAIN
-write_data[0] => write_data_temp[0].DATAIN
-write_data[1] => write_data_temp[1].DATAIN
-write_data[2] => write_data_temp[2].DATAIN
-write_data[3] => write_data_temp[3].DATAIN
-write_data[4] => write_data_temp[4].DATAIN
-write_data[5] => write_data_temp[5].DATAIN
-write_data[6] => write_data_temp[6].DATAIN
-write_data[7] => write_data_temp[7].DATAIN
-write_valid => always1.IN0
-write_ready <= write_ready.DB_MAX_OUTPUT_PORT_TYPE
-read_data[0] <= <GND>
-read_data[1] <= <GND>
-read_data[2] <= <GND>
-read_data[3] <= <GND>
-read_data[4] <= <GND>
-read_data[5] <= <GND>
-read_data[6] <= <GND>
-read_data[7] <= <GND>
-read_valid <= <GND>
-read_ready => ~NO_FANOUT~
-error <= error.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|dstream:audio_input
-dstream.data[0] <> <UNC>
-dstream.data[1] <> <UNC>
-dstream.data[2] <> <UNC>
-dstream.data[3] <> <UNC>
-dstream.data[4] <> <UNC>
-dstream.data[5] <> <UNC>
-dstream.data[6] <> <UNC>
-dstream.data[7] <> <UNC>
-dstream.data[8] <> <UNC>
-dstream.data[9] <> <UNC>
-dstream.data[10] <> <UNC>
-dstream.data[11] <> <UNC>
-dstream.data[12] <> <UNC>
-dstream.data[13] <> <UNC>
-dstream.data[14] <> <UNC>
-dstream.data[15] <> <UNC>
-dstream.ready <> <UNC>
-dstream.valid <> <UNC>
-
-
-|top_level|dstream:pitch_output
-dstream.data[0] <> <UNC>
-dstream.data[1] <> <UNC>
-dstream.data[2] <> <UNC>
-dstream.data[3] <> <UNC>
-dstream.data[4] <> <UNC>
-dstream.data[5] <> <UNC>
-dstream.data[6] <> <UNC>
-dstream.data[7] <> <UNC>
-dstream.data[8] <> <UNC>
-dstream.data[9] <> <UNC>
-dstream.ready <> <UNC>
-dstream.valid <> <UNC>
-
-
-|top_level|mic_load:u_mic_load
-bclk => temp_rx_data[0].CLK
-bclk => temp_rx_data[1].CLK
-bclk => temp_rx_data[2].CLK
-bclk => temp_rx_data[3].CLK
-bclk => temp_rx_data[4].CLK
-bclk => temp_rx_data[5].CLK
-bclk => temp_rx_data[6].CLK
-bclk => temp_rx_data[7].CLK
-bclk => temp_rx_data[8].CLK
-bclk => temp_rx_data[9].CLK
-bclk => temp_rx_data[10].CLK
-bclk => temp_rx_data[11].CLK
-bclk => temp_rx_data[12].CLK
-bclk => temp_rx_data[13].CLK
-bclk => temp_rx_data[14].CLK
-bclk => temp_rx_data[15].CLK
-bclk => sample_data[0]~reg0.CLK
-bclk => sample_data[1]~reg0.CLK
-bclk => sample_data[2]~reg0.CLK
-bclk => sample_data[3]~reg0.CLK
-bclk => sample_data[4]~reg0.CLK
-bclk => sample_data[5]~reg0.CLK
-bclk => sample_data[6]~reg0.CLK
-bclk => sample_data[7]~reg0.CLK
-bclk => sample_data[8]~reg0.CLK
-bclk => sample_data[9]~reg0.CLK
-bclk => sample_data[10]~reg0.CLK
-bclk => sample_data[11]~reg0.CLK
-bclk => sample_data[12]~reg0.CLK
-bclk => sample_data[13]~reg0.CLK
-bclk => sample_data[14]~reg0.CLK
-bclk => sample_data[15]~reg0.CLK
-bclk => bit_index[0].CLK
-bclk => bit_index[1].CLK
-bclk => bit_index[2].CLK
-bclk => bit_index[3].CLK
-bclk => bit_index[4].CLK
-bclk => bit_index[5].CLK
-bclk => bit_index[6].CLK
-bclk => bit_index[7].CLK
-bclk => bit_index[8].CLK
-bclk => bit_index[9].CLK
-bclk => bit_index[10].CLK
-bclk => bit_index[11].CLK
-bclk => bit_index[12].CLK
-bclk => bit_index[13].CLK
-bclk => bit_index[14].CLK
-bclk => bit_index[15].CLK
-bclk => bit_index[16].CLK
-bclk => bit_index[17].CLK
-bclk => bit_index[18].CLK
-bclk => bit_index[19].CLK
-bclk => bit_index[20].CLK
-bclk => bit_index[21].CLK
-bclk => bit_index[22].CLK
-bclk => bit_index[23].CLK
-bclk => bit_index[24].CLK
-bclk => bit_index[25].CLK
-bclk => bit_index[26].CLK
-bclk => bit_index[27].CLK
-bclk => bit_index[28].CLK
-bclk => bit_index[29].CLK
-bclk => bit_index[30].CLK
-bclk => bit_index[31].CLK
-bclk => valid~reg0.CLK
-bclk => adclrc_q.CLK
-adclrc => redge_adclrc.IN1
-adclrc => adclrc_q.DATAIN
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-adcdat => temp_rx_data.DATAB
-valid <= valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[0] <= sample_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[1] <= sample_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[2] <= sample_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[3] <= sample_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[4] <= sample_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[5] <= sample_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[6] <= sample_data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[7] <= sample_data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[8] <= sample_data[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[9] <= sample_data[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[10] <= sample_data[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[11] <= sample_data[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[12] <= sample_data[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[13] <= sample_data[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[14] <= sample_data[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sample_data[15] <= sample_data[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|fft_pitch_detect:DUT
+|fft_pitch_detect
 clk => clk.IN1
 audio_clk => fft_input_buffer:u_fft_input_buffer.audio_clk
 reset => reset.IN1
@@ -469,11 +30,17 @@ pitch_output.data[6] <= fft_find_peak:u_fft_find_peak.peak_k[6]
 pitch_output.data[7] <= fft_find_peak:u_fft_find_peak.peak_k[7]
 pitch_output.data[8] <= fft_find_peak:u_fft_find_peak.peak_k[8]
 pitch_output.data[9] <= fft_find_peak:u_fft_find_peak.peak_k[9]
+pitch_output.data[10] <= <GND>
+pitch_output.data[11] <= <GND>
+pitch_output.data[12] <= <GND>
+pitch_output.data[13] <= <GND>
+pitch_output.data[14] <= <GND>
+pitch_output.data[15] <= <GND>
 pitch_output.ready => ~NO_FANOUT~
 pitch_output.valid <= fft_find_peak:u_fft_find_peak.peak_valid
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer
 clk => async_fifo:u_fifo.rdclk
 clk => n[0].CLK
 clk => n[1].CLK
@@ -578,7 +145,7 @@ fft_input[15] <= async_fifo:u_fifo.q[15]
 fft_input_valid <= fft_read.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo
 aclr => aclr.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -620,7 +187,7 @@ rdfull <= dcfifo:dcfifo_component.rdfull
 wrfull <= dcfifo:dcfifo_component.wrfull
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component
 data[0] => dcfifo_t4k1:auto_generated.data[0]
 data[1] => dcfifo_t4k1:auto_generated.data[1]
 data[2] => dcfifo_t4k1:auto_generated.data[2]
@@ -686,7 +253,7 @@ wrusedw[8] <= <GND>
 wrusedw[9] <= <GND>
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated
 aclr => a_graycounter_677:rdptr_g1p.aclr
 aclr => a_graycounter_2lc:wrptr_g1p.aclr
 aclr => altsyncram_vq41:fifo_ram.aclr1
@@ -772,7 +339,7 @@ wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
 wrreq => valid_wrreq.IN0
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|a_graycounter_677:rdptr_g1p
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|a_graycounter_677:rdptr_g1p
 aclr => counter5a1.IN0
 aclr => counter5a0.IN0
 aclr => parity6.IN0
@@ -819,7 +386,7 @@ q[9] <= counter5a9.DB_MAX_OUTPUT_PORT_TYPE
 q[10] <= counter5a10.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|a_graycounter_2lc:wrptr_g1p
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|a_graycounter_2lc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -866,7 +433,7 @@ q[9] <= counter8a9.DB_MAX_OUTPUT_PORT_TYPE
 q[10] <= counter8a10.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|altsyncram_vq41:fifo_ram
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|altsyncram_vq41:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -1317,7 +884,7 @@ wren_a => ram_block11a15.PORTAWE
 wren_a => ram_block11a15.ENA0
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_9pl:rs_dgwp
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_9pl:rs_dgwp
 clock => dffpipe_qe9:dffpipe12.clock
 clrn => dffpipe_qe9:dffpipe12.clrn
 d[0] => dffpipe_qe9:dffpipe12.d[0]
@@ -1344,7 +911,7 @@ q[9] <= dffpipe_qe9:dffpipe12.q[9]
 q[10] <= dffpipe_qe9:dffpipe12.q[10]
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_9pl:rs_dgwp|dffpipe_qe9:dffpipe12
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_9pl:rs_dgwp|dffpipe_qe9:dffpipe12
 clock => dffe13a[10].CLK
 clock => dffe13a[9].CLK
 clock => dffe13a[8].CLK
@@ -1413,7 +980,7 @@ q[9] <= dffe14a[9].DB_MAX_OUTPUT_PORT_TYPE
 q[10] <= dffe14a[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_apl:ws_dgrp
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_apl:ws_dgrp
 clock => dffpipe_re9:dffpipe15.clock
 clrn => dffpipe_re9:dffpipe15.clrn
 d[0] => dffpipe_re9:dffpipe15.d[0]
@@ -1440,7 +1007,7 @@ q[9] <= dffpipe_re9:dffpipe15.q[9]
 q[10] <= dffpipe_re9:dffpipe15.q[10]
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_apl:ws_dgrp|dffpipe_re9:dffpipe15
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|alt_synch_pipe_apl:ws_dgrp|dffpipe_re9:dffpipe15
 clock => dffe16a[10].CLK
 clock => dffe16a[9].CLK
 clock => dffe16a[8].CLK
@@ -1509,7 +1076,7 @@ q[9] <= dffe17a[9].DB_MAX_OUTPUT_PORT_TYPE
 q[10] <= dffe17a[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|cmpr_o76:rdempty_eq_comp
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|cmpr_o76:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1535,7 +1102,7 @@ datab[9] => data_wire[6].IN1
 datab[10] => data_wire[7].IN1
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|cmpr_o76:rdfull_eq_comp
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|cmpr_o76:rdfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1561,7 +1128,7 @@ datab[9] => data_wire[6].IN1
 datab[10] => data_wire[7].IN1
 
 
-|top_level|fft_pitch_detect:DUT|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|cmpr_o76:wrfull_eq_comp
+|fft_pitch_detect|fft_input_buffer:u_fft_input_buffer|async_fifo:u_fifo|dcfifo:dcfifo_component|dcfifo_t4k1:auto_generated|cmpr_o76:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1587,7 +1154,7 @@ datab[9] => data_wire[6].IN1
 datab[10] => data_wire[7].IN1
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip
+|fft_pitch_detect|FFT:u_fft_ip
 clock => clock.IN5
 reset => reset.IN5
 di_en => di_en.IN1
@@ -1658,7 +1225,7 @@ do_im[14] <= SdfUnit:SU5.do_im
 do_im[15] <= SdfUnit:SU5.do_im
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1
 clock => clock.IN3
 reset => mu_do_en.ACLR
 reset => bf2_do_en.ACLR
@@ -1771,7 +1338,7 @@ do_im[14] <= mu_do_im[14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= mu_do_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1|Butterfly:BF1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1|Butterfly:BF1
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -1974,7 +1541,7 @@ y1_im[14] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1|DelayBuffer:DB1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1|DelayBuffer:DB1
 clock => buf_im[511][0].CLK
 clock => buf_im[511][1].CLK
 clock => buf_im[511][2].CLK
@@ -18425,7 +17992,7 @@ do_im[14] <= buf_im[511][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[511][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1|Butterfly:BF2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1|Butterfly:BF2
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -18628,7 +18195,7 @@ y1_im[14] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1|DelayBuffer:DB2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1|DelayBuffer:DB2
 clock => buf_im[255][0].CLK
 clock => buf_im[255][1].CLK
 clock => buf_im[255][2].CLK
@@ -26887,7 +26454,7 @@ do_im[14] <= buf_im[255][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[255][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1|Twiddle:TW
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1|Twiddle:TW
 clock => ff_im[0].CLK
 clock => ff_im[1].CLK
 clock => ff_im[2].CLK
@@ -27274,7 +26841,7 @@ tw_im[14] <= ff_im[14].DB_MAX_OUTPUT_PORT_TYPE
 tw_im[15] <= ff_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU1|Multiply:MU
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU1|Multiply:MU
 a_re[0] => Mult0.IN15
 a_re[0] => Mult1.IN15
 a_re[1] => Mult0.IN14
@@ -27437,7 +27004,7 @@ m_im[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 m_im[15] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2
 clock => clock.IN3
 reset => mu_do_en.ACLR
 reset => bf2_do_en.ACLR
@@ -27550,7 +27117,7 @@ do_im[14] <= mu_do_im[14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= mu_do_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2|Butterfly:BF1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2|Butterfly:BF1
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -27753,7 +27320,7 @@ y1_im[14] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2|DelayBuffer:DB1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2|DelayBuffer:DB1
 clock => buf_im[127][0].CLK
 clock => buf_im[127][1].CLK
 clock => buf_im[127][2].CLK
@@ -31916,7 +31483,7 @@ do_im[14] <= buf_im[127][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[127][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2|Butterfly:BF2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2|Butterfly:BF2
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -32119,7 +31686,7 @@ y1_im[14] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2|DelayBuffer:DB2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2|DelayBuffer:DB2
 clock => buf_im[63][0].CLK
 clock => buf_im[63][1].CLK
 clock => buf_im[63][2].CLK
@@ -34234,7 +33801,7 @@ do_im[14] <= buf_im[63][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[63][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2|Twiddle:TW
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2|Twiddle:TW
 clock => ff_im[0].CLK
 clock => ff_im[1].CLK
 clock => ff_im[2].CLK
@@ -34621,7 +34188,7 @@ tw_im[14] <= ff_im[14].DB_MAX_OUTPUT_PORT_TYPE
 tw_im[15] <= ff_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU2|Multiply:MU
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU2|Multiply:MU
 a_re[0] => Mult0.IN15
 a_re[0] => Mult1.IN15
 a_re[1] => Mult0.IN14
@@ -34784,7 +34351,7 @@ m_im[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 m_im[15] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3
 clock => clock.IN3
 reset => mu_do_en.ACLR
 reset => bf2_do_en.ACLR
@@ -34897,7 +34464,7 @@ do_im[14] <= mu_do_im[14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= mu_do_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3|Butterfly:BF1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3|Butterfly:BF1
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -35100,7 +34667,7 @@ y1_im[14] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3|DelayBuffer:DB1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3|DelayBuffer:DB1
 clock => buf_im[31][0].CLK
 clock => buf_im[31][1].CLK
 clock => buf_im[31][2].CLK
@@ -36191,7 +35758,7 @@ do_im[14] <= buf_im[31][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[31][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3|Butterfly:BF2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3|Butterfly:BF2
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -36394,7 +35961,7 @@ y1_im[14] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3|DelayBuffer:DB2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3|DelayBuffer:DB2
 clock => buf_im[15][0].CLK
 clock => buf_im[15][1].CLK
 clock => buf_im[15][2].CLK
@@ -36973,7 +36540,7 @@ do_im[14] <= buf_im[15][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[15][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3|Twiddle:TW
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3|Twiddle:TW
 clock => ff_im[0].CLK
 clock => ff_im[1].CLK
 clock => ff_im[2].CLK
@@ -37360,7 +36927,7 @@ tw_im[14] <= ff_im[14].DB_MAX_OUTPUT_PORT_TYPE
 tw_im[15] <= ff_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU3|Multiply:MU
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU3|Multiply:MU
 a_re[0] => Mult0.IN15
 a_re[0] => Mult1.IN15
 a_re[1] => Mult0.IN14
@@ -37523,7 +37090,7 @@ m_im[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 m_im[15] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4
 clock => clock.IN3
 reset => mu_do_en.ACLR
 reset => bf2_do_en.ACLR
@@ -37636,7 +37203,7 @@ do_im[14] <= mu_do_im[14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= mu_do_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4|Butterfly:BF1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4|Butterfly:BF1
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -37839,7 +37406,7 @@ y1_im[14] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4|DelayBuffer:DB1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4|DelayBuffer:DB1
 clock => buf_im[7][0].CLK
 clock => buf_im[7][1].CLK
 clock => buf_im[7][2].CLK
@@ -38162,7 +37729,7 @@ do_im[14] <= buf_im[7][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[7][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4|Butterfly:BF2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4|Butterfly:BF2
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -38365,7 +37932,7 @@ y1_im[14] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4|DelayBuffer:DB2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4|DelayBuffer:DB2
 clock => buf_im[3][0].CLK
 clock => buf_im[3][1].CLK
 clock => buf_im[3][2].CLK
@@ -38560,7 +38127,7 @@ do_im[14] <= buf_im[3][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[3][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4|Twiddle:TW
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4|Twiddle:TW
 clock => ff_im[0].CLK
 clock => ff_im[1].CLK
 clock => ff_im[2].CLK
@@ -38947,7 +38514,7 @@ tw_im[14] <= ff_im[14].DB_MAX_OUTPUT_PORT_TYPE
 tw_im[15] <= ff_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU4|Multiply:MU
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU4|Multiply:MU
 a_re[0] => Mult0.IN15
 a_re[0] => Mult1.IN15
 a_re[1] => Mult0.IN14
@@ -39110,7 +38677,7 @@ m_im[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 m_im[15] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5
 clock => clock.IN3
 reset => bf2_do_en.ACLR
 reset => bf2_count[0].ACLR
@@ -39222,7 +38789,7 @@ do_im[14] <= do_im[14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= do_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5|Butterfly:BF1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5|Butterfly:BF1
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -39425,7 +38992,7 @@ y1_im[14] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5|DelayBuffer:DB1
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5|DelayBuffer:DB1
 clock => buf_im[1][0].CLK
 clock => buf_im[1][1].CLK
 clock => buf_im[1][2].CLK
@@ -39556,7 +39123,7 @@ do_im[14] <= buf_im[1][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[1][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5|Butterfly:BF2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5|Butterfly:BF2
 x0_re[0] => Add0.IN17
 x0_re[0] => Add2.IN34
 x0_re[1] => Add0.IN16
@@ -39759,7 +39326,7 @@ y1_im[14] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 y1_im[15] <= Add7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5|DelayBuffer:DB2
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5|DelayBuffer:DB2
 clock => buf_im[0][0].CLK
 clock => buf_im[0][1].CLK
 clock => buf_im[0][2].CLK
@@ -39858,7 +39425,7 @@ do_im[14] <= buf_im[0][14].DB_MAX_OUTPUT_PORT_TYPE
 do_im[15] <= buf_im[0][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5|Twiddle:TW
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5|Twiddle:TW
 clock => ff_im[0].CLK
 clock => ff_im[1].CLK
 clock => ff_im[2].CLK
@@ -40245,7 +39812,7 @@ tw_im[14] <= ff_im[14].DB_MAX_OUTPUT_PORT_TYPE
 tw_im[15] <= ff_im[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|FFT:u_fft_ip|SdfUnit:SU5|Multiply:MU
+|fft_pitch_detect|FFT:u_fft_ip|SdfUnit:SU5|Multiply:MU
 a_re[0] => Mult0.IN15
 a_re[0] => Mult1.IN15
 a_re[1] => Mult0.IN14
@@ -40408,7 +39975,7 @@ m_im[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 m_im[15] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_mag_sq:u_fft_mag_sq
+|fft_pitch_detect|fft_mag_sq:u_fft_mag_sq
 clk => add_stage[0].CLK
 clk => add_stage[1].CLK
 clk => add_stage[2].CLK
@@ -40706,7 +40273,7 @@ mag_sq[32] <= add_stage[32].DB_MAX_OUTPUT_PORT_TYPE
 mag_valid <= mag_valid_temp[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_level|fft_pitch_detect:DUT|fft_find_peak:u_fft_find_peak
+|fft_pitch_detect|fft_find_peak:u_fft_find_peak
 clk => peak_k[0]~reg0.CLK
 clk => peak_k[1]~reg0.CLK
 clk => peak_k[2]~reg0.CLK
@@ -41108,182 +40675,5 @@ peak_k[7] <= peak_k[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 peak_k[8] <= peak_k[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 peak_k[9] <= peak_k[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 peak_valid <= peak_valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|display:u_display
-clk => digit3[0].CLK
-clk => digit3[1].CLK
-clk => digit3[2].CLK
-clk => digit3[3].CLK
-clk => digit2[0].CLK
-clk => digit2[1].CLK
-clk => digit2[2].CLK
-clk => digit2[3].CLK
-clk => digit1[0].CLK
-clk => digit1[1].CLK
-clk => digit1[2].CLK
-clk => digit1[3].CLK
-clk => digit0[0].CLK
-clk => digit0[1].CLK
-clk => digit0[2].CLK
-clk => digit0[3].CLK
-clk => temp_value[0].CLK
-clk => temp_value[1].CLK
-clk => temp_value[2].CLK
-clk => temp_value[3].CLK
-clk => temp_value[4].CLK
-clk => temp_value[5].CLK
-clk => temp_value[6].CLK
-clk => temp_value[7].CLK
-clk => temp_value[8].CLK
-clk => temp_value[9].CLK
-clk => temp_value[10].CLK
-clk => bcd0[0].CLK
-clk => bcd0[1].CLK
-clk => bcd0[2].CLK
-clk => bcd0[3].CLK
-clk => bcd1[0].CLK
-clk => bcd1[1].CLK
-clk => bcd1[2].CLK
-clk => bcd1[3].CLK
-clk => bcd2[0].CLK
-clk => bcd2[1].CLK
-clk => bcd2[2].CLK
-clk => bcd2[3].CLK
-clk => bcd3[0].CLK
-clk => bcd3[1].CLK
-clk => bcd3[2].CLK
-clk => bcd3[3].CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => current_state[0].CLK
-clk => current_state[1].CLK
-clk => current_state[2].CLK
-clk => current_state[3].CLK
-clk => current_state[4].CLK
-clk => current_state[5].CLK
-clk => current_state[6].CLK
-clk => current_state[7].CLK
-clk => current_state[8].CLK
-clk => current_state[9].CLK
-clk => current_state[10].CLK
-clk => current_state[11].CLK
-clk => current_state[12].CLK
-clk => current_state[13].CLK
-clk => current_state[14].CLK
-clk => current_state[15].CLK
-clk => current_state[16].CLK
-clk => current_state[17].CLK
-clk => current_state[18].CLK
-clk => current_state[19].CLK
-clk => current_state[20].CLK
-clk => current_state[21].CLK
-clk => current_state[22].CLK
-clk => current_state[23].CLK
-clk => current_state[24].CLK
-clk => current_state[25].CLK
-clk => current_state[26].CLK
-clk => current_state[27].CLK
-clk => current_state[28].CLK
-clk => current_state[29].CLK
-clk => current_state[30].CLK
-clk => current_state[31].CLK
-value[0] => temp_value.DATAB
-value[1] => temp_value.DATAB
-value[2] => temp_value.DATAB
-value[3] => temp_value.DATAB
-value[4] => temp_value.DATAB
-value[5] => temp_value.DATAB
-value[6] => temp_value.DATAB
-value[7] => temp_value.DATAB
-value[8] => temp_value.DATAB
-value[9] => temp_value.DATAB
-value[10] => temp_value.DATAB
-display0[0] <= seven_seg:u_digit0.segments
-display0[1] <= seven_seg:u_digit0.segments
-display0[2] <= seven_seg:u_digit0.segments
-display0[3] <= seven_seg:u_digit0.segments
-display0[4] <= seven_seg:u_digit0.segments
-display0[5] <= seven_seg:u_digit0.segments
-display0[6] <= seven_seg:u_digit0.segments
-display1[0] <= seven_seg:u_digit1.segments
-display1[1] <= seven_seg:u_digit1.segments
-display1[2] <= seven_seg:u_digit1.segments
-display1[3] <= seven_seg:u_digit1.segments
-display1[4] <= seven_seg:u_digit1.segments
-display1[5] <= seven_seg:u_digit1.segments
-display1[6] <= seven_seg:u_digit1.segments
-display2[0] <= seven_seg:u_digit2.segments
-display2[1] <= seven_seg:u_digit2.segments
-display2[2] <= seven_seg:u_digit2.segments
-display2[3] <= seven_seg:u_digit2.segments
-display2[4] <= seven_seg:u_digit2.segments
-display2[5] <= seven_seg:u_digit2.segments
-display2[6] <= seven_seg:u_digit2.segments
-display3[0] <= seven_seg:u_digit3.segments
-display3[1] <= seven_seg:u_digit3.segments
-display3[2] <= seven_seg:u_digit3.segments
-display3[3] <= seven_seg:u_digit3.segments
-display3[4] <= seven_seg:u_digit3.segments
-display3[5] <= seven_seg:u_digit3.segments
-display3[6] <= seven_seg:u_digit3.segments
-
-
-|top_level|display:u_display|seven_seg:u_digit0
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|display:u_display|seven_seg:u_digit1
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|display:u_display|seven_seg:u_digit2
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top_level|display:u_display|seven_seg:u_digit3
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

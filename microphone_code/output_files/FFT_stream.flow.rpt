@@ -1,5 +1,5 @@
 Flow report for FFT_stream
-Thu Sep 19 15:33:10 2024
+Sat Sep 21 13:27:17 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 19 15:33:10 2024       ;
+; Flow Status                        ; Successful - Sat Sep 21 13:27:17 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; FFT_stream                                  ;
-; Top-level Entity Name              ; top_level                                   ;
+; Top-level Entity Name              ; fft_pitch_detect                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,212 / 114,480 ( 5 % )                     ;
-;     Total combinational functions  ; 4,872 / 114,480 ( 4 % )                     ;
-;     Dedicated logic registers      ; 1,237 / 114,480 ( 1 % )                     ;
-; Total registers                    ; 1237                                        ;
-; Total pins                         ; 57 / 529 ( 11 % )                           ;
+; Total logic elements               ; 4,873 / 114,480 ( 4 % )                     ;
+;     Total combinational functions  ; 4,592 / 114,480 ( 4 % )                     ;
+;     Dedicated logic registers      ; 1,068 / 114,480 ( < 1 % )                   ;
+; Total registers                    ; 1068                                        ;
+; Total pins                         ; 39 / 529 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 40,352 / 3,981,312 ( 1 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 36 / 532 ( 7 % )                            ;
-; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,50 +65,50 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2024 15:30:59 ;
+; Start date & time ; 09/21/2024 13:25:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FFT_stream          ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                     ;
-+-----------------------------------------+----------------------------------------+---------------+-------------+---------------------+
-; Assignment Name                         ; Value                                  ; Default Value ; Entity Name ; Section Id          ;
-+-----------------------------------------+----------------------------------------+---------------+-------------+---------------------+
-; COMPILER_SIGNATURE_ID                   ; 189559950239589.172672385814412        ; --            ; --          ; --                  ;
-; EDA_DESIGN_INSTANCE_NAME                ; NA                                     ; --            ; --          ; fft_pitch_detect_tb ;
-; EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT  ; simulation/modelsim/wave.do            ; --            ; --          ; eda_simulation      ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH    ; fft_pitch_detect_tb                    ; --            ; --          ; eda_simulation      ;
-; EDA_OUTPUT_DATA_FORMAT                  ; Verilog Hdl                            ; --            ; --          ; eda_simulation      ;
-; EDA_SIMULATION_TOOL                     ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --                  ;
-; EDA_TEST_BENCH_ENABLE_STATUS            ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation      ;
-; EDA_TEST_BENCH_FILE                     ; fft_pitch_detect_tb.sv                 ; --            ; --          ; fft_pitch_detect_tb ;
-; EDA_TEST_BENCH_MODULE_NAME              ; fft_pitch_detect_tb                    ; --            ; --          ; fft_pitch_detect_tb ;
-; EDA_TEST_BENCH_NAME                     ; fft_pitch_detect_tb                    ; --            ; --          ; eda_simulation      ;
-; EDA_TIME_SCALE                          ; 1 ps                                   ; --            ; --          ; eda_simulation      ;
-; ENABLE_SIGNALTAP                        ; On                                     ; --            ; --          ; --                  ;
-; MAX_CORE_JUNCTION_TEMP                  ; 85                                     ; --            ; --          ; --                  ;
-; MIN_CORE_JUNCTION_TEMP                  ; 0                                      ; --            ; --          ; --                  ;
-; MISC_FILE                               ; mic/i2c_pll_bb.v                       ; --            ; --          ; --                  ;
-; MISC_FILE                               ; mic/i2c_pll.ppf                        ; --            ; --          ; --                  ;
-; MISC_FILE                               ; mic/adc_pll_bb.v                       ; --            ; --          ; --                  ;
-; MISC_FILE                               ; mic/adc_pll.ppf                        ; --            ; --          ; --                  ;
-; MISC_FILE                               ; async_fifo_bb.v                        ; --            ; --          ; --                  ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE             ; 1.2V                                   ; --            ; --          ; --                  ;
-; PARTITION_COLOR                         ; -- (Not supported for targeted family) ; --            ; top_level   ; Top                 ;
-; PARTITION_FITTER_PRESERVATION_LEVEL     ; -- (Not supported for targeted family) ; --            ; top_level   ; Top                 ;
-; PARTITION_NETLIST_TYPE                  ; -- (Not supported for targeted family) ; --            ; top_level   ; Top                 ;
-; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ; On                                     ; Off           ; --          ; --                  ;
-; PHYSICAL_SYNTHESIS_REGISTER_RETIMING    ; On                                     ; Off           ; --          ; --                  ;
-; POWER_BOARD_THERMAL_MODEL               ; None (CONSERVATIVE)                    ; --            ; --          ; --                  ;
-; POWER_PRESET_COOLING_SOLUTION           ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                  ;
-; PROJECT_OUTPUT_DIRECTORY                ; output_files                           ; --            ; --          ; --                  ;
-; SEARCH_PATH                             ; r22sdf                                 ; --            ; --          ; --                  ;
-; SEARCH_PATH                             ; mic                                    ; --            ; --          ; --                  ;
-; TOP_LEVEL_ENTITY                        ; top_level                              ; FFT_stream    ; --          ; --                  ;
-; USE_SIGNALTAP_FILE                      ; output_files/stp1.stp                  ; --            ; --          ; --                  ;
-+-----------------------------------------+----------------------------------------+---------------+-------------+---------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                          ;
++-----------------------------------------+----------------------------------------+---------------+------------------+---------------------+
+; Assignment Name                         ; Value                                  ; Default Value ; Entity Name      ; Section Id          ;
++-----------------------------------------+----------------------------------------+---------------+------------------+---------------------+
+; COMPILER_SIGNATURE_ID                   ; 27214213411374.172688913618204         ; --            ; --               ; --                  ;
+; EDA_DESIGN_INSTANCE_NAME                ; NA                                     ; --            ; --               ; fft_pitch_detect_tb ;
+; EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT  ; simulation/modelsim/wave.do            ; --            ; --               ; eda_simulation      ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH    ; fft_pitch_detect_tb                    ; --            ; --               ; eda_simulation      ;
+; EDA_OUTPUT_DATA_FORMAT                  ; Verilog Hdl                            ; --            ; --               ; eda_simulation      ;
+; EDA_SIMULATION_TOOL                     ; ModelSim-Altera (Verilog)              ; <None>        ; --               ; --                  ;
+; EDA_TEST_BENCH_ENABLE_STATUS            ; TEST_BENCH_MODE                        ; --            ; --               ; eda_simulation      ;
+; EDA_TEST_BENCH_FILE                     ; fft_pitch_detect_tb.sv                 ; --            ; --               ; fft_pitch_detect_tb ;
+; EDA_TEST_BENCH_MODULE_NAME              ; fft_pitch_detect_tb                    ; --            ; --               ; fft_pitch_detect_tb ;
+; EDA_TEST_BENCH_NAME                     ; fft_pitch_detect_tb                    ; --            ; --               ; eda_simulation      ;
+; EDA_TIME_SCALE                          ; 1 ps                                   ; --            ; --               ; eda_simulation      ;
+; ENABLE_SIGNALTAP                        ; On                                     ; --            ; --               ; --                  ;
+; MAX_CORE_JUNCTION_TEMP                  ; 85                                     ; --            ; --               ; --                  ;
+; MIN_CORE_JUNCTION_TEMP                  ; 0                                      ; --            ; --               ; --                  ;
+; MISC_FILE                               ; mic/i2c_pll_bb.v                       ; --            ; --               ; --                  ;
+; MISC_FILE                               ; mic/i2c_pll.ppf                        ; --            ; --               ; --                  ;
+; MISC_FILE                               ; mic/adc_pll_bb.v                       ; --            ; --               ; --                  ;
+; MISC_FILE                               ; mic/adc_pll.ppf                        ; --            ; --               ; --                  ;
+; MISC_FILE                               ; async_fifo_bb.v                        ; --            ; --               ; --                  ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE             ; 1.2V                                   ; --            ; --               ; --                  ;
+; PARTITION_COLOR                         ; -- (Not supported for targeted family) ; --            ; fft_pitch_detect ; Top                 ;
+; PARTITION_FITTER_PRESERVATION_LEVEL     ; -- (Not supported for targeted family) ; --            ; fft_pitch_detect ; Top                 ;
+; PARTITION_NETLIST_TYPE                  ; -- (Not supported for targeted family) ; --            ; fft_pitch_detect ; Top                 ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ; On                                     ; Off           ; --               ; --                  ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING    ; On                                     ; Off           ; --               ; --                  ;
+; POWER_BOARD_THERMAL_MODEL               ; None (CONSERVATIVE)                    ; --            ; --               ; --                  ;
+; POWER_PRESET_COOLING_SOLUTION           ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --               ; --                  ;
+; PROJECT_OUTPUT_DIRECTORY                ; output_files                           ; --            ; --               ; --                  ;
+; SEARCH_PATH                             ; r22sdf                                 ; --            ; --               ; --                  ;
+; SEARCH_PATH                             ; mic                                    ; --            ; --               ; --                  ;
+; TOP_LEVEL_ENTITY                        ; fft_pitch_detect                       ; FFT_stream    ; --               ; --                  ;
+; USE_SIGNALTAP_FILE                      ; output_files/stp1.stp                  ; --            ; --               ; --                  ;
++-----------------------------------------+----------------------------------------+---------------+------------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -116,12 +116,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:16     ; 1.0                     ; 5055 MB             ; 00:01:18                           ;
-; Fitter               ; 00:00:35     ; 1.2                     ; 6113 MB             ; 00:00:36                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4713 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.6                     ; 4966 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4684 MB             ; 00:00:02                           ;
-; Total                ; 00:02:04     ; --                      ; --                  ; 00:02:03                           ;
+; Analysis & Synthesis ; 00:00:54     ; 1.0                     ; 5020 MB             ; 00:01:05                           ;
+; Fitter               ; 00:00:35     ; 1.1                     ; 5806 MB             ; 00:00:58                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4707 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.4                     ; 4913 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4676 MB             ; 00:00:01                           ;
+; Total                ; 00:01:37     ; --                      ; --                  ; 00:02:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -130,11 +130,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-M3I7ASQ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-M3I7ASQ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-M3I7ASQ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-M3I7ASQ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-M3I7ASQ  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

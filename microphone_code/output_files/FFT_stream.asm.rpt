@@ -1,5 +1,5 @@
 Assembler report for FFT_stream
-Thu Sep 19 15:32:59 2024
+Sat Sep 21 13:27:10 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/schof/OneDrive/Desktop/mic_code/output_files/FFT_stream.sof
+  5. Assembler Device Options: C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/output_files/FFT_stream.sof
   6. Assembler Messages
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Sep 19 15:32:59 2024 ;
+; Assembler Status      ; Successful - Sat Sep 21 13:27:10 2024 ;
 ; Revision Name         ; FFT_stream                            ;
-; Top-level Entity Name ; top_level                             ;
+; Top-level Entity Name ; fft_pitch_detect                      ;
 ; Family                ; Cyclone IV E                          ;
 ; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+----------------------------------------------------------------------+
-; Assembler Generated Files                                            ;
-+----------------------------------------------------------------------+
-; File Name                                                            ;
-+----------------------------------------------------------------------+
-; C:/Users/schof/OneDrive/Desktop/mic_code/output_files/FFT_stream.sof ;
-+----------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                   ;
++---------------------------------------------------------------------------------------------+
+; File Name                                                                                   ;
++---------------------------------------------------------------------------------------------+
+; C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/output_files/FFT_stream.sof ;
++---------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/schof/OneDrive/Desktop/mic_code/output_files/FFT_stream.sof ;
-+----------------+-------------------------------------------------------------------------------+
-; Option         ; Setting                                                                       ;
-+----------------+-------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x008734E5                                                                    ;
-; Checksum       ; 0x008734E5                                                                    ;
-+----------------+-------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Alfie/OneDrive/Desktop/tron/MTRX3700A2/microphone_code/output_files/FFT_stream.sof ;
++----------------+------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                              ;
++----------------+------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x0082A20C                                                                                           ;
+; Checksum       ; 0x0082A20C                                                                                           ;
++----------------+------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Sep 19 15:32:55 2024
+    Info: Processing started: Sat Sep 21 13:27:07 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off FFT_stream -c FFT_stream
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4713 megabytes
-    Info: Processing ended: Thu Sep 19 15:32:59 2024
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 4707 megabytes
+    Info: Processing ended: Sat Sep 21 13:27:10 2024
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 
