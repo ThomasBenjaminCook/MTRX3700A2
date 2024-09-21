@@ -49,22 +49,10 @@ output	I2C_SCLK,
 
 
 
-
-// DE2-115 board has an Altera Cyclone V E, which has ALTPLL's'
-wire clk_50_camera;
-wire clk_25_vga;
-wire wren;
-wire resend;
-wire nBlank;
-wire vSync;
-wire [16:0] wraddress;
-wire [11:0] wrdata;
-wire [16:0] rdaddress;
-wire [11:0] rddata;
-wire [7:0] red; wire [7:0] green; wire [7:0] blue;
-wire activeArea;
-
-wire       address;     //   avalon_lcd_slave.address
+	 
+	 //---------------------LCD MODULES----------------------
+	 
+	 wire       address;     //   avalon_lcd_slave.address
 wire       chipselect;  //                   .chipselect
 wire       read;        //                   .read
 wire       write;       //                   .write
@@ -74,9 +62,72 @@ wire       waitrequest; //                   .waitrequest
 wire 		  button_value;
 wire reset;
 
-  assign vga_r = red[7:0];
-  assign vga_g = green[7:0];
-  assign vga_b = blue[7:0];
+wire [2:0] menu_choice;
+	 
+	 
+	 
+	debounce u_debounce (
+		.clk(clk_50),
+		.button(btn_resend),
+		.button_pressed(button_value)
+	);
+	
+	hello_lcd (
+		 .clk(clk_50),
+		 .button_right(~KEY[1]),
+		 .button_left(~KEY[2]),
+		 // Avalon-MM signals to LCD_Controller slave
+		 .address(address),          // Address line for LCD controller
+		 .chipselect(chipselect),
+		 .byteenable(),
+		 .read(),
+		 .write(write),
+		 .waitrequest(waitrequest),
+		 .readdata(),
+		 .response(),
+		 .writedata(writedata),
+		 .reset(reset),
+		 .menu_choice(menu_choice)
+	);
+
+	LCD_IP u_LCD_IP (
+		.clk         (clk_50),         //                clk.clk
+		.reset       (reset),       //              reset.reset
+		.address     (address),     //   avalon_lcd_slave.address
+		.chipselect  (chipselect),  //                   .chipselect
+		.read        (read),        //                   .read
+		.write       (write),       //                   .write
+		.writedata   (writedata),   //                   .writedata
+		.readdata    (readdata),    //                   .readdata
+		.waitrequest (waitrequest), //                   .waitrequest
+		.LCD_DATA    (LCD_DATA),    // external_interface.export
+		.LCD_ON      (LCD_ON),      //                   .export
+		.LCD_BLON    (LCD_BLON),    //                   .export
+		.LCD_EN      (LCD_EN),      //                   .export
+		.LCD_RS      (LCD_RS),      //                   .export
+		.LCD_RW      (LCD_RW)       //                   .export
+	);
+	
+	
+	//----------------CAMERA AND VGA--------------
+
+	// DE2-115 board has an Altera Cyclone V E, which has ALTPLL's'
+wire clk_50_camera;
+wire clk_25_vga;
+wire wren;
+wire resend;
+wire nBlank;
+wire vSync;
+wire [16:0] wraddress;
+wire [11:0] wrdata;
+reg [16:0] rdaddress;
+wire [11:0] rddata;
+wire [7:0] red; wire [7:0] green; wire [7:0] blue;
+wire activeArea;
+
+//  assign vga_r = red[7:0];
+//  assign vga_g = green[7:0];
+//  assign vga_b = blue[7:0];
   my_altpll Inst_vga_pll(
       .inclk0(clk_50),
     .c0(clk_50_camera),
@@ -85,16 +136,16 @@ wire reset;
   // take the inverted push button because KEY0 on DE2-115 board generates
   // a signal 111000111; with 1 with not pressed and 0 when pressed/pushed;
   assign resend =  ~btn_resend;
-  assign vga_vsync = vSync;
-  assign vga_blank_N = nBlank;
-  VGA Inst_VGA(
-      .CLK25(clk_25_vga),
-    .clkout(vga_CLK),
-    .Hsync(vga_hsync),
-    .Vsync(vSync),
-    .Nblank(nBlank),
-    .Nsync(vga_sync_N),
-    .activeArea(activeArea));
+//  assign vga_vsync = vSync;
+//  assign vga_blank_N = nBlank;
+//  VGA Inst_VGA(
+//      .CLK25(clk_25_vga),
+//    .clkout(vga_CLK),
+//    .Hsync(vga_hsync),
+//    .Vsync(vSync),
+//    .Nblank(nBlank),
+//    .Nsync(vga_sync_N),
+//    .activeArea(activeArea));
 
   ov7670_controller Inst_ov7670_controller(
       .clk(clk_50_camera),
@@ -124,66 +175,110 @@ wire reset;
     .data(wrdata),
     .wren(wren));
 
-  RGB Inst_RGB(
-      .Din(rddata),
-    .Nblank(activeArea),
-    .R(red),
-    .G(green),
-    .B(blue));
+//  RGB Inst_RGB(
+//      .Din(rddata),
+//    .Nblank(activeArea),
+//    .R(red),
+//    .G(green),
+//    .B(blue));
+//
+//  Address_Generator Inst_Address_Generator(
+//      .CLK25(clk_25_vga),
+//    .enable(activeArea),
+//    .vsync(vSync),
+//    .address(rdaddress));
 
-  Address_Generator Inst_Address_Generator(
-      .CLK25(clk_25_vga),
-    .enable(activeArea),
-    .vsync(vSync),
-    .address(rdaddress));
-	 
-	 
-	 //---------------------LCD MODULES----------------------
-	 
-	 
-	debounce u_debounce (
-		.clk(clk_50),
-		.button(btn_resend),
-		.button_pressed(button_value)
-	);
+integer row = 0, col = 0;
+integer row_old = 0, col_old = 0;
+reg vga_ready, vga_start, vga_end;
+reg [30:0] vga_data;
+always @(posedge clk_25_vga) begin
+	if(resend) begin
+		col <= 0;
+		row <= 0;
+	end
+	else if(vga_ready) begin
+		if(col >= 319) begin
+			col <= 0;
+			if(row >= 239) row <= 0;
+			else row <= row + 1;
+		end 
+		else col <= col + 1;	
+	end
 	
-	hello_lcd (
-		 .clk(clk_50),
-		 .button_right(~button_value),
-		 .button_left(~KEY[1]),
-		 // Avalon-MM signals to LCD_Controller slave
-		 .address(address),          // Address line for LCD controller
-		 .chipselect(chipselect),
-		 .byteenable(),
-		 .read(),
-		 .write(write),
-		 .waitrequest(waitrequest),
-		 .readdata(),
-		 .response(),
-		 .writedata(writedata),
-		 .reset(reset)
-	);
+	row_old <= row;
+	col_old <= col;
+end
 
-	LCD_IP u_LCD_IP (
-		.clk         (clk_50),         //                clk.clk
-		.reset       (reset),       //              reset.reset
-		.address     (address),     //   avalon_lcd_slave.address
-		.chipselect  (chipselect),  //                   .chipselect
-		.read        (read),        //                   .read
-		.write       (write),       //                   .write
-		.writedata   (writedata),   //                   .writedata
-		.readdata    (readdata),    //                   .readdata
-		.waitrequest (waitrequest), //                   .waitrequest
-		.LCD_DATA    (LCD_DATA),    // external_interface.export
-		.LCD_ON      (LCD_ON),      //                   .export
-		.LCD_BLON    (LCD_BLON),    //                   .export
-		.LCD_EN      (LCD_EN),      //                   .export
-		.LCD_RS      (LCD_RS),      //                   .export
-		.LCD_RW      (LCD_RW)       //                   .export
-	);
-	
-	
-	
+always @(*) begin
+ if(col_old == 0 && row_old == 0) vga_start = 1;
+ else vga_start = 0;
+ 
+  if(col_old == 319 && row_old == 239) vga_end = 1;
+ else vga_end = 0;
+ 
+ 
+ rdaddress = row*320 + col;
+end
 
+//always @(*) begin
+//// vga_data = {
+//// {row[7:0], 2'b00},
+//// {row[7:0], 2'b00},
+//// {row[7:0], 2'b00}
+//// };
+//	vga_data = {
+//	{rddata[11:8],rddata[11:8], 2'b00},
+//	{rddata[7:4],rddata[7:4], 2'b00},
+//	{rddata[3:0],rddata[3:0], 2'b00}
+//	};
+//end
+
+wire [9:0] temp_red, temp_green, temp_blue, gray_scaled;
+wire [17:0] gray;
+
+assign temp_red   = {rddata[11:8], rddata[11:8], 2'b00};
+assign temp_green = {rddata[7:4],  rddata[7:4],  2'b00};
+assign temp_blue  = {rddata[3:0],  rddata[3:0],  2'b00};
+
+assign gray = (temp_red * 77 + temp_green * 150 + temp_blue * 29);
+
+assign gray_scaled = gray >> 8;
+
+always @(*) begin
+	if(menu_choice == 2) begin
+		vga_data = {
+			 gray_scaled,
+			 gray_scaled,
+			 gray_scaled
+		};
+	end
+	else begin
+	vga_data = {
+			 temp_red,
+			 temp_green,
+			 temp_blue
+		};
+	end
+end
+
+vga_demo u_vga_demo(
+		.clk_clk(clk_25_vga),                                         //                                       clk.clk
+		.reset_reset_n(1),                                   //                                     reset.reset_n
+		.video_scaler_0_avalon_scaler_sink_startofpacket(vga_start), //         video_scaler_0_avalon_scaler_sink.startofpacket
+		.video_scaler_0_avalon_scaler_sink_endofpacket(vga_end),   //                                          .endofpacket
+		.video_scaler_0_avalon_scaler_sink_valid(1'b1),         //                                          .valid
+		.video_scaler_0_avalon_scaler_sink_ready(vga_ready),         //                                          .ready
+		.video_scaler_0_avalon_scaler_sink_data(vga_data),          //                                          .data
+//		.video_scaler_0_avalon_scaler_sink_data(rddata),
+		.video_vga_controller_0_external_interface_CLK(vga_CLK),   // video_vga_controller_0_external_interface.CLK
+		.video_vga_controller_0_external_interface_HS(vga_hsync),    //                                          .HS
+		.video_vga_controller_0_external_interface_VS(vga_vsync),    //                                          .VS
+		.video_vga_controller_0_external_interface_BLANK(vga_blank_N), //                                          .BLANK
+		.video_vga_controller_0_external_interface_SYNC(vga_sync_N),  //                                          .SYNC
+		.video_vga_controller_0_external_interface_R(vga_r),     //                                          .R
+		.video_vga_controller_0_external_interface_G(vga_g),     //                                          .G
+		.video_vga_controller_0_external_interface_B(vga_b)      //                                          .B
+	);
 
 endmodule
