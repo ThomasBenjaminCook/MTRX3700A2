@@ -6,8 +6,8 @@ module edge_conv #(parameter W = 30, W_FRAC = 0) (
 );
 
 	//CHANGE THESE BACK TO 320 x 240!!!!
-	localparam WIDTH = 20;
-	localparam HEIGHT = 20;
+	localparam WIDTH = 320;
+	localparam HEIGHT = 240;
 
     // 1. Assign x.ready: we are ready for data if the module we output to (y.ready) is ready (this module does not exert backpressure).
     assign x.ready = y.ready;

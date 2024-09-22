@@ -1,0 +1,128 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\lwat0045\Documents\VGA\vga.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\lwat0045\Documents\VGA\vga\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading VGA/vga.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Adding vga_face_0 [vga_face 1.0]
+Progress: Parameterizing module vga_face_0
+Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
+Progress: Parameterizing module video_pll_0
+Progress: Adding video_rgb_resampler_0 [altera_up_avalon_video_rgb_resampler 18.0]
+Progress: Parameterizing module video_rgb_resampler_0
+Progress: Adding video_rgb_resampler_1 [altera_up_avalon_video_rgb_resampler 18.0]
+Progress: Parameterizing module video_rgb_resampler_1
+Progress: Adding video_vga_controller_0 [altera_up_avalon_video_vga_controller 18.0]
+Progress: Parameterizing module video_vga_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: vga.video_rgb_resampler_0: RGB Resampling: 10 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: vga.video_rgb_resampler_1: RGB Resampling: 8 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: vga.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Warning: vga.video_rgb_resampler_0: video_rgb_resampler_0.avalon_rgb_slave must be connected to an Avalon-MM master
+Warning: vga.video_rgb_resampler_1: video_rgb_resampler_1.avalon_rgb_slave must be connected to an Avalon-MM master
+Info: vga: Generating vga "vga" for SIM_VERILOG
+Info: vga_face_0: "vga" instantiated vga_face "vga_face_0"
+Info: video_pll_0: "vga" instantiated altera_up_avalon_video_pll "video_pll_0"
+Info: video_rgb_resampler_0: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler_0: "vga" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler_0"
+Info: video_rgb_resampler_1: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler_1: "vga" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler_1"
+Info: video_vga_controller_0: Starting Generation of VGA Controller
+Info: video_vga_controller_0: "vga" instantiated altera_up_avalon_video_vga_controller "video_vga_controller_0"
+Info: rst_controller: "vga" instantiated altera_reset_controller "rst_controller"
+Info: video_pll: "video_pll_0" instantiated altera_up_altpll "video_pll"
+Info: reset_from_locked: "video_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: vga: Done "vga" with 9 modules, 12 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\lwat0045\Documents\VGA\vga\vga.spd --output-directory=C:/Users/lwat0045/Documents/VGA/vga/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\lwat0045\Documents\VGA\vga\vga.spd --output-directory=C:/Users/lwat0045/Documents/VGA/vga/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/lwat0045/Documents/VGA/vga/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/lwat0045/Documents/VGA/vga/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/lwat0045/Documents/VGA/vga/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/lwat0045/Documents/VGA/vga/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	8 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/lwat0045/Documents/VGA/vga/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/lwat0045/Documents/VGA/vga/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\lwat0045\Documents\VGA\vga.qsys --block-symbol-file --output-directory=C:\Users\lwat0045\Documents\VGA\vga --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading VGA/vga.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Adding vga_face_0 [vga_face 1.0]
+Progress: Parameterizing module vga_face_0
+Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
+Progress: Parameterizing module video_pll_0
+Progress: Adding video_rgb_resampler_0 [altera_up_avalon_video_rgb_resampler 18.0]
+Progress: Parameterizing module video_rgb_resampler_0
+Progress: Adding video_rgb_resampler_1 [altera_up_avalon_video_rgb_resampler 18.0]
+Progress: Parameterizing module video_rgb_resampler_1
+Progress: Adding video_vga_controller_0 [altera_up_avalon_video_vga_controller 18.0]
+Progress: Parameterizing module video_vga_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: vga.video_rgb_resampler_0: RGB Resampling: 10 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: vga.video_rgb_resampler_1: RGB Resampling: 8 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: vga.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Warning: vga.video_rgb_resampler_0: video_rgb_resampler_0.avalon_rgb_slave must be connected to an Avalon-MM master
+Warning: vga.video_rgb_resampler_1: video_rgb_resampler_1.avalon_rgb_slave must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\lwat0045\Documents\VGA\vga.qsys --synthesis=VERILOG --output-directory=C:\Users\lwat0045\Documents\VGA\vga\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading VGA/vga.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Adding vga_face_0 [vga_face 1.0]
+Progress: Parameterizing module vga_face_0
+Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
+Progress: Parameterizing module video_pll_0
+Progress: Adding video_rgb_resampler_0 [altera_up_avalon_video_rgb_resampler 18.0]
+Progress: Parameterizing module video_rgb_resampler_0
+Progress: Adding video_rgb_resampler_1 [altera_up_avalon_video_rgb_resampler 18.0]
+Progress: Parameterizing module video_rgb_resampler_1
+Progress: Adding video_vga_controller_0 [altera_up_avalon_video_vga_controller 18.0]
+Progress: Parameterizing module video_vga_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: vga.video_rgb_resampler_0: RGB Resampling: 10 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: vga.video_rgb_resampler_1: RGB Resampling: 8 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: vga.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Warning: vga.video_rgb_resampler_0: video_rgb_resampler_0.avalon_rgb_slave must be connected to an Avalon-MM master
+Warning: vga.video_rgb_resampler_1: video_rgb_resampler_1.avalon_rgb_slave must be connected to an Avalon-MM master
+Info: vga: Generating vga "vga" for QUARTUS_SYNTH
+Info: vga_face_0: "vga" instantiated vga_face "vga_face_0"
+Info: video_pll_0: "vga" instantiated altera_up_avalon_video_pll "video_pll_0"
+Info: video_rgb_resampler_0: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler_0: "vga" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler_0"
+Info: video_rgb_resampler_1: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler_1: "vga" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler_1"
+Info: video_vga_controller_0: Starting Generation of VGA Controller
+Info: video_vga_controller_0: "vga" instantiated altera_up_avalon_video_vga_controller "video_vga_controller_0"
+Info: rst_controller: "vga" instantiated altera_reset_controller "rst_controller"
+Info: video_pll: "video_pll_0" instantiated altera_up_altpll "video_pll"
+Info: reset_from_locked: "video_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: vga: Done "vga" with 9 modules, 12 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

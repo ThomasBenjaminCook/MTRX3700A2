@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/altera_up_avalon_reset_from_locked_signal.v"
+   type="VERILOG"
+   library="reset_from_locked" />
+ <file
+   path="simulation/submodules/altera_up_altpll.v"
+   type="VERILOG"
+   library="video_pll" />
+ <file
+   path="simulation/submodules/altera_reset_controller.v"
+   type="VERILOG"
+   library="rst_controller" />
+ <file
+   path="simulation/submodules/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="rst_controller" />
+ <file
+   path="simulation/submodules/altera_reset_controller.sdc"
+   type="SDC"
+   library="rst_controller" />
+ <file
+   path="simulation/submodules/altera_up_avalon_video_vga_timing.v"
+   type="VERILOG"
+   library="video_vga_controller_0" />
+ <file
+   path="simulation/submodules/vga_video_vga_controller_0.v"
+   type="VERILOG"
+   library="video_vga_controller_0" />
+ <file
+   path="simulation/submodules/vga_video_rgb_resampler_1.v"
+   type="VERILOG"
+   library="video_rgb_resampler_1" />
+ <file
+   path="simulation/submodules/vga_video_rgb_resampler_0.v"
+   type="VERILOG"
+   library="video_rgb_resampler_0" />
+ <file
+   path="simulation/submodules/vga_video_pll_0.v"
+   type="VERILOG"
+   library="video_pll_0" />
+ <file
+   path="simulation/submodules/vga_face.sv"
+   type="SYSTEM_VERILOG"
+   library="vga_face_0" />
+ <file path="simulation/vga.v" type="VERILOG" />
+ <topLevel name="vga" />
+ <deviceFamily name="cycloneive" />
+</simPackage>
