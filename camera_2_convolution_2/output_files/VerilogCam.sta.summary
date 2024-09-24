@@ -1,0 +1,125 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'ov7670_pclk'
+Slack : -4.510
+TNS   : -2075.903
+
+Type  : Slow 1200mV 85C Model Setup 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 15.224
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 25.083
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ov7670_pclk'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ov7670_pclk'
+Slack : -3.000
+TNS   : -1635.833
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.705
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
+Slack : 9.819
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 19.708
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ov7670_pclk'
+Slack : -3.991
+TNS   : -1835.783
+
+Type  : Slow 1200mV 0C Model Setup 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 15.636
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 26.461
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ov7670_pclk'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ov7670_pclk'
+Slack : -3.000
+TNS   : -1591.789
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.709
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
+Slack : 9.799
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 19.709
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ov7670_pclk'
+Slack : -1.865
+TNS   : -799.931
+
+Type  : Fast 1200mV 0C Model Setup 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 17.657
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 32.539
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.110
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ov7670_pclk'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ov7670_pclk'
+Slack : -3.000
+TNS   : -962.107
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
+Slack : 9.400
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.779
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Inst_vga_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 19.751
+TNS   : 0.000
+
+------------------------------------------------------------
