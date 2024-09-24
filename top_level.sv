@@ -282,6 +282,9 @@ always @(*) begin
 			pink_scaled >> 1         // Slightly reduced blue channel
 		};
 	end
+	else if(menu_choice == 0) begin
+		vga_data = vga_data_edge;
+	end
 	else begin
 	vga_data = {
 			 temp_red,
@@ -345,4 +348,39 @@ vga_demo u_vga_demo(
 	display u_display (.clk(adc_clk),.value(pitch_output.data),.display0(HEX0),.display1(HEX1),.display2(HEX2),.display3(HEX3));
 
 
+	//---------------------EDGING------------------------
+	
+	 dstream #(.N(30)) pixel_input ();
+
+    dstream #(.N(30)) pixel_output ();
+
+	 wire [29:0] data;
+	 assign data = {gray_scaled, gray_scaled, gray_scaled};
+ 
+
+    assign pixel_input.data = data;
+
+    assign pixel_input.valid = 1'b1;
+
+    assign pixel_output.ready = vga_ready;
+
+ 
+
+    edge_conv u_edge_conv (
+
+    .clk(clk_25_vga),
+
+    .x(pixel_input),
+
+    .y(pixel_output)
+
+    );
+	 
+	 reg [30:0] vga_data_edge;
+	 
+	 always @(posedge clk_25_vga) begin
+		vga_data_edge <= pixel_output.data;
+	 end
+	
+	
 endmodule
