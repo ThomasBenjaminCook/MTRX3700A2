@@ -29,9 +29,13 @@ module edge_conv_five #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8
     localparam N = 25;
 
 //    logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'h00, 8'h00, 8'h00, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00};
-//	     logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'h15, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
+      logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
+														8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+														8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
+														8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+														8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
 //		  logic signed [BW-1:0] h [0:N-1] = '{8'h01, 8'h02, 8'h01, 8'h02, 8'h04, 8'h02, 8'h01, 8'h02, 8'h01};
-logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'h01, 8'h02, 8'h01, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hff, 8'hff, 8'hfe, 8'hff, 8'hff, 8'hfe, 8'hfe, 8'hfc, 8'hfe, 8'hfe};
+// logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'h01, 8'h02, 8'h01, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hff, 8'hff, 8'hfe, 8'hff, 8'hff, 8'hfe, 8'hfe, 8'hfc, 8'hfe, 8'hfe};
 
  
 
@@ -63,7 +67,7 @@ logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'
 
                                                 counter <= counter + 1;
 
-                                                if(counter >= 2*WIDTH + 5) begin
+                                                if(counter >= 4*WIDTH + 5) begin
 
                                                                 conv_ready <= 1'b1;
 
@@ -77,7 +81,7 @@ logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'
 
                                                 end
 
-                                                for (int j = 0; j < 2*WIDTH + 5; j=j+1) begin
+                                                for (int j = 0; j < 4*WIDTH + 5; j=j+1) begin
 
                 input_buffer[j+1] = input_buffer_old[j];
 
@@ -116,86 +120,6 @@ logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'
 			  end
 
 		 end
-
-//    always_comb begin : h_multiply
-//
-//        // Set mult_result for each n value.
-//
-//        // Hint: use a for loop.
-//
-// 
-//
-//                                mult_result_red[0] = signed'({1'b0,input_buffer[0][29:22]}) * signed'(h[0]);
-//
-//                                mult_result_green[0] = signed'({1'b0,input_buffer[0][19:12]}) * signed'(h[0]);
-//
-//                                mult_result_blue[0] = signed'({1'b0,input_buffer[0][9:2]}) * signed'(h[0]);
-//
-// 
-//
-//                                mult_result_red[1] = signed'({1'b0,input_buffer[1][29:22]}) * signed'(h[1]);
-//
-//                                mult_result_green[1] = signed'({1'b0,input_buffer[1][19:12]}) * signed'(h[1]);
-//
-//                                mult_result_blue[1] = signed'({1'b0,input_buffer[1][9:2]}) * signed'(h[1]);
-//
-// 
-//
-//                                mult_result_red[2] = signed'({1'b0,input_buffer[2][29:22]}) * signed'(h[2]);
-//
-//                                mult_result_green[2] = signed'({1'b0,input_buffer[2][19:12]}) * signed'(h[2]);
-//
-//                                mult_result_blue[2] = signed'({1'b0,input_buffer[2][9:2]}) * signed'(h[2]);
-//
-// 
-//
-//                                mult_result_red[3] = signed'({1'b0,input_buffer[WIDTH][29:22]}) * signed'(h[3]);
-//
-//                                mult_result_green[3] = signed'({1'b0,input_buffer[WIDTH][19:12]}) * signed'(h[3]);
-//
-//                                mult_result_blue[3] = signed'({1'b0,input_buffer[WIDTH][9:2]}) * signed'(h[3]);
-//
-// 
-//
-//                                mult_result_red[4] = signed'({1'b0,input_buffer[WIDTH+1][29:22]}) * signed'(h[4]);
-//
-//                                mult_result_green[4] = signed'({1'b0,input_buffer[WIDTH+1][19:12]}) * signed'(h[4]);
-//
-//                                mult_result_blue[4] = signed'({1'b0,input_buffer[WIDTH+1][9:2]}) * signed'(h[4]);
-//
-// 
-//
-//                                mult_result_red[5] = signed'({1'b0,input_buffer[WIDTH+2][29:22]}) * signed'(h[5]);
-//
-//                                mult_result_green[5] = signed'({1'b0,input_buffer[WIDTH+2][19:12]}) * signed'(h[5]);
-//
-//                                mult_result_blue[5] = signed'({1'b0,input_buffer[WIDTH+2][9:2]}) * signed'(h[5]);
-//
-// 
-//
-//                                mult_result_red[6] = signed'({1'b0,input_buffer[2*WIDTH][29:22]}) * signed'(h[6]);
-//
-//                                mult_result_green[6] = signed'({1'b0,input_buffer[2*WIDTH][19:12]}) * signed'(h[6]);
-//
-//                                mult_result_blue[6] = signed'({1'b0,input_buffer[2*WIDTH][9:2]}) * signed'(h[6]);
-//
-// 
-//
-//                                mult_result_red[7] = signed'({1'b0,input_buffer[2*WIDTH+1][29:22]}) * signed'(h[7]);
-//
-//                                mult_result_green[7] = signed'({1'b0,input_buffer[2*WIDTH+1][19:12]}) * signed'(h[7]);
-//
-//                                mult_result_blue[7] = signed'({1'b0,input_buffer[2*WIDTH+1][9:2]}) * signed'(h[7]);
-//
-// 
-//
-//                                mult_result_red[8] = signed'({1'b0,input_buffer[2*WIDTH+2][29:22]}) * signed'(h[8]);
-//
-//                                mult_result_green[8] = signed'({1'b0,input_buffer[2*WIDTH+2][19:12]}) * signed'(h[8]);
-//
-//                                mult_result_blue[8] = signed'({1'b0,input_buffer[2*WIDTH+2][9:2]}) * signed'(h[8]);
-//
-//    end
 
  
 
@@ -240,10 +164,19 @@ logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'
     logic x_valid_q = 1'b0; // Delay x.valid by 1 clock cycle
 	 
 	 logic [$clog2(N)+2*BW:0] macc_red_final, macc_blue_final, macc_green_final;
-	 
-	 assign macc_red_final = macc_red[$clog2(N)+2*BW] ? 0 : macc_red;
-	 assign macc_green_final = macc_green[$clog2(N)+2*BW] ? 0 : macc_green;
-	 assign macc_blue_final = macc_blue[$clog2(N)+2*BW] ? 0 : macc_blue;
+//	 
+//	 assign macc_red_final = macc_red[$clog2(N)+2*BW] ? 0 : macc_red;
+//	 assign macc_green_final = macc_green[$clog2(N)+2*BW] ? 0 : macc_green;
+//	 assign macc_blue_final = macc_blue[$clog2(N)+2*BW] ? 0 : macc_blue;
+//
+//	 assign macc_red_final = (macc_red<=0) ? 0 : macc_red;
+//	 assign macc_green_final = (macc_green<=0) ? 0 : macc_green;
+//	 assign macc_blue_final = (macc_blue<=0) ? 0 : macc_blue;
+
+
+	 assign macc_red_final = (macc_red<=0) ? 0 : (macc_red>=254) ? 254 : macc_red;
+	 assign macc_green_final = (macc_green<=0) ? 0 : (macc_green>=254) ? 254 : macc_green;
+	 assign macc_blue_final = (macc_blue<=0) ? 0 : (macc_blue>=254) ? 254 : macc_blue;
 	 
 
     always_ff @(posedge clk) begin : output_reg

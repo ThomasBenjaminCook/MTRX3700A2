@@ -29,7 +29,9 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
     localparam N = 9;
 
 //    logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'h00, 8'h00, 8'h00, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00};
-	     logic signed [BW-1:0] h [0:N-1] = '{8'hff, 8'hff, 8'hff, 8'hff, 8'h08, 8'hff, 8'hff, 8'hff, 8'hff};
+	     logic signed [BW-1:0] h [0:N-1] = '{8'hff, 8'hff, 8'hff, 
+														  8'hff, 8'h08, 8'hff, 
+														  8'hff, 8'hff, 8'hff};
 //		  logic signed [BW-1:0] h [0:N-1] = '{8'h01, 8'h02, 8'h01, 8'h02, 8'h04, 8'h02, 8'h01, 8'h02, 8'h01};
 
  
