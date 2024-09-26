@@ -54,6 +54,15 @@ output logic [17:0] LEDR
 );
 
 
+	//----------- MIC WIRES-----------
+		dstream #(.N(W))                audio_input ();
+   dstream #(.N($clog2(NSamples))) pitch_output ();
+	
+	//----------EDGE CONV WIRES-------
+	
+	dstream #(.N(30)) pixel_input ();
+
+    dstream #(.N(30)) pixel_output ();
 
 	 
 	 //---------------------LCD MODULES----------------------
@@ -203,7 +212,7 @@ always @(posedge clk_25_vga) begin
 		col <= 0;
 		row <= 0;
 	end
-	else if(vga_ready) begin
+	else if(vga_ready & pixel_output.valid) begin
 		if(col >= 319) begin
 			col <= 0;
 			if(row >= 239) row <= 0;
@@ -256,6 +265,8 @@ assign gray_scaled = gray >> 8;
 
 wire [9:0] temp_red_1, temp_green_1, temp_blue_1, pink_scaled;
 wire [17:0] pink;
+wire [23:0] scaled_pink;  // Wider wire to handle scaling result
+wire [8:0] pitch_output_capped;
 
 // Increase red contribution, decrease green and blue to create a pink tint
 assign temp_red_1   = {rddata[11:8], rddata[11:8], 2'b00};  // Keep red as is
@@ -263,7 +274,14 @@ assign temp_green_1 = {rddata[7:4],  rddata[7:4],  2'b00};  // Reduce green by s
 assign temp_blue_1  = {rddata[3:0],  rddata[3:0],  2'b00};  // Reduce blue slightly
 
 assign pink = (temp_red_1 * 120 + temp_green_1 * 60 + temp_blue_1 * 50);  // Adjust weights for pink
-assign pink_scaled = pink >> 8;
+
+assign pitch_output_capped = (pitch_output.data > 63) ? 63 : (pitch_output.data < 10) ? 10 : pitch_output.data;
+
+assign scaled_pink = (pink * pitch_output_capped) >> 6;
+
+assign pink_scaled = scaled_pink[17:8];
+
+
 
 //--------
 
@@ -326,9 +344,6 @@ vga_demo u_vga_demo(
 	logic i2c_clk; i2c_pll i2c_pll_u (.areset(1'b0),.inclk0(clk_50),.c0(i2c_clk)); // generate 20 kHz clock
 
 	set_audio_encoder set_codec_u (.i2c_clk(i2c_clk), .I2C_SCLK(I2C_SCLK), .I2C_SDAT(I2C_SDAT));
-
-	dstream #(.N(W))                audio_input ();
-   dstream #(.N($clog2(NSamples))) pitch_output ();
 	 
 	mic_load #(.N(W)) u_mic_load (
     .adclrc(AUD_ADCLRCK),
@@ -353,9 +368,7 @@ vga_demo u_vga_demo(
 
 	//---------------------EDGING------------------------
 	
-	 dstream #(.N(30)) pixel_input ();
-
-    dstream #(.N(30)) pixel_output ();
+	 
 
 	 wire [29:0] data;
 	 assign data = {gray_scaled, gray_scaled, gray_scaled};
