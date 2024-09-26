@@ -369,7 +369,7 @@ vga_demo u_vga_demo(
 
  
 
-    edge_conv u_edge_conv (
+    edge_conv_five u_edge_conv_five (
 
     .clk(clk_25_vga),
 

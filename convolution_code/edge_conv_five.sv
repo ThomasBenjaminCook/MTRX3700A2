@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
+module edge_conv_five #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
     input clk,
 
@@ -26,19 +26,20 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
     // Impulse response h[n]: (32-bit, 16-bit frac, 2's complement)
 
-    localparam N = 9;
+    localparam N = 25;
 
 //    logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'h00, 8'h00, 8'h00, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00};
-	     logic signed [BW-1:0] h [0:N-1] = '{8'hff, 8'hff, 8'hff, 8'hff, 8'h08, 8'hff, 8'hff, 8'hff, 8'hff};
+//	     logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'h15, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
 //		  logic signed [BW-1:0] h [0:N-1] = '{8'h01, 8'h02, 8'h01, 8'h02, 8'h04, 8'h02, 8'h01, 8'h02, 8'h01};
+logic signed [BW-1:0] h [0:N-1] = '{8'h02, 8'h02, 8'h04, 8'h02, 8'h02, 8'h01, 8'h01, 8'h02, 8'h01, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hff, 8'hff, 8'hfe, 8'hff, 8'hff, 8'hfe, 8'hfe, 8'hfc, 8'hfe, 8'hfe};
 
  
 
                 // Store the first 2 lines of pixels in shift register
 
-                logic [W-1:0] input_buffer [0:2*WIDTH + 3];
+                logic [W-1:0] input_buffer [0:4*WIDTH + 5];
 
-                logic [W-1:0] input_buffer_old [0:2*WIDTH + 3];
+                logic [W-1:0] input_buffer_old [0:4*WIDTH + 5];
 
                  logic [$clog2(307200):0]counter;
 
@@ -62,7 +63,7 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
                                                 counter <= counter + 1;
 
-                                                if(counter >= 2*WIDTH + 3) begin
+                                                if(counter >= 2*WIDTH + 5) begin
 
                                                                 conv_ready <= 1'b1;
 
@@ -76,7 +77,7 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
                                                 end
 
-                                                for (int j = 0; j < 2*WIDTH + 3; j=j+1) begin
+                                                for (int j = 0; j < 2*WIDTH + 5; j=j+1) begin
 
                 input_buffer[j+1] = input_buffer_old[j];
 
@@ -106,11 +107,11 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
 			  for(int j = 0; j < N; j = j + 1) begin
 
-					mult_result_red[j] = signed'({1'b0,input_buffer[(j%3)+(WIDTH*(j/3))][29:22]}) * signed'(h[j]);
+					mult_result_red[j] = signed'({1'b0,input_buffer[(j%5)+(WIDTH*(j/5))][29:22]}) * signed'(h[j]);
 
-					mult_result_green[j] = signed'({1'b0,input_buffer[(j%3)+(WIDTH*(j/3))][19:12]}) * signed'(h[j]);
+					mult_result_green[j] = signed'({1'b0,input_buffer[(j%5)+(WIDTH*(j/5))][19:12]}) * signed'(h[j]);
 
-					mult_result_blue[j] = signed'({1'b0,input_buffer[(j%3)+(WIDTH*(j/3))][9:2]}) * signed'(h[j]);
+					mult_result_blue[j] = signed'({1'b0,input_buffer[(j%5)+(WIDTH*(j/5))][9:2]}) * signed'(h[j]);
 
 			  end
 
