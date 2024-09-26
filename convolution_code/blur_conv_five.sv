@@ -174,9 +174,9 @@ module blur_conv_five #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8
 //	 assign macc_blue_final = (macc_blue<=0) ? 0 : macc_blue;
 
 
-	 assign macc_red_final = (macc_red<=0) ? 0 : (macc_red>=254) ? 254 : macc_red/331;
-	 assign macc_green_final = (macc_green<=0) ? 0 : (macc_green>=254) ? 254 : macc_green/331;
-	 assign macc_blue_final = (macc_blue<=0) ? 0 : (macc_blue>=254) ? 254 : macc_blue/311;
+	 assign macc_red_final = (macc_red<=0) ? 0 : ((macc_red/331)>=254) ? 254 : macc_red/331;
+	 assign macc_green_final = (macc_green<=0) ? 0 : ((macc_green/331)>=254) ? 254 : macc_green/331;
+	 assign macc_blue_final = (macc_blue<=0) ? 0 : ((macc_blue/331)>=254) ? 254 : macc_blue/331;
 	 
 
     always_ff @(posedge clk) begin : output_reg
