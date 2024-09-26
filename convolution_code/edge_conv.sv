@@ -29,7 +29,9 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
     localparam N = 9;
 
 //    logic signed [BW-1:0] h [0:N-1] = '{8'h00, 8'h00, 8'h00, 8'h00, 8'h01, 8'h00, 8'h00, 8'h00, 8'h00};
-	     logic signed [BW-1:0] h [0:N-1] = '{8'hff, 8'hff, 8'hff, 8'hff, 8'h08, 8'hff, 8'hff, 8'hff, 8'hff};
+	     logic signed [BW-1:0] h [0:N-1] = '{8'hff, 8'hff, 8'hff, 
+														  8'hff, 8'h08, 8'hff, 
+														  8'hff, 8'hff, 8'hff};
 //		  logic signed [BW-1:0] h [0:N-1] = '{8'h01, 8'h02, 8'h01, 8'h02, 8'h04, 8'h02, 8'h01, 8'h02, 8'h01};
 
  
@@ -101,86 +103,100 @@ module edge_conv #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
                 //logic global_pixel_pointer;
 
                 //logic adder = 0;
+					 
+		always_comb begin: multiply
 
-    always_comb begin : h_multiply
+			  for(int j = 0; j < N; j = j + 1) begin
 
-        // Set mult_result for each n value.
+					mult_result_red[j] = signed'({1'b0,input_buffer[(j%3)+(WIDTH*(j/3))][29:22]}) * signed'(h[j]);
 
-        // Hint: use a for loop.
+					mult_result_green[j] = signed'({1'b0,input_buffer[(j%3)+(WIDTH*(j/3))][19:12]}) * signed'(h[j]);
 
- 
+					mult_result_blue[j] = signed'({1'b0,input_buffer[(j%3)+(WIDTH*(j/3))][9:2]}) * signed'(h[j]);
 
-                                mult_result_red[0] = signed'({1'b0,input_buffer[0][29:22]}) * signed'(h[0]);
+			  end
 
-                                mult_result_green[0] = signed'({1'b0,input_buffer[0][19:12]}) * signed'(h[0]);
+		 end
 
-                                mult_result_blue[0] = signed'({1'b0,input_buffer[0][9:2]}) * signed'(h[0]);
-
- 
-
-                                mult_result_red[1] = signed'({1'b0,input_buffer[1][29:22]}) * signed'(h[1]);
-
-                                mult_result_green[1] = signed'({1'b0,input_buffer[1][19:12]}) * signed'(h[1]);
-
-                                mult_result_blue[1] = signed'({1'b0,input_buffer[1][9:2]}) * signed'(h[1]);
-
- 
-
-                                mult_result_red[2] = signed'({1'b0,input_buffer[2][29:22]}) * signed'(h[2]);
-
-                                mult_result_green[2] = signed'({1'b0,input_buffer[2][19:12]}) * signed'(h[2]);
-
-                                mult_result_blue[2] = signed'({1'b0,input_buffer[2][9:2]}) * signed'(h[2]);
-
- 
-
-                                mult_result_red[3] = signed'({1'b0,input_buffer[WIDTH][29:22]}) * signed'(h[3]);
-
-                                mult_result_green[3] = signed'({1'b0,input_buffer[WIDTH][19:12]}) * signed'(h[3]);
-
-                                mult_result_blue[3] = signed'({1'b0,input_buffer[WIDTH][9:2]}) * signed'(h[3]);
-
- 
-
-                                mult_result_red[4] = signed'({1'b0,input_buffer[WIDTH+1][29:22]}) * signed'(h[4]);
-
-                                mult_result_green[4] = signed'({1'b0,input_buffer[WIDTH+1][19:12]}) * signed'(h[4]);
-
-                                mult_result_blue[4] = signed'({1'b0,input_buffer[WIDTH+1][9:2]}) * signed'(h[4]);
-
- 
-
-                                mult_result_red[5] = signed'({1'b0,input_buffer[WIDTH+2][29:22]}) * signed'(h[5]);
-
-                                mult_result_green[5] = signed'({1'b0,input_buffer[WIDTH+2][19:12]}) * signed'(h[5]);
-
-                                mult_result_blue[5] = signed'({1'b0,input_buffer[WIDTH+2][9:2]}) * signed'(h[5]);
-
- 
-
-                                mult_result_red[6] = signed'({1'b0,input_buffer[2*WIDTH][29:22]}) * signed'(h[6]);
-
-                                mult_result_green[6] = signed'({1'b0,input_buffer[2*WIDTH][19:12]}) * signed'(h[6]);
-
-                                mult_result_blue[6] = signed'({1'b0,input_buffer[2*WIDTH][9:2]}) * signed'(h[6]);
-
- 
-
-                                mult_result_red[7] = signed'({1'b0,input_buffer[2*WIDTH+1][29:22]}) * signed'(h[7]);
-
-                                mult_result_green[7] = signed'({1'b0,input_buffer[2*WIDTH+1][19:12]}) * signed'(h[7]);
-
-                                mult_result_blue[7] = signed'({1'b0,input_buffer[2*WIDTH+1][9:2]}) * signed'(h[7]);
-
- 
-
-                                mult_result_red[8] = signed'({1'b0,input_buffer[2*WIDTH+2][29:22]}) * signed'(h[8]);
-
-                                mult_result_green[8] = signed'({1'b0,input_buffer[2*WIDTH+2][19:12]}) * signed'(h[8]);
-
-                                mult_result_blue[8] = signed'({1'b0,input_buffer[2*WIDTH+2][9:2]}) * signed'(h[8]);
-
-    end
+//    always_comb begin : h_multiply
+//
+//        // Set mult_result for each n value.
+//
+//        // Hint: use a for loop.
+//
+// 
+//
+//                                mult_result_red[0] = signed'({1'b0,input_buffer[0][29:22]}) * signed'(h[0]);
+//
+//                                mult_result_green[0] = signed'({1'b0,input_buffer[0][19:12]}) * signed'(h[0]);
+//
+//                                mult_result_blue[0] = signed'({1'b0,input_buffer[0][9:2]}) * signed'(h[0]);
+//
+// 
+//
+//                                mult_result_red[1] = signed'({1'b0,input_buffer[1][29:22]}) * signed'(h[1]);
+//
+//                                mult_result_green[1] = signed'({1'b0,input_buffer[1][19:12]}) * signed'(h[1]);
+//
+//                                mult_result_blue[1] = signed'({1'b0,input_buffer[1][9:2]}) * signed'(h[1]);
+//
+// 
+//
+//                                mult_result_red[2] = signed'({1'b0,input_buffer[2][29:22]}) * signed'(h[2]);
+//
+//                                mult_result_green[2] = signed'({1'b0,input_buffer[2][19:12]}) * signed'(h[2]);
+//
+//                                mult_result_blue[2] = signed'({1'b0,input_buffer[2][9:2]}) * signed'(h[2]);
+//
+// 
+//
+//                                mult_result_red[3] = signed'({1'b0,input_buffer[WIDTH][29:22]}) * signed'(h[3]);
+//
+//                                mult_result_green[3] = signed'({1'b0,input_buffer[WIDTH][19:12]}) * signed'(h[3]);
+//
+//                                mult_result_blue[3] = signed'({1'b0,input_buffer[WIDTH][9:2]}) * signed'(h[3]);
+//
+// 
+//
+//                                mult_result_red[4] = signed'({1'b0,input_buffer[WIDTH+1][29:22]}) * signed'(h[4]);
+//
+//                                mult_result_green[4] = signed'({1'b0,input_buffer[WIDTH+1][19:12]}) * signed'(h[4]);
+//
+//                                mult_result_blue[4] = signed'({1'b0,input_buffer[WIDTH+1][9:2]}) * signed'(h[4]);
+//
+// 
+//
+//                                mult_result_red[5] = signed'({1'b0,input_buffer[WIDTH+2][29:22]}) * signed'(h[5]);
+//
+//                                mult_result_green[5] = signed'({1'b0,input_buffer[WIDTH+2][19:12]}) * signed'(h[5]);
+//
+//                                mult_result_blue[5] = signed'({1'b0,input_buffer[WIDTH+2][9:2]}) * signed'(h[5]);
+//
+// 
+//
+//                                mult_result_red[6] = signed'({1'b0,input_buffer[2*WIDTH][29:22]}) * signed'(h[6]);
+//
+//                                mult_result_green[6] = signed'({1'b0,input_buffer[2*WIDTH][19:12]}) * signed'(h[6]);
+//
+//                                mult_result_blue[6] = signed'({1'b0,input_buffer[2*WIDTH][9:2]}) * signed'(h[6]);
+//
+// 
+//
+//                                mult_result_red[7] = signed'({1'b0,input_buffer[2*WIDTH+1][29:22]}) * signed'(h[7]);
+//
+//                                mult_result_green[7] = signed'({1'b0,input_buffer[2*WIDTH+1][19:12]}) * signed'(h[7]);
+//
+//                                mult_result_blue[7] = signed'({1'b0,input_buffer[2*WIDTH+1][9:2]}) * signed'(h[7]);
+//
+// 
+//
+//                                mult_result_red[8] = signed'({1'b0,input_buffer[2*WIDTH+2][29:22]}) * signed'(h[8]);
+//
+//                                mult_result_green[8] = signed'({1'b0,input_buffer[2*WIDTH+2][19:12]}) * signed'(h[8]);
+//
+//                                mult_result_blue[8] = signed'({1'b0,input_buffer[2*WIDTH+2][9:2]}) * signed'(h[8]);
+//
+//    end
 
  
 
