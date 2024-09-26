@@ -285,6 +285,9 @@ always @(*) begin
 	else if(menu_choice == 0) begin
 		vga_data = vga_data_edge;
 	end
+	else if(menu_choice == 3) begin
+		vga_data = vga_data_sharp;
+	end
 	else begin
 	vga_data = {
 			 temp_red,
@@ -381,6 +384,40 @@ vga_demo u_vga_demo(
 	 always @(posedge clk_25_vga) begin
 		vga_data_edge <= pixel_output.data;
 	 end
+	 
+	 
+	 //-----------SHARPENING-------------
 	
+	dstream #(.N(30)) pixel_input_sharp ();
+
+    dstream #(.N(30)) pixel_output_sharp ();
+
+	 wire [29:0] data_shart;
+	 assign data_shart = {temp_red, temp_green, temp_blue};
+ 
+
+    assign pixel_input_sharp.data = data_shart;
+
+    assign pixel_input_sharp.valid = 1'b1;
+
+    assign pixel_output_sharp.ready = vga_ready;
+
+ 
+
+    sharp_conv u_sharp_conv (
+
+    .clk(clk_25_vga),
+
+    .x(pixel_input_sharp),
+
+    .y(pixel_output_sharp)
+
+    );
+	 
+	 reg [30:0] vga_data_sharp;
+	 
+	 always @(posedge clk_25_vga) begin
+		vga_data_sharp <= pixel_output_sharp.data;
+	 end
 	
 endmodule
