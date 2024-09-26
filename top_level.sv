@@ -404,7 +404,7 @@ vga_demo u_vga_demo(
 
  
 
-    sharp_conv u_sharp_conv (
+    blur_conv_five u_blur_conv_five (
 
     .clk(clk_25_vga),
 
