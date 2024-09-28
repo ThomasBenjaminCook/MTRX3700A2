@@ -20,13 +20,19 @@ module fft_pitch_detect_tb;
     fft_pitch_detect DUT (.clk(clk), .audio_clk(bclk), .reset(reset), .audio_input(audio_input), .pitch_output(pitch_output));
 
     logic [W-1:0] input_signal [NSamples];
-    initial $readmemh("hex_recording.hex", input_signal);
-
+    //initial $readmemh("test_waveform.hex", input_signal);
+	 initial $readmemh("fft_pitch_detect_tb.hex", input_signal);
 
     logic start = 1'b0; // Use a start flag.
+	 
+	 
+    logic [2*W:0] output_check, expected_output;
+    integer output_i = 0;
+	 
     initial begin : test_procedure
         $dumpfile("waveform.vcd");
         $dumpvars();
+		  expected_output = 0;
         reset = 1'b1;
         #(TCLK*5);
         reset = 1'b0;
@@ -52,8 +58,7 @@ module fft_pitch_detect_tb;
         end
     end
 
-    logic [2*W:0] output_check, expected_output;
-    integer output_i = 0;
+
     always_ff @(posedge clk) begin : monitor
         if (pitch_output.valid) begin
             output_check <= pitch_output.data;
