@@ -251,67 +251,61 @@ end
 
 //---------
 
-wire [9:0] temp_red, temp_green, temp_blue, gray_scaled;
-wire [17:0] gray;
+//wire [9:0] temp_red, temp_green, temp_blue, gray_scaled;
+//wire [17:0] gray;
+//
+//assign temp_red   = {rddata[11:8], rddata[11:8], 2'b00};
+//assign temp_green = {rddata[7:4],  rddata[7:4],  2'b00};
+//assign temp_blue  = {rddata[3:0],  rddata[3:0],  2'b00};
+//
+//assign gray = (temp_red * 77 + temp_green * 150 + temp_blue * 29);
+//assign gray_scaled = gray >> 8;
+//
+////---------
+//
+//wire [9:0] temp_red_1, temp_green_1, temp_blue_1, pink_scaled;
+//wire [17:0] pink;
+//wire [23:0] scaled_pink;  // Wider wire to handle scaling result
+//wire [8:0] pitch_output_capped;
+//
+//// Increase red contribution, decrease green and blue to create a pink tint
+//assign temp_red_1   = {rddata[11:8], rddata[11:8], 2'b00};  // Keep red as is
+//assign temp_green_1 = {rddata[7:4],  rddata[7:4],  2'b00};  // Reduce green by shifting right
+//assign temp_blue_1  = {rddata[3:0],  rddata[3:0],  2'b00};  // Reduce blue slightly
+//
+//assign pink = (temp_red_1 * 120 + temp_green_1 * 60 + temp_blue_1 * 50);  // Adjust weights for pink
+//
+//assign pitch_output_capped = (pitch_output.data > 63) ? 63 : (pitch_output.data < 10) ? 10 : pitch_output.data;
+//
+//assign scaled_pink = (pink * pitch_output_capped) >> 6;
+//
+//assign pink_scaled = scaled_pink[17:8];
 
-assign temp_red   = {rddata[11:8], rddata[11:8], 2'b00};
-assign temp_green = {rddata[7:4],  rddata[7:4],  2'b00};
-assign temp_blue  = {rddata[3:0],  rddata[3:0],  2'b00};
+wire [29:0] filter_output;
 
-assign gray = (temp_red * 77 + temp_green * 150 + temp_blue * 29);
-assign gray_scaled = gray >> 8;
 
-//---------
-
-wire [9:0] temp_red_1, temp_green_1, temp_blue_1, pink_scaled;
-wire [17:0] pink;
-wire [23:0] scaled_pink;  // Wider wire to handle scaling result
-wire [8:0] pitch_output_capped;
-
-// Increase red contribution, decrease green and blue to create a pink tint
-assign temp_red_1   = {rddata[11:8], rddata[11:8], 2'b00};  // Keep red as is
-assign temp_green_1 = {rddata[7:4],  rddata[7:4],  2'b00};  // Reduce green by shifting right
-assign temp_blue_1  = {rddata[3:0],  rddata[3:0],  2'b00};  // Reduce blue slightly
-
-assign pink = (temp_red_1 * 120 + temp_green_1 * 60 + temp_blue_1 * 50);  // Adjust weights for pink
-
-assign pitch_output_capped = (pitch_output.data > 63) ? 63 : (pitch_output.data < 10) ? 10 : pitch_output.data;
-
-assign scaled_pink = (pink * pitch_output_capped) >> 6;
-
-assign pink_scaled = scaled_pink[17:8];
-
+pixel_filters u_pixel_filters (
+	.filter_selection(menu_choice),
+	.rddata(rddata),
+	.filter_output(filter_output),
+	.pitch_output(pitch_output.data)
+);
 
 
 //--------
 
 always @(*) begin
-	if(menu_choice == 2) begin
-		vga_data = {
-			 gray_scaled,
-			 gray_scaled,
-			 gray_scaled
-		};
-	end
-	else if(menu_choice == 1) begin
-		vga_data = {
-			pink_scaled,             // Strong red channel
-			pink_scaled >> 2,        // Reduced green channel
-			pink_scaled >> 1         // Slightly reduced blue channel
-		};
+	if((menu_choice == 1) | (menu_choice == 2)) begin
+		vga_data = filter_output;
 	end
 	else if(menu_choice == 0) begin
 		vga_data = vga_data_edge;
 	end
 	else if(menu_choice == 3) begin
-		vga_data = vga_data_sharp;
+		vga_data = vga_data_blur;
 	end
 	else begin
-	vga_data = {
-			 temp_red,
-			 temp_green,
-			 temp_blue
-		};
+	vga_data = filter_output;
 	end
 end
 
@@ -366,30 +360,16 @@ vga_demo u_vga_demo(
 	display u_display (.clk(adc_clk),.value(pitch_output.data),.display0(HEX0),.display1(HEX1),.display2(HEX2),.display3(HEX3));
 
 
-	//---------------------EDGING------------------------
-	
-	 
+	//---------------------EDGING--------------------
 
-	 wire [29:0] data;
-	 assign data = {gray_scaled, gray_scaled, gray_scaled};
- 
-
-    assign pixel_input.data = data;
-
+    assign pixel_input.data = filter_output;
     assign pixel_input.valid = 1'b1;
-
     assign pixel_output.ready = vga_ready;
 
- 
-
     edge_conv_five u_edge_conv_five (
-
-    .clk(clk_25_vga),
-
-    .x(pixel_input),
-
-    .y(pixel_output)
-
+		 .clk(clk_25_vga),
+		 .x(pixel_input),
+		 .y(pixel_output)
     );
 	 
 	 reg [30:0] vga_data_edge;
@@ -399,38 +379,25 @@ vga_demo u_vga_demo(
 	 end
 	 
 	 
-	 //-----------SHARPENING-------------
+	 //---------------------BLUR---------------------
 	
-	dstream #(.N(30)) pixel_input_sharp ();
-
-    dstream #(.N(30)) pixel_output_sharp ();
-
-	 wire [29:0] data_shart;
-	 assign data_shart = {temp_red, temp_green, temp_blue};
+	 dstream #(.N(30)) pixel_input_blur ();
+    dstream #(.N(30)) pixel_output_blur ();
  
-
-    assign pixel_input_sharp.data = data_shart;
-
-    assign pixel_input_sharp.valid = 1'b1;
-
-    assign pixel_output_sharp.ready = vga_ready;
-
- 
+    assign pixel_input_blur.data = filter_output;
+    assign pixel_input_blur.valid = 1'b1;
+    assign pixel_output_blur.ready = vga_ready; 
 
     blur_conv_five u_blur_conv_five (
-
-    .clk(clk_25_vga),
-
-    .x(pixel_input_sharp),
-
-    .y(pixel_output_sharp)
-
+		 .clk(clk_25_vga),
+		 .x(pixel_input_blur),
+		 .y(pixel_output_blur)
     );
 	 
-	 reg [30:0] vga_data_sharp;
+	 reg [30:0] vga_data_blur;
 	 
 	 always @(posedge clk_25_vga) begin
-		vga_data_sharp <= pixel_output_sharp.data;
+		vga_data_blur <= pixel_output_blur.data;
 	 end
 	
 endmodule
