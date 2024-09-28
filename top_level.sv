@@ -367,20 +367,9 @@ vga_demo u_vga_demo(
     assign pixel_output.ready = vga_ready;
 
     edge_conv_five u_edge_conv_five (
-<<<<<<< Updated upstream
 		 .clk(clk_25_vga),
 		 .x(pixel_input),
 		 .y(pixel_output)
-=======
-
-    .clk(clk_25_vga),
-
-    .x(pixel_input),
-	 
-
-    .y(pixel_output)
-
->>>>>>> Stashed changes
     );
 	 
 	 reg [30:0] vga_data_edge;
@@ -390,17 +379,13 @@ vga_demo u_vga_demo(
 	 end
 	 
 	 
-<<<<<<< Updated upstream
 	 //---------------------BLUR---------------------
-=======
-	 //-----------SHARPENING-------------
 	 
 	 logic signed [8-1:0] h [0:25-1] = '{8'h01, 8'h04, 8'h07, 8'h04, 8'h01,
 													8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
 													8'h07, 8'h21, 8'h37, 8'h21, 8'h07, 
 													8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
 													8'h01, 8'h04, 8'h07, 8'h04, 8'h01};
->>>>>>> Stashed changes
 	
 	 dstream #(.N(30)) pixel_input_blur ();
     dstream #(.N(30)) pixel_output_blur ();
@@ -409,12 +394,6 @@ vga_demo u_vga_demo(
     assign pixel_input_blur.valid = 1'b1;
     assign pixel_output_blur.ready = vga_ready; 
 
-<<<<<<< Updated upstream
-    blur_conv_five u_blur_conv_five (
-		 .clk(clk_25_vga),
-		 .x(pixel_input_blur),
-		 .y(pixel_output_blur)
-=======
     conv_filter u_blur_conv_five (
 
     .clk(clk_25_vga),
@@ -427,7 +406,6 @@ vga_demo u_vga_demo(
 
     .y(pixel_output_sharp)
 
->>>>>>> Stashed changes
     );
 	 
 	 reg [30:0] vga_data_blur;
