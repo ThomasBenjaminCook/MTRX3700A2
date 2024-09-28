@@ -4,17 +4,15 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
     input clk,
 	 
-	 input logic signed [BW-1:0] h [0:N-1],
+	 input logic signed [31:0] h [0:N-1],
 	 
-	 input logic [15:0] scale_down,
+	 input [15:0] scale_down,
 
     dstream.in x,
 
     dstream.out y
 
 );
-
- 
 
 
 	 localparam WIDTH = 320;
@@ -54,11 +52,7 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
                 logic [W-1:0] test;
 
- 
-
                 assign test = input_buffer[0];
-
-               
 
                  always_ff @(posedge clk) begin: store_values
 
@@ -98,11 +92,11 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
     // 3. Multiply each register in the shift register by its repsective h[n] value, for n = 0 to N.
 
-    logic signed [2*BW-1:0] mult_result_red [0:N-1];
+    logic signed [31:0] mult_result_red [0:N-1];
 
-	 logic signed [2*BW-1:0] mult_result_green [0:N-1];
+	 logic signed [31:0] mult_result_green [0:N-1];
 
-	 logic signed [2*BW-1:0] mult_result_blue [0:N-1];          // 2*W as the multiply doubles width
+	 logic signed [31:0] mult_result_blue [0:N-1];          // 2*W as the multiply doubles width
 
      //logic i2;
 
@@ -136,19 +130,19 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
         macc_red = 0;
 
-                                macc_green = 0;
+        macc_green = 0;
 
-                                macc_blue = 0;
+        macc_blue = 0;
 
-                                for (int i = 0; i < N; i = i+1) begin
+        for (int i = 0; i < N; i = i+1) begin
 
-                                                macc_red = macc_red + mult_result_red[i];
+                        macc_red = macc_red + (mult_result_red[i] >> 10);
 
-                                                macc_green = macc_green + mult_result_green[i];
+                        macc_green = macc_green + (mult_result_green[i] >> 10);
 
-                                                macc_blue = macc_blue + mult_result_blue[i];
+                        macc_blue = macc_blue + (mult_result_blue[i] >> 10);
 
-                                end
+        end
 
         // Set macc to be the sum of all elements in mult_result.
 
