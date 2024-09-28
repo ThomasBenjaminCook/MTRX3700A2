@@ -65,7 +65,7 @@ output logic [17:0] LEDR
     dstream #(.N(30)) pixel_output ();
 
 	 
-	 //---------------------LCD MODULES----------------------
+	 //---------------LCD MODULES-----------------
 	 
 	 wire       address;     //   avalon_lcd_slave.address
 wire       chipselect;  //                   .chipselect
@@ -141,7 +141,7 @@ wire [7:0] red; wire [7:0] green; wire [7:0] blue;
 wire activeArea;
 
   my_altpll Inst_vga_pll(
-      .inclk0(clk_50),
+    .inclk0(clk_50),
     .c0(clk_50_camera),
     .c1(clk_25_vga));
 
@@ -169,13 +169,15 @@ wire activeArea;
     .we(wren));
 
   frame_buffer Inst_frame_buffer(
-      .rdaddress(rdaddress),
+    .rdaddress(rdaddress),
     .rdclock(clk_25_vga),
     .q(rddata),
     .wrclock(ov7670_pclk),
     .wraddress(wraddress[16:0]),
     .data(wrdata),
     .wren(wren));
+	 
+//---------------ADDRESS GENERATOR---------------
 
 integer row = 0, col = 0;
 integer row_old = 0, col_old = 0;
@@ -210,8 +212,10 @@ always @(*) begin
  rdaddress = row*320 + col;
 end
 
-wire [29:0] filter_output;
 
+//------------------PIXEL FILTERS----------------
+
+wire [29:0] filter_output;
 
 pixel_filters u_pixel_filters (
 	.filter_selection(menu_choice),
@@ -221,7 +225,7 @@ pixel_filters u_pixel_filters (
 );
 
 
-//--------
+//----------------MENU MULTIPLEXER---------------
 
 logic signed [8-1:0] h [0:25-1];
 logic [15:0] scale_down;
@@ -279,7 +283,7 @@ vga_demo u_vga_demo(
 	
 	
 	
-	//---------------------MIC MODULES------------------------
+	//-----------------MIC MODULES----------------
 	
 	localparam W        = 16;   //NOTE: To change this, you must also change the Twiddle factor initialisations in r22sdf/Twiddle.v. You can use r22sdf/twiddle_gen.pl.
    localparam NSamples = 1024; //NOTE: To change this, you must also change the SdfUnit instantiations in r22sdf/FFT.v accordingly.
@@ -310,14 +314,14 @@ vga_demo u_vga_demo(
 	display u_display (.clk(adc_clk),.value(pitch_output.data),.display0(HEX0),.display1(HEX1),.display2(HEX2),.display3(HEX3));
 
 
-	//---------------------EDGING--------------------
+	//-----------------CONVOLUTION----------------
 
     assign pixel_input.data = filter_output;
     assign pixel_input.valid = 1'b1;
     assign pixel_output.ready = vga_ready;
 	
 
-    conv_filter u_edge_conv_five (
+    conv_filter u_conv_filter (
 		 .clk(clk_25_vga),
 		 .x(pixel_input),
 		 .h(h),
