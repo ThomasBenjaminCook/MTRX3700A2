@@ -140,9 +140,6 @@ wire [11:0] rddata;
 wire [7:0] red; wire [7:0] green; wire [7:0] blue;
 wire activeArea;
 
-//  assign vga_r = red[7:0];
-//  assign vga_g = green[7:0];
-//  assign vga_b = blue[7:0];
   my_altpll Inst_vga_pll(
       .inclk0(clk_50),
     .c0(clk_50_camera),
@@ -151,16 +148,6 @@ wire activeArea;
   // take the inverted push button because KEY0 on DE2-115 board generates
   // a signal 111000111; with 1 with not pressed and 0 when pressed/pushed;
   assign resend =  ~btn_resend;
-//  assign vga_vsync = vSync;
-//  assign vga_blank_N = nBlank;
-//  VGA Inst_VGA(
-//      .CLK25(clk_25_vga),
-//    .clkout(vga_CLK),
-//    .Hsync(vga_hsync),
-//    .Vsync(vSync),
-//    .Nblank(nBlank),
-//    .Nsync(vga_sync_N),
-//    .activeArea(activeArea));
 
   ov7670_controller Inst_ov7670_controller(
       .clk(clk_50_camera),
@@ -189,19 +176,6 @@ wire activeArea;
     .wraddress(wraddress[16:0]),
     .data(wrdata),
     .wren(wren));
-
-//  RGB Inst_RGB(
-//      .Din(rddata),
-//    .Nblank(activeArea),
-//    .R(red),
-//    .G(green),
-//    .B(blue));
-//
-//  Address_Generator Inst_Address_Generator(
-//      .CLK25(clk_25_vga),
-//    .enable(activeArea),
-//    .vsync(vSync),
-//    .address(rdaddress));
 
 integer row = 0, col = 0;
 integer row_old = 0, col_old = 0;
@@ -236,19 +210,6 @@ always @(*) begin
  rdaddress = row*320 + col;
 end
 
-//always @(*) begin
-//// vga_data = {
-//// {row[7:0], 2'b00},
-//// {row[7:0], 2'b00},
-//// {row[7:0], 2'b00}
-//// };
-//	vga_data = {
-//	{rddata[11:8],rddata[11:8], 2'b00},
-//	{rddata[7:4],rddata[7:4], 2'b00},
-//	{rddata[3:0],rddata[3:0], 2'b00}
-//	};
-//end
-
 wire [29:0] filter_output;
 
 
@@ -262,17 +223,36 @@ pixel_filters u_pixel_filters (
 
 //--------
 
-//logic signed [8-1:0] h [0:25-1];
+logic signed [8-1:0] h [0:25-1];
+logic [15:0] scale_down;
 
 always @(*) begin
+	h = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
+			8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+			8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
+			8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+			8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
+	scale_down = 1;
 	if((menu_choice == 1) | (menu_choice == 2)) begin
 		vga_data = filter_output;
 	end
 	else if(menu_choice == 0) begin
-		vga_data = vga_data_edge;
+		h = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
+				8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+				8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
+				8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+				8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
+		scale_down = 1;
+		vga_data = vga_data_conv;
 	end
 	else if(menu_choice == 3) begin
-		vga_data = vga_data_blur;
+		h = '{8'h01, 8'h04, 8'h07, 8'h04, 8'h01,
+				8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
+				8'h07, 8'h21, 8'h37, 8'h21, 8'h07, 
+				8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
+				8'h01, 8'h04, 8'h07, 8'h04, 8'h01};
+		scale_down = 331;
+		vga_data = vga_data_conv;
 	end
 	else begin
 	vga_data = filter_output;
@@ -335,55 +315,21 @@ vga_demo u_vga_demo(
     assign pixel_input.data = filter_output;
     assign pixel_input.valid = 1'b1;
     assign pixel_output.ready = vga_ready;
-	 
-	 logic signed [8-1:0] h_edge [0:25-1] = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
-												8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
-												8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
-												8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
-												8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
+	
 
     conv_filter u_edge_conv_five (
 		 .clk(clk_25_vga),
 		 .x(pixel_input),
-		 .h(h_edge),
-		 .scale_down(1),
+		 .h(h),
+		 .scale_down(scale_down),
 		 .y(pixel_output)
     );
 	 
-	 reg [30:0] vga_data_edge;
+	 reg [30:0] vga_data_conv;
 	 
 	 always @(posedge clk_25_vga) begin
-		vga_data_edge <= pixel_output.data;
+		vga_data_conv <= pixel_output.data;
 	 end
 	 
 	 
-	 //---------------------BLUR---------------------
-	 
-	 logic signed [8-1:0] h [0:25-1] = '{8'h01, 8'h04, 8'h07, 8'h04, 8'h01,
-													8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
-													8'h07, 8'h21, 8'h37, 8'h21, 8'h07, 
-													8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
-													8'h01, 8'h04, 8'h07, 8'h04, 8'h01};
-	
-	 dstream #(.N(30)) pixel_input_blur ();
-    dstream #(.N(30)) pixel_output_blur ();
- 
-    assign pixel_input_blur.data = filter_output;
-    assign pixel_input_blur.valid = 1'b1;
-    assign pixel_output_blur.ready = vga_ready; 
-
-    conv_filter u_blur_conv_five (
-		 .clk(clk_25_vga),
-		 .x(pixel_input_blur),
-		 .h(h),
-		 .scale_down(331),
-		 .y(pixel_output_blur)
-    );
-	 
-	 reg [30:0] vga_data_blur;
-	 
-	 always @(posedge clk_25_vga) begin
-		vga_data_blur <= pixel_output_blur.data;
-	 end
-	
 endmodule
