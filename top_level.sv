@@ -249,38 +249,6 @@ end
 //	};
 //end
 
-//---------
-
-//wire [9:0] temp_red, temp_green, temp_blue, gray_scaled;
-//wire [17:0] gray;
-//
-//assign temp_red   = {rddata[11:8], rddata[11:8], 2'b00};
-//assign temp_green = {rddata[7:4],  rddata[7:4],  2'b00};
-//assign temp_blue  = {rddata[3:0],  rddata[3:0],  2'b00};
-//
-//assign gray = (temp_red * 77 + temp_green * 150 + temp_blue * 29);
-//assign gray_scaled = gray >> 8;
-//
-////---------
-//
-//wire [9:0] temp_red_1, temp_green_1, temp_blue_1, pink_scaled;
-//wire [17:0] pink;
-//wire [23:0] scaled_pink;  // Wider wire to handle scaling result
-//wire [8:0] pitch_output_capped;
-//
-//// Increase red contribution, decrease green and blue to create a pink tint
-//assign temp_red_1   = {rddata[11:8], rddata[11:8], 2'b00};  // Keep red as is
-//assign temp_green_1 = {rddata[7:4],  rddata[7:4],  2'b00};  // Reduce green by shifting right
-//assign temp_blue_1  = {rddata[3:0],  rddata[3:0],  2'b00};  // Reduce blue slightly
-//
-//assign pink = (temp_red_1 * 120 + temp_green_1 * 60 + temp_blue_1 * 50);  // Adjust weights for pink
-//
-//assign pitch_output_capped = (pitch_output.data > 63) ? 63 : (pitch_output.data < 10) ? 10 : pitch_output.data;
-//
-//assign scaled_pink = (pink * pitch_output_capped) >> 6;
-//
-//assign pink_scaled = scaled_pink[17:8];
-
 wire [29:0] filter_output;
 
 
@@ -293,6 +261,8 @@ pixel_filters u_pixel_filters (
 
 
 //--------
+
+//logic signed [8-1:0] h [0:25-1];
 
 always @(*) begin
 	if((menu_choice == 1) | (menu_choice == 2)) begin
@@ -365,10 +335,18 @@ vga_demo u_vga_demo(
     assign pixel_input.data = filter_output;
     assign pixel_input.valid = 1'b1;
     assign pixel_output.ready = vga_ready;
+	 
+	 logic signed [8-1:0] h_edge [0:25-1] = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
+												8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+												8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
+												8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
+												8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
 
-    edge_conv_five u_edge_conv_five (
+    conv_filter u_edge_conv_five (
 		 .clk(clk_25_vga),
 		 .x(pixel_input),
+		 .h(h_edge),
+		 .scale_down(1),
 		 .y(pixel_output)
     );
 	 
@@ -395,17 +373,11 @@ vga_demo u_vga_demo(
     assign pixel_output_blur.ready = vga_ready; 
 
     conv_filter u_blur_conv_five (
-
-    .clk(clk_25_vga),
-
-    .x(pixel_input_sharp),
-	 
-	 .h(h),
-	 
-	 .scale_down(331),
-
-    .y(pixel_output_sharp)
-
+		 .clk(clk_25_vga),
+		 .x(pixel_input_blur),
+		 .h(h),
+		 .scale_down(331),
+		 .y(pixel_output_blur)
     );
 	 
 	 reg [30:0] vga_data_blur;

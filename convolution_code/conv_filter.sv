@@ -6,7 +6,7 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 	 
 	 input logic signed [BW-1:0] h [0:N-1],
 	 
-	 input [15:0] scale_down,
+	 input logic [15:0] scale_down,
 
     dstream.in x,
 
