@@ -277,7 +277,7 @@ always @(*) begin
 				16'h0007, 16'h0021, 16'h0037, 16'h0021, 16'h0007, 
 				16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
 				16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001};
-		scale_down = 311/(311*((50-pitch_output_capped)/50));
+		scale_down = 1+(pitch_output_capped*6);
 		vga_data = vga_data_conv;
 	end
 	else begin

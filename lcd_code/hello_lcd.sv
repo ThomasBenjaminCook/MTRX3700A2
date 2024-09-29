@@ -42,13 +42,13 @@ module hello_lcd (
     typedef enum logic [1:0] {IDLE, WRITE_OP} state_t;
     state_t current_state, next_state;
 
-    localparam N_INSTRS = 16;
-    logic [8:0] instructions0 [N_INSTRS] = '{CLEAR_DISPLAY, _E, _d, _g, _i, _n, _g, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}; 
-	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _L, _o, _v, _e, _SPACE, _M, _o, _d, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
-	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _G, _r, _e, _y, _s, _c, _a, _l, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
-	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _B, _l, _u, _r, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
-	 logic [8:0] instructions4 [N_INSTRS] = '{CLEAR_DISPLAY, _E, _d, _g, _e, _SPACE, _P, _i, _t, _c, _h, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}; 
-	 logic [8:0] instructions5 [N_INSTRS] = '{CLEAR_DISPLAY, _B, _l, _u, _r, _SPACE, _P, _i, _t, _c, _h, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}; 
+    localparam N_INSTRS = 17;
+    logic [8:0] instructions0 [N_INSTRS] = '{CLEAR_DISPLAY, _LESS_THAN, _MINUS, _SPACE, _SPACE, _SPACE, _SPACE, _E, _d, _g, _e, _SPACE, _SPACE, _SPACE, _SPACE, _MINUS, _GREATER_THAN}; 
+	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _LESS_THAN, _MINUS, _SPACE, _L, _o, _v, _e, _SPACE, _M, _o, _d, _e, _SPACE, _SPACE, _MINUS, _GREATER_THAN};
+	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _LESS_THAN, _MINUS, _SPACE, _G, _r, _e, _y, _s, _c, _a, _l, _e, _SPACE, _SPACE, _MINUS, _GREATER_THAN};
+	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _LESS_THAN, _MINUS, _SPACE, _SPACE, _SPACE, _SPACE, _B, _l, _u, _r, _SPACE, _SPACE, _SPACE, _SPACE, _MINUS, _GREATER_THAN};
+	 logic [8:0] instructions4 [N_INSTRS] = '{CLEAR_DISPLAY, _LESS_THAN, _MINUS, _SPACE, _E, _d, _g, _e, _SPACE, _P, _i, _t, _c, _h, _SPACE, _MINUS, _GREATER_THAN}; 
+	 logic [8:0] instructions5 [N_INSTRS] = '{CLEAR_DISPLAY, _LESS_THAN, _MINUS, _SPACE, _B, _l, _u, _r, _SPACE, _P, _i, _t, _c, _h, _SPACE, _MINUS, _GREATER_THAN}; 
     // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data.
 
     logic [8:0] instructions [N_INSTRS];
@@ -110,7 +110,12 @@ module hello_lcd (
 	 
 	 always_ff @(posedge clk) begin
 		 if (button_edge_left) begin
-			button_press_count <= (button_press_count-1)%6;   
+			if(button_press_count)begin
+				button_press_count <= (button_press_count-1)%6; 
+		   end
+			else begin
+				button_press_count <= 5;
+			end
 		 end
          if (button_edge_right) begin
             button_press_count <= (button_press_count+1)%6; 
