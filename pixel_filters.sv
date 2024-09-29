@@ -1,10 +1,10 @@
 `timescale 1ns/1ns
 
 module pixel_filters (
-   input wire [2:0] filter_selection,
-	input wire [11:0] rddata,
-	input wire [29:0] pitch_output,
-	output wire [29:0] filter_output
+   input logic [2:0] filter_selection,
+	input logic [11:0] rddata,
+	input logic [29:0] pitch_output,
+	output logic [29:0] filter_output
 );
 
 	// Gray
