@@ -221,7 +221,7 @@ pixel_filters u_pixel_filters (
 	.filter_selection(menu_choice),
 	.rddata(rddata),
 	.filter_output(filter_output),
-	.pitch_output(pitch_output.data)
+	.pitch_output(pitch_output.data*10)
 );
 
 
@@ -333,7 +333,7 @@ vga_demo u_vga_demo(
 		 .pitch_output(pitch_output)
     );
 	
-	display u_display (.clk(adc_clk),.value(pitch_output.data),.display0(HEX0),.display1(HEX1),.display2(HEX2),.display3(HEX3));
+	display u_display (.clk(adc_clk),.value(pitch_output.data*10),.display0(HEX0),.display1(HEX1),.display2(HEX2),.display3(HEX3));
 
 
 	//-----------------CONVOLUTION----------------
@@ -343,7 +343,7 @@ vga_demo u_vga_demo(
     assign pixel_output.ready = vga_ready;
 	 
 	 
-	 assign pitch_output_capped = (pitch_output.data > 60) ? 50 : (pitch_output.data < 10) ? 0 : pitch_output.data-10;
+	 assign pitch_output_capped = ((pitch_output.data*10) > 60) ? 50 : ((pitch_output.data*10) < 10) ? 0 : (pitch_output.data*10)-10;
 	 
 	 kernel_converter #(.k_range(50), .N(25), .FRACTIONAL_BITS(10)) u_kernel_converter (
 
