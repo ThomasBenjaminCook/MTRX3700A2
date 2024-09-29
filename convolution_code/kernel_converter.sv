@@ -2,8 +2,7 @@
 
 module kernel_converter #(parameter k_range, parameter N, parameter FRACTIONAL_BITS)(
 
-    input clk,
-    input kernel_choice,
+    input logic signed [BW-1:0] selected_kernel [0:N-1],
     input [$clog2(k_range):0]k_index,
     output logic signed [32-1:0] output_kernel [0:N-1]
 );
@@ -18,27 +17,7 @@ logic signed [BW-1:0] identity_kernel [0:N-1] = '{16'h0000, 16'h0000, 16'h0000, 
                                                 16'h0000, 16'h0000, 16'h0000, 16'h0000, 16'h0000, 
                                                 16'h0000, 16'h0000, 16'h0000, 16'h0000, 16'h0000};
 
-logic signed [BW-1:0] blur_kernel [0:N-1] = '{16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001, 
-                                                16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
-                                                16'h0007, 16'h0021, 16'h0037, 16'h0021, 16'h0007, 
-                                                16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
-                                                16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001};
-
-logic signed [BW-1:0] edge_kernel [0:N-1] = '{16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001, 
-                                                16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
-                                                16'h0007, 16'h0021, 16'h0037, 16'h0021, 16'h0007, 
-                                                16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
-                                                16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001};
-
-logic signed [BW-1:0] selected_kernel [0:N-1];
 logic signed [BW-1:0] range_kernel [0:N-1];
-
-always_comb begin: select_kernel
-    case(kernel_choice)
-        0: selected_kernel = edge_kernel;
-        1: selected_kernel = blur_kernel;
-    endcase
-end
 
 
 always_comb begin: find_range_kernel
@@ -49,7 +28,7 @@ end
 
 always_comb begin: get_output_kernel
     for(int j = 0; j < N; j = j + 1) begin
-        output_kernel[j] = ((range_kernel[j]*SCALE_FACTOR)/k_range)*k_index;
+        output_kernel[j] = ((range_kernel[j]*SCALE_FACTOR)/k_range)*k_index + identity_kernel[j]*SCALE_FACTOR;
     end
 end
 

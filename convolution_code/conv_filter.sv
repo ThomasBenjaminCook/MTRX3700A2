@@ -92,11 +92,11 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
     // 3. Multiply each register in the shift register by its repsective h[n] value, for n = 0 to N.
 
-    logic signed [31:0] mult_result_red [0:N-1];
+    logic signed [45:0] mult_result_red [0:N-1];
 
-	 logic signed [31:0] mult_result_green [0:N-1];
+	 logic signed [45:0] mult_result_green [0:N-1];
 
-	 logic signed [31:0] mult_result_blue [0:N-1];          // 2*W as the multiply doubles width
+	 logic signed [45:0] mult_result_blue [0:N-1];          // 2*W as the multiply doubles width
 
      //logic i2;
 
@@ -136,11 +136,11 @@ module conv_filter #(parameter W = 30, parameter W_FRAC = 0, parameter BW = 8) (
 
         for (int i = 0; i < N; i = i+1) begin
 
-                        macc_red = macc_red + (mult_result_red[i] >> 10);
+                        macc_red = macc_red + (mult_result_red[i] >>> 10);
 
-                        macc_green = macc_green + (mult_result_green[i] >> 10);
+                        macc_green = macc_green + (mult_result_green[i] >>> 10);
 
-                        macc_blue = macc_blue + (mult_result_blue[i] >> 10);
+                        macc_blue = macc_blue + (mult_result_blue[i] >>> 10);
 
         end
 

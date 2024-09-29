@@ -27,7 +27,7 @@ module pixel_filters (
 	assign scaled_pink = (pink * pitch_output_capped) >> 6;
 
 	always_comb begin
-		if ((filter_selection == 2) | (filter_selection == 0)) begin
+		if ((filter_selection == 2) | (filter_selection == 0) | (filter_selection == 0)) begin
 			filter_output = {gray_scaled, gray_scaled, gray_scaled};
 		end
 		else if (filter_selection == 1) begin

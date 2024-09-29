@@ -106,7 +106,7 @@ wire [2:0] menu_choice;
 	);
 
 	LCD_IP u_LCD_IP (
-		.clk         (clk_50),         //                clk.clk
+		.clk         (clk_50),      //                clk.clk
 		.reset       (reset),       //              reset.reset
 		.address     (address),     //   avalon_lcd_slave.address
 		.chipselect  (chipselect),  //                   .chipselect
@@ -227,35 +227,57 @@ pixel_filters u_pixel_filters (
 
 //----------------MENU MULTIPLEXER---------------
 
-logic signed [8-1:0] h [0:25-1];
+logic signed [16-1:0] h [0:25-1];
+logic signed [31:0] h_mic [0:25-1];
+logic signed [31:0] h_selected [0:25-1];
+logic signed [31:0] h_expanded [0:25-1];
 logic [15:0] scale_down;
+logic signed [10:0] pitch_output_capped;
 
 always @(*) begin
-	h = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
-			8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
-			8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
-			8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
-			8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
+	h = '{16'h0000, 16'hffff, 16'hffff, 16'hffff, 16'h0000, 
+				16'hffff, 16'hffff, 16'hffff, 16'hffff, 16'hffff, 
+				16'hffff, 16'hffff, 16'h0014, 16'hffff, 16'hffff, 
+				16'hffff, 16'hffff, 16'hffff, 16'hffff, 16'hffff, 
+				16'h0000, 16'hffff, 16'hffff, 16'hffff, 16'h0000};
 	scale_down = 1;
 	if((menu_choice == 1) | (menu_choice == 2)) begin
 		vga_data = filter_output;
 	end
 	else if(menu_choice == 0) begin
-		h = '{8'h00, 8'hff, 8'hff, 8'hff, 8'h00,
-				8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
-				8'hff, 8'hff, 8'h14, 8'hff, 8'hff, 
-				8'hff, 8'hff, 8'hff, 8'hff, 8'hff, 
-				8'h00, 8'hff, 8'hff, 8'hff, 8'h00};
+		h = '{16'h0000, 16'hffff, 16'hffff, 16'hffff, 16'h0000, 
+				16'hffff, 16'hffff, 16'hffff, 16'hffff, 16'hffff, 
+				16'hffff, 16'hffff, 16'h0014, 16'hffff, 16'hffff, 
+				16'hffff, 16'hffff, 16'hffff, 16'hffff, 16'hffff, 
+				16'h0000, 16'hffff, 16'hffff, 16'hffff, 16'h0000};
 		scale_down = 1;
 		vga_data = vga_data_conv;
 	end
 	else if(menu_choice == 3) begin
-		h = '{8'h01, 8'h04, 8'h07, 8'h04, 8'h01,
-				8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
-				8'h07, 8'h21, 8'h37, 8'h21, 8'h07, 
-				8'h04, 8'h14, 8'h21, 8'h14, 8'h04, 
-				8'h01, 8'h04, 8'h07, 8'h04, 8'h01};
-		scale_down = 331;
+		h = '{16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001, 
+				16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
+				16'h0007, 16'h0021, 16'h0037, 16'h0021, 16'h0007, 
+				16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
+				16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001};
+		scale_down = 311;
+		vga_data = vga_data_conv;
+	end
+	else if(menu_choice == 4) begin
+		h = '{16'h0000, 16'hffff, 16'hffff, 16'hffff, 16'h0000, 
+				16'hffff, 16'hffff, 16'hffff, 16'hffff, 16'hffff, 
+				16'hffff, 16'hffff, 16'h0014, 16'hffff, 16'hffff, 
+				16'hffff, 16'hffff, 16'hffff, 16'hffff, 16'hffff, 
+				16'h0000, 16'hffff, 16'hffff, 16'hffff, 16'h0000};
+		scale_down = 1;
+		vga_data = vga_data_conv;
+	end
+	else if(menu_choice == 5) begin
+		h = '{16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001, 
+				16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
+				16'h0007, 16'h0021, 16'h0037, 16'h0021, 16'h0007, 
+				16'h0004, 16'h0014, 16'h0021, 16'h0014, 16'h0004, 
+				16'h0001, 16'h0004, 16'h0007, 16'h0004, 16'h0001};
+		scale_down = 311/(311*((50-pitch_output_capped)/50));
 		vga_data = vga_data_conv;
 	end
 	else begin
@@ -319,12 +341,37 @@ vga_demo u_vga_demo(
     assign pixel_input.data = filter_output;
     assign pixel_input.valid = 1'b1;
     assign pixel_output.ready = vga_ready;
+	 
+	 
+	 assign pitch_output_capped = (pitch_output.data > 60) ? 50 : (pitch_output.data < 10) ? 0 : pitch_output.data-10;
+	 
+	 kernel_converter #(.k_range(50), .N(25), .FRACTIONAL_BITS(10)) u_kernel_converter (
+
+    .selected_kernel(h),
+    .k_index(pitch_output_capped),
+    .output_kernel(h_mic)
+);
+
+	always_comb begin: get_expanded_kernel
+		 for(int j = 0; j < 25; j = j + 1) begin
+			  h_expanded[j] = h[j]*(1 << 10);
+		 end
+	end
+
+	always_comb begin
+		if((menu_choice == 4) | (menu_choice == 5)) begin
+		h_selected = h_mic;
+		end
+		else begin
+		h_selected = h_expanded;
+		end
+	end
 	
 
     conv_filter u_conv_filter (
 		 .clk(clk_25_vga),
 		 .x(pixel_input),
-		 .h(h),
+		 .h(h_selected),
 		 .scale_down(scale_down),
 		 .y(pixel_output)
     );

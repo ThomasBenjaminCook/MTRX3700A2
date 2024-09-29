@@ -47,6 +47,8 @@ module hello_lcd (
 	 logic [8:0] instructions1 [N_INSTRS] = '{CLEAR_DISPLAY, _L, _o, _v, _e, _SPACE, _M, _o, _d, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
 	 logic [8:0] instructions2 [N_INSTRS] = '{CLEAR_DISPLAY, _G, _r, _e, _y, _s, _c, _a, _l, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
 	 logic [8:0] instructions3 [N_INSTRS] = '{CLEAR_DISPLAY, _B, _l, _u, _r, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
+	 logic [8:0] instructions4 [N_INSTRS] = '{CLEAR_DISPLAY, _E, _d, _g, _e, _SPACE, _P, _i, _t, _c, _h, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}; 
+	 logic [8:0] instructions5 [N_INSTRS] = '{CLEAR_DISPLAY, _B, _l, _u, _r, _SPACE, _P, _i, _t, _c, _h, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}; 
     // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data.
 
     logic [8:0] instructions [N_INSTRS];
@@ -64,6 +66,12 @@ module hello_lcd (
             end
             3'b011 : begin
                 instructions = instructions3;
+            end
+            3'b100 : begin
+                instructions = instructions4;
+            end
+            3'b101 : begin
+                instructions = instructions5;
             end
 				default : begin
 					instructions = instructions3;
@@ -102,10 +110,10 @@ module hello_lcd (
 	 
 	 always_ff @(posedge clk) begin
 		 if (button_edge_left) begin
-			button_press_count <= (button_press_count-1)%4;   
+			button_press_count <= (button_press_count-1)%6;   
 		 end
          if (button_edge_right) begin
-            button_press_count <= (button_press_count+1)%4; 
+            button_press_count <= (button_press_count+1)%6; 
          end
 	 end
 
