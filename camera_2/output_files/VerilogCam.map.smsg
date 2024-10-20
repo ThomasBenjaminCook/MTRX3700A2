@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at camera_capture.sv(39): always construct contains both blocking and non-blocking assignments File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/camera_capture.sv Line: 39
+Warning (10268): Verilog HDL information at camera_capture.sv(43): always construct contains both blocking and non-blocking assignments File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/camera_capture.sv Line: 43

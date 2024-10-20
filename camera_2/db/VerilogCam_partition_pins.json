@@ -124,7 +124,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
 					"name" : "ov7670_siod",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{

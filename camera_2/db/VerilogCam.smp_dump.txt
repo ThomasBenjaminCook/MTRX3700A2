@@ -1,4 +1,9 @@
 
+State Machine - |top_level|camera_capture:u_camera_capture|colour_index
+Name colour_index.001 
+colour_index.000 0 
+colour_index.001 1 
+
 State Machine - |top_level|vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|s_multiply_height
 Name s_multiply_height.STATE_0_GET_CURRENT_LINE s_multiply_height.STATE_2_OUTPUT_LAST_LINE s_multiply_height.STATE_1_LOOP_FIFO 
 s_multiply_height.STATE_0_GET_CURRENT_LINE 0 0 0 

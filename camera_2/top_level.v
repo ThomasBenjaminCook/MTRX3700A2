@@ -253,7 +253,9 @@ output wire ov7670_sioc,
 inout wire ov7670_siod,
 output wire ov7670_pwdn,
 output wire ov7670_reset,
-output wire [1:0] GPIO
+output wire [1:0] GPIO,
+output wire [5:1] LEDR,
+input wire [3:1] KEY
 );
 
 
@@ -274,6 +276,8 @@ wire [7:0] red; wire [7:0] green; wire [7:0] blue;
 wire activeArea;
 wire [7:0] data_to_send;
 wire valid, ready, rst;
+
+assign LEDR[1] = ~(KEY[1]);
 
 
 //  assign vga_r = red[7:0];
@@ -342,7 +346,7 @@ wire valid, ready, rst;
 integer row = 0, col = 0;
 integer row_old = 0, col_old = 0;
 reg vga_ready, vga_start, vga_end;
-reg [30:0] vga_data;
+reg [29:0] vga_data;
 always @(posedge clk_25_vga) begin
 	if(resend) begin
 		col <= 0;
@@ -424,10 +428,8 @@ vga_demo u_vga_demo(
 	);
 	
 	
-assign data_to_send = {vga_data, 2'b00};
+//assign data_to_send = {vga_data, 2'b00};
 assign rst = 0;
-assign valid = 1;
-assign ready = 1;
 
 uart_tx u_uart_tx(
    .clk(CLOCK_50),
@@ -438,14 +440,17 @@ uart_tx u_uart_tx(
 	.rst(rst)
 );
 
-//camera_capture u_camera_capture(
-//	.clk(CLOCK_50),
-//	.KEY(KEY),
-//	.pixel_ipt(vga_data),
-//	.start_frame(vga_start),
-//	.rgb_data(data_to_send),
-//	.valid(valid)
-//);
+camera_capture u_camera_capture(
+	.clk(CLOCK_50),
+	.KEY(KEY),
+	.pixel_input(vga_data),
+	.start_frame(1),
+	.rgb_data(data_to_send),
+	.uart_ready(ready),
+	.valid(valid)
+);
+
+//BREAK DOWN INTO 8 BIT BECAUSE UART CAN'T TAKE 30 BIT
 
 endmodule
 

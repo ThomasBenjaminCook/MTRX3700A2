@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VerilogCam
-Sun Oct 20 18:19:18 2024
+Sun Oct 20 20:19:09 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -15,53 +15,55 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |top_level|vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|s_multiply_height
- 11. State Machine - |top_level|ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg
- 12. Registers Protected by Synthesis
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated
- 19. Source assignments for frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated
- 20. Source assignments for vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram
- 21. Source assignments for vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 22. Source assignments for vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 23. Parameter Settings for User Entity Instance: my_altpll:Inst_vga_pll|altpll:altpll_component
- 24. Parameter Settings for User Entity Instance: ov7670_controller:Inst_ov7670_controller
- 25. Parameter Settings for User Entity Instance: frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component
- 26. Parameter Settings for User Entity Instance: frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component
- 27. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0
- 28. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height
- 29. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO
- 30. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_width:Multiply_Width
- 31. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0
- 32. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|altera_up_avalon_video_vga_timing:VGA_Timing
- 33. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter
- 34. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|altera_reset_controller:rst_controller
- 35. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 36. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 37. Parameter Settings for User Entity Instance: uart_tx:u_uart_tx
- 38. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
- 39. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
- 40. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 41. altpll Parameter Settings by Entity Instance
- 42. altsyncram Parameter Settings by Entity Instance
- 43. scfifo Parameter Settings by Entity Instance
- 44. lpm_mult Parameter Settings by Entity Instance
- 45. Port Connectivity Checks: "uart_tx:u_uart_tx"
- 46. Port Connectivity Checks: "vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
- 47. Port Connectivity Checks: "vga_demo:u_vga_demo|altera_reset_controller:rst_controller"
- 48. Port Connectivity Checks: "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|altera_up_avalon_video_vga_timing:VGA_Timing"
- 49. Port Connectivity Checks: "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0"
- 50. Port Connectivity Checks: "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0"
- 51. Port Connectivity Checks: "vga_demo:u_vga_demo"
- 52. Port Connectivity Checks: "ov7670_controller:Inst_ov7670_controller|i2c_sender:Inst_i2c_sender"
- 53. Post-Synthesis Netlist Statistics for Top Partition
- 54. Elapsed Time Per Partition
- 55. Analysis & Synthesis Messages
- 56. Analysis & Synthesis Suppressed Messages
+ 10. State Machine - |top_level|camera_capture:u_camera_capture|colour_index
+ 11. State Machine - |top_level|vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|s_multiply_height
+ 12. State Machine - |top_level|ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg
+ 13. Registers Protected by Synthesis
+ 14. Registers Removed During Synthesis
+ 15. Removed Registers Triggering Further Register Optimizations
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated
+ 20. Source assignments for frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated
+ 21. Source assignments for vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram
+ 22. Source assignments for vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 23. Source assignments for vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 24. Parameter Settings for User Entity Instance: my_altpll:Inst_vga_pll|altpll:altpll_component
+ 25. Parameter Settings for User Entity Instance: ov7670_controller:Inst_ov7670_controller
+ 26. Parameter Settings for User Entity Instance: frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component
+ 27. Parameter Settings for User Entity Instance: frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component
+ 28. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0
+ 29. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height
+ 30. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO
+ 31. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_width:Multiply_Width
+ 32. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0
+ 33. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|altera_up_avalon_video_vga_timing:VGA_Timing
+ 34. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter
+ 35. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|altera_reset_controller:rst_controller
+ 36. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 37. Parameter Settings for User Entity Instance: vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 38. Parameter Settings for User Entity Instance: uart_tx:u_uart_tx
+ 39. Parameter Settings for User Entity Instance: camera_capture:u_camera_capture
+ 40. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
+ 41. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
+ 42. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 43. altpll Parameter Settings by Entity Instance
+ 44. altsyncram Parameter Settings by Entity Instance
+ 45. scfifo Parameter Settings by Entity Instance
+ 46. lpm_mult Parameter Settings by Entity Instance
+ 47. Port Connectivity Checks: "uart_tx:u_uart_tx"
+ 48. Port Connectivity Checks: "vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 49. Port Connectivity Checks: "vga_demo:u_vga_demo|altera_reset_controller:rst_controller"
+ 50. Port Connectivity Checks: "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|altera_up_avalon_video_vga_timing:VGA_Timing"
+ 51. Port Connectivity Checks: "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0"
+ 52. Port Connectivity Checks: "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0"
+ 53. Port Connectivity Checks: "vga_demo:u_vga_demo"
+ 54. Port Connectivity Checks: "ov7670_controller:Inst_ov7670_controller|i2c_sender:Inst_i2c_sender"
+ 55. Post-Synthesis Netlist Statistics for Top Partition
+ 56. Elapsed Time Per Partition
+ 57. Analysis & Synthesis Messages
+ 58. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -88,7 +90,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 20 18:19:18 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 20 20:19:09 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; VerilogCam                                  ;
 ; Top-level Entity Name              ; top_level                                   ;
@@ -97,7 +99,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 977                                         ;
 ;     Dedicated logic registers      ; 545                                         ;
 ; Total registers                    ; 545                                         ;
-; Total pins                         ; 50                                          ;
+; Total pins                         ; 58                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,585,664                                   ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -210,88 +212,89 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                        ;
-+-------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------+
-; File Name with User-Entered Path                                              ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                      ; Library  ;
-+-------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------+
-; vga_demo/synthesis/vga_demo.v                                                 ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v                                                 ; vga_demo ;
-; vga_demo/synthesis/submodules/altera_reset_controller.v                       ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v                       ; vga_demo ;
-; vga_demo/synthesis/submodules/altera_reset_synchronizer.v                     ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_synchronizer.v                     ; vga_demo ;
-; vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v                    ; vga_demo ;
-; vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv ; vga_demo ;
-; vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v             ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v             ; vga_demo ;
-; vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v               ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v               ; vga_demo ;
-; vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v         ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v         ; vga_demo ;
-; vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v        ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v        ; vga_demo ;
-; vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v                       ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v                       ; vga_demo ;
-; top_level.v                                                                   ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v                                                                   ;          ;
-; ov7670_registers.v                                                            ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_registers.v                                                            ;          ;
-; ov7670_controller.v                                                           ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_controller.v                                                           ;          ;
-; ov7670_capture.v                                                              ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_capture.v                                                              ;          ;
-; my_frame_buffer_15to0.v                                                       ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_frame_buffer_15to0.v                                                       ;          ;
-; my_altpll.v                                                                   ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_altpll.v                                                                   ;          ;
-; i2c_sender.v                                                                  ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/i2c_sender.v                                                                  ;          ;
-; frame_buffer.v                                                                ; yes             ; User Verilog HDL File        ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/frame_buffer.v                                                                ;          ;
-; uart_tx.sv                                                                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv                                                                    ;          ;
-; altpll.tdf                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                                                                 ;          ;
-; aglobal201.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                             ;          ;
-; stratix_pll.inc                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                                                            ;          ;
-; stratixii_pll.inc                                                             ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                          ;          ;
-; cycloneii_pll.inc                                                             ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                          ;          ;
-; db/my_altpll_altpll.v                                                         ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/my_altpll_altpll.v                                                         ;          ;
-; altsyncram.tdf                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                             ;          ;
-; stratix_ram_block.inc                                                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                      ;          ;
-; lpm_mux.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                ;          ;
-; lpm_decode.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                             ;          ;
-; a_rdenreg.inc                                                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                              ;          ;
-; altrom.inc                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                                 ;          ;
-; altram.inc                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                                 ;          ;
-; altdpram.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                               ;          ;
-; db/altsyncram_eik1.tdf                                                        ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf                                                        ;          ;
-; db/decode_rsa.tdf                                                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/decode_rsa.tdf                                                             ;          ;
-; db/decode_k8a.tdf                                                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/decode_k8a.tdf                                                             ;          ;
-; db/mux_mob.tdf                                                                ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/mux_mob.tdf                                                                ;          ;
-; scfifo.tdf                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                                                 ;          ;
-; a_regfifo.inc                                                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                                              ;          ;
-; a_dpfifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                                               ;          ;
-; a_i2fifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                                               ;          ;
-; a_fffifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                                               ;          ;
-; a_f2fifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                                               ;          ;
-; db/scfifo_ci31.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/scfifo_ci31.tdf                                                            ;          ;
-; db/a_dpfifo_v931.tdf                                                          ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf                                                          ;          ;
-; db/altsyncram_5tb1.tdf                                                        ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf                                                        ;          ;
-; db/cmpr_ms8.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cmpr_ms8.tdf                                                               ;          ;
-; db/cntr_1ab.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cntr_1ab.tdf                                                               ;          ;
-; db/cntr_ea7.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cntr_ea7.tdf                                                               ;          ;
-; db/cntr_2ab.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cntr_2ab.tdf                                                               ;          ;
-; lpm_mult.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                               ;          ;
-; lpm_add_sub.inc                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                            ;          ;
-; multcore.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc                                                               ;          ;
-; bypassff.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                                                               ;          ;
-; altshift.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc                                                               ;          ;
-; multcore.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf                                                               ;          ;
-; csa_add.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/csa_add.inc                                                                ;          ;
-; mpar_add.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc                                                               ;          ;
-; muleabz.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/muleabz.inc                                                                ;          ;
-; mul_lfrg.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_lfrg.inc                                                               ;          ;
-; mul_boothc.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_boothc.inc                                                             ;          ;
-; alt_ded_mult.inc                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                           ;          ;
-; alt_ded_mult_y.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                         ;          ;
-; dffpipe.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc                                                                ;          ;
-; mpar_add.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf                                                               ;          ;
-; lpm_add_sub.tdf                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                            ;          ;
-; addcore.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc                                                                ;          ;
-; look_add.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc                                                               ;          ;
-; alt_stratix_add_sub.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                    ;          ;
-; db/add_sub_bfh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_bfh.tdf                                                            ;          ;
-; db/add_sub_mgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_mgh.tdf                                                            ;          ;
-; altshift.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.tdf                                                               ;          ;
-; db/add_sub_lgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_lgh.tdf                                                            ;          ;
-; db/add_sub_pgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_pgh.tdf                                                            ;          ;
-; db/add_sub_kgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_kgh.tdf                                                            ;          ;
-; db/add_sub_ogh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_ogh.tdf                                                            ;          ;
-+-------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                          ;
++-------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
+; File Name with User-Entered Path                                              ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                        ; Library  ;
++-------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
+; vga_demo/synthesis/vga_demo.v                                                 ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v                                                 ; vga_demo ;
+; vga_demo/synthesis/submodules/altera_reset_controller.v                       ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v                       ; vga_demo ;
+; vga_demo/synthesis/submodules/altera_reset_synchronizer.v                     ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_synchronizer.v                     ; vga_demo ;
+; vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v                    ; vga_demo ;
+; vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv ; vga_demo ;
+; vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v             ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v             ; vga_demo ;
+; vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v               ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v               ; vga_demo ;
+; vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v         ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v         ; vga_demo ;
+; vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v        ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v        ; vga_demo ;
+; vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v                       ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v                       ; vga_demo ;
+; top_level.v                                                                   ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v                                                                   ;          ;
+; ov7670_registers.v                                                            ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_registers.v                                                            ;          ;
+; ov7670_controller.v                                                           ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_controller.v                                                           ;          ;
+; ov7670_capture.v                                                              ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_capture.v                                                              ;          ;
+; my_frame_buffer_15to0.v                                                       ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_frame_buffer_15to0.v                                                       ;          ;
+; my_altpll.v                                                                   ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_altpll.v                                                                   ;          ;
+; i2c_sender.v                                                                  ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/i2c_sender.v                                                                  ;          ;
+; frame_buffer.v                                                                ; yes             ; User Verilog HDL File        ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/frame_buffer.v                                                                ;          ;
+; camera_capture.sv                                                             ; yes             ; User SystemVerilog HDL File  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/camera_capture.sv                                                             ;          ;
+; uart_tx.sv                                                                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv                                                                    ;          ;
+; altpll.tdf                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                                                                                                   ;          ;
+; aglobal201.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                                                               ;          ;
+; stratix_pll.inc                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                              ;          ;
+; stratixii_pll.inc                                                             ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                                            ;          ;
+; cycloneii_pll.inc                                                             ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                                            ;          ;
+; db/my_altpll_altpll.v                                                         ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/my_altpll_altpll.v                                                         ;          ;
+; altsyncram.tdf                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                                               ;          ;
+; stratix_ram_block.inc                                                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                        ;          ;
+; lpm_mux.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                  ;          ;
+; lpm_decode.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                                               ;          ;
+; a_rdenreg.inc                                                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                                ;          ;
+; altrom.inc                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                                                                   ;          ;
+; altram.inc                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                                                                   ;          ;
+; altdpram.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                                                                 ;          ;
+; db/altsyncram_eik1.tdf                                                        ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf                                                        ;          ;
+; db/decode_rsa.tdf                                                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/decode_rsa.tdf                                                             ;          ;
+; db/decode_k8a.tdf                                                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/decode_k8a.tdf                                                             ;          ;
+; db/mux_mob.tdf                                                                ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/mux_mob.tdf                                                                ;          ;
+; scfifo.tdf                                                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                                                                                   ;          ;
+; a_regfifo.inc                                                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                                                                                ;          ;
+; a_dpfifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                                                                                 ;          ;
+; a_i2fifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                                                                                 ;          ;
+; a_fffifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                                                                                 ;          ;
+; a_f2fifo.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                                                                                 ;          ;
+; db/scfifo_ci31.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/scfifo_ci31.tdf                                                            ;          ;
+; db/a_dpfifo_v931.tdf                                                          ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf                                                          ;          ;
+; db/altsyncram_5tb1.tdf                                                        ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf                                                        ;          ;
+; db/cmpr_ms8.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cmpr_ms8.tdf                                                               ;          ;
+; db/cntr_1ab.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cntr_1ab.tdf                                                               ;          ;
+; db/cntr_ea7.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cntr_ea7.tdf                                                               ;          ;
+; db/cntr_2ab.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cntr_2ab.tdf                                                               ;          ;
+; lpm_mult.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                                                                 ;          ;
+; lpm_add_sub.inc                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                                              ;          ;
+; multcore.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc                                                                                                 ;          ;
+; bypassff.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                                                                                                 ;          ;
+; altshift.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc                                                                                                 ;          ;
+; multcore.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf                                                                                                 ;          ;
+; csa_add.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/csa_add.inc                                                                                                  ;          ;
+; mpar_add.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc                                                                                                 ;          ;
+; muleabz.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/muleabz.inc                                                                                                  ;          ;
+; mul_lfrg.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_lfrg.inc                                                                                                 ;          ;
+; mul_boothc.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_boothc.inc                                                                                               ;          ;
+; alt_ded_mult.inc                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                                                             ;          ;
+; alt_ded_mult_y.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                                                           ;          ;
+; dffpipe.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc                                                                                                  ;          ;
+; mpar_add.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf                                                                                                 ;          ;
+; lpm_add_sub.tdf                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                                                              ;          ;
+; addcore.inc                                                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc                                                                                                  ;          ;
+; look_add.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc                                                                                                 ;          ;
+; alt_stratix_add_sub.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                                                      ;          ;
+; db/add_sub_bfh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_bfh.tdf                                                            ;          ;
+; db/add_sub_mgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_mgh.tdf                                                            ;          ;
+; altshift.tdf                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.tdf                                                                                                 ;          ;
+; db/add_sub_lgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_lgh.tdf                                                            ;          ;
+; db/add_sub_pgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_pgh.tdf                                                            ;          ;
+; db/add_sub_kgh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_kgh.tdf                                                            ;          ;
+; db/add_sub_ogh.tdf                                                            ; yes             ; Auto-Generated Megafunction  ; C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_ogh.tdf                                                            ;          ;
++-------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -315,7 +318,7 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 545                                                                                             ;
 ;     -- I/O registers                        ; 0                                                                                               ;
 ;                                             ;                                                                                                 ;
-; I/O pins                                    ; 50                                                                                              ;
+; I/O pins                                    ; 58                                                                                              ;
 ; Total memory bits                           ; 1585664                                                                                         ;
 ;                                             ;                                                                                                 ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                               ;
@@ -325,8 +328,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                 ;
 ; Maximum fan-out node                        ; my_altpll:Inst_vga_pll|altpll:altpll_component|my_altpll_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 715                                                                                             ;
-; Total fan-out                               ; 11087                                                                                           ;
-; Average fan-out                             ; 6.02                                                                                            ;
+; Total fan-out                               ; 11096                                                                                           ;
+; Average fan-out                             ; 5.98                                                                                            ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
@@ -335,7 +338,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                              ; Entity Name                            ; Library Name ;
 +-------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |top_level                                                        ; 977 (162)           ; 545 (128)                 ; 1585664     ; 0            ; 0       ; 0         ; 50   ; 0            ; |top_level                                                                                                                                                                                                                       ; top_level                              ; work         ;
+; |top_level                                                        ; 977 (162)           ; 545 (128)                 ; 1585664     ; 0            ; 0       ; 0         ; 58   ; 0            ; |top_level                                                                                                                                                                                                                       ; top_level                              ; work         ;
 ;    |frame_buffer:Inst_frame_buffer|                               ; 148 (120)           ; 3 (0)                     ; 1572864     ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|frame_buffer:Inst_frame_buffer                                                                                                                                                                                        ; frame_buffer                           ; work         ;
 ;       |my_frame_buffer_15to0:Inst_buffer_bottom|                  ; 10 (0)              ; 3 (0)                     ; 786432      ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom                                                                                                                                               ; my_frame_buffer_15to0                  ; work         ;
 ;          |altsyncram:altsyncram_component|                        ; 10 (0)              ; 3 (0)                     ; 786432      ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component                                                                                                               ; altsyncram                             ; work         ;
@@ -417,6 +420,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; channel_adapter          ; 20.1    ; N/A          ; N/A          ; |top_level|vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter|vga_demo_avalon_st_adapter_channel_adapter_0:channel_adapter_0 ; vga_demo.qsys   ;
 ; Altera ; altera_reset_controller  ; 20.1    ; N/A          ; N/A          ; |top_level|vga_demo:u_vga_demo|altera_reset_controller:rst_controller                                                                      ; vga_demo.qsys   ;
 +--------+--------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------+
+; State Machine - |top_level|camera_capture:u_camera_capture|colour_index ;
++------------------+------------------------------------------------------+
+; Name             ; colour_index.001                                     ;
++------------------+------------------------------------------------------+
+; colour_index.000 ; 0                                                    ;
+; colour_index.001 ; 1                                                    ;
++------------------+------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -511,16 +525,28 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                                                        ; Reason for Removal                                                                                                                                                  ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; camera_capture:u_camera_capture|counter_in[0,1]                                                                                                      ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|rgb_data[0..7]                                                                                                       ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|counter_out[0..7]                                                                                                    ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|counter_out[8]                                                                                                       ; Stuck at VCC due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|counter_out[9]                                                                                                       ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|counter_out[10..14]                                                                                                  ; Stuck at VCC due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|counter_in[2..14]                                                                                                    ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|end_flag                                                                                                             ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|start_flag                                                                                                           ; Stuck at GND due to stuck port clock                                                                                                                                ;
 ; uart_tx:u_uart_tx|current_state[0..3]                                                                                                                ; Stuck at GND due to stuck port clock                                                                                                                                ;
 ; uart_tx:u_uart_tx|data_tx_temp[0..7]                                                                                                                 ; Stuck at GND due to stuck port clock                                                                                                                                ;
 ; uart_tx:u_uart_tx|bit_n[0..2]                                                                                                                        ; Stuck at GND due to stuck port clock                                                                                                                                ;
 ; uart_tx:u_uart_tx|counter[0..8]                                                                                                                      ; Stuck at GND due to stuck port clock                                                                                                                                ;
-; uart_tx:u_uart_tx|current_state[4..31]                                                                                                               ; Lost fanout                                                                                                                                                         ;
+; uart_tx:u_uart_tx|current_state[4..31]                                                                                                               ; Stuck at GND due to stuck port clock                                                                                                                                ;
 ; vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|VGA_SYNC                                                                  ; Stuck at GND due to stuck port data_in                                                                                                                              ;
 ; frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|address_reg_b[2] ; Merged with frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|address_reg_b[2] ;
 ; frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|address_reg_b[1] ; Merged with frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|address_reg_b[1] ;
 ; frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|address_reg_b[0] ; Merged with frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_bottom|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|address_reg_b[0] ;
 ; ov7670_controller:Inst_ov7670_controller|i2c_sender:Inst_i2c_sender|data_sr[0]                                                                       ; Stuck at VCC due to stuck port data_in                                                                                                                              ;
+; camera_capture:u_camera_capture|colour_index.001                                                                                                     ; Stuck at GND due to stuck port clock                                                                                                                                ;
+; camera_capture:u_camera_capture|colour_index~4                                                                                                       ; Lost fanout                                                                                                                                                         ;
+; camera_capture:u_camera_capture|colour_index~5                                                                                                       ; Lost fanout                                                                                                                                                         ;
 ; ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg~2                                                               ; Lost fanout                                                                                                                                                         ;
 ; ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg~3                                                               ; Lost fanout                                                                                                                                                         ;
 ; ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg~4                                                               ; Lost fanout                                                                                                                                                         ;
@@ -537,19 +563,32 @@ Encoding Type:  One-Hot
 ; ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg~15                                                              ; Lost fanout                                                                                                                                                         ;
 ; ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg~16                                                              ; Lost fanout                                                                                                                                                         ;
 ; ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers|sreg~17                                                              ; Lost fanout                                                                                                                                                         ;
-; Total Number of Removed Registers = 73                                                                                                               ;                                                                                                                                                                     ;
+; Total Number of Removed Registers = 116                                                                                                              ;                                                                                                                                                                     ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                            ;
-+------------------------------------+-------------------------+-------------------------------------------------------------------------+
-; Register name                      ; Reason for Removal      ; Registers Removed due to This Register                                  ;
-+------------------------------------+-------------------------+-------------------------------------------------------------------------+
-; uart_tx:u_uart_tx|current_state[3] ; Stuck at GND            ; uart_tx:u_uart_tx|current_state[2], uart_tx:u_uart_tx|current_state[1], ;
-;                                    ; due to stuck port clock ; uart_tx:u_uart_tx|current_state[0], uart_tx:u_uart_tx|bit_n[2],         ;
-;                                    ;                         ; uart_tx:u_uart_tx|bit_n[1], uart_tx:u_uart_tx|bit_n[0]                  ;
-+------------------------------------+-------------------------+-------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                  ;
++-----------------------------------------------+-------------------------+------------------------------------------------------------------------------------+
+; Register name                                 ; Reason for Removal      ; Registers Removed due to This Register                                             ;
++-----------------------------------------------+-------------------------+------------------------------------------------------------------------------------+
+; camera_capture:u_camera_capture|counter_in[0] ; Stuck at GND            ; camera_capture:u_camera_capture|rgb_data[0],                                       ;
+;                                               ; due to stuck port clock ; camera_capture:u_camera_capture|rgb_data[1],                                       ;
+;                                               ;                         ; camera_capture:u_camera_capture|rgb_data[2],                                       ;
+;                                               ;                         ; camera_capture:u_camera_capture|rgb_data[3],                                       ;
+;                                               ;                         ; camera_capture:u_camera_capture|rgb_data[4],                                       ;
+;                                               ;                         ; camera_capture:u_camera_capture|rgb_data[5],                                       ;
+;                                               ;                         ; camera_capture:u_camera_capture|rgb_data[6], uart_tx:u_uart_tx|data_tx_temp[6],    ;
+;                                               ;                         ; uart_tx:u_uart_tx|data_tx_temp[5], uart_tx:u_uart_tx|data_tx_temp[4],              ;
+;                                               ;                         ; uart_tx:u_uart_tx|data_tx_temp[3], uart_tx:u_uart_tx|data_tx_temp[2],              ;
+;                                               ;                         ; uart_tx:u_uart_tx|data_tx_temp[1], uart_tx:u_uart_tx|data_tx_temp[0]               ;
+; uart_tx:u_uart_tx|current_state[3]            ; Stuck at GND            ; uart_tx:u_uart_tx|current_state[2], uart_tx:u_uart_tx|current_state[1],            ;
+;                                               ; due to stuck port clock ; uart_tx:u_uart_tx|bit_n[2], uart_tx:u_uart_tx|bit_n[1], uart_tx:u_uart_tx|bit_n[0] ;
+; camera_capture:u_camera_capture|rgb_data[7]   ; Stuck at GND            ; uart_tx:u_uart_tx|data_tx_temp[7]                                                  ;
+;                                               ; due to stuck port clock ;                                                                                    ;
+; camera_capture:u_camera_capture|start_flag    ; Stuck at GND            ; uart_tx:u_uart_tx|current_state[0]                                                 ;
+;                                               ; due to stuck port clock ;                                                                                    ;
++-----------------------------------------------+-------------------------+------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1377,6 +1416,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: camera_capture:u_camera_capture ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; HEIGHT         ; 100   ; Signed Integer                                      ;
+; WIDTH          ; 320   ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2                     ;
 +------------------------------------------------+--------------+---------------------+
@@ -1587,16 +1637,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "uart_tx:u_uart_tx"                                                                           ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; data_tx[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; valid         ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; ready         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rst           ; Input  ; Info     ; Stuck at GND                                                                        ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------+
+; Port Connectivity Checks: "uart_tx:u_uart_tx" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; rst  ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
@@ -1688,7 +1735,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; reset_reset_n                           ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; reset_reset_n[-1]                       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
 ; video_scaler_0_avalon_scaler_sink_valid ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; video_scaler_0_avalon_scaler_sink_data  ; Input ; Warning  ; Input port expression (31 bits) is wider than the input port (30 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 +-----------------------------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1710,7 +1756,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 50                          ;
+; boundary_port         ; 58                          ;
 ; cycloneiii_ff         ; 545                         ;
 ;     ENA               ; 146                         ;
 ;     ENA SCLR          ; 64                          ;
@@ -1719,13 +1765,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 14                          ;
 ;     plain             ; 218                         ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 979                         ;
+; cycloneiii_lcell_comb ; 980                         ;
 ;     arith             ; 246                         ;
 ;         2 data inputs ; 152                         ;
 ;         3 data inputs ; 94                          ;
-;     normal            ; 733                         ;
+;     normal            ; 734                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 19                          ;
+;         1 data inputs ; 20                          ;
 ;         2 data inputs ; 188                         ;
 ;         3 data inputs ; 138                         ;
 ;         4 data inputs ; 384                         ;
@@ -1752,69 +1798,69 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Oct 20 18:19:07 2024
+    Info: Processing started: Sun Oct 20 20:18:55 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VerilogCam -c VerilogCam
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/vga_demo.v
-    Info (12023): Found entity 1: vga_demo File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 6
+    Info (12023): Found entity 1: vga_demo File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/altera_reset_controller.v
-    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v Line: 42
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/altera_reset_synchronizer.v
-    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_synchronizer.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v
-    Info (12023): Found entity 1: vga_demo_avalon_st_adapter File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v Line: 9
+    Info (12023): Found entity 1: vga_demo_avalon_st_adapter File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv
-    Info (12023): Found entity 1: vga_demo_avalon_st_adapter_channel_adapter_0 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv Line: 55
+    Info (12023): Found entity 1: vga_demo_avalon_st_adapter_channel_adapter_0 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v
-    Info (12023): Found entity 1: altera_up_avalon_video_vga_timing File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v Line: 28
+    Info (12023): Found entity 1: altera_up_avalon_video_vga_timing File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v
-    Info (12023): Found entity 1: vga_demo_video_vga_controller_0 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v Line: 28
+    Info (12023): Found entity 1: vga_demo_video_vga_controller_0 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/altera_up_video_scaler_shrink.v
-    Info (12023): Found entity 1: altera_up_video_scaler_shrink File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_shrink.v Line: 28
+    Info (12023): Found entity 1: altera_up_video_scaler_shrink File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_shrink.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v
-    Info (12023): Found entity 1: altera_up_video_scaler_multiply_width File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v Line: 28
+    Info (12023): Found entity 1: altera_up_video_scaler_multiply_width File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v
-    Info (12023): Found entity 1: altera_up_video_scaler_multiply_height File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 28
+    Info (12023): Found entity 1: altera_up_video_scaler_multiply_height File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v
-    Info (12023): Found entity 1: vga_demo_video_scaler_0 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v Line: 28
+    Info (12023): Found entity 1: vga_demo_video_scaler_0 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file vga.v
-    Info (12023): Found entity 1: VGA File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga.v Line: 26
+    Info (12023): Found entity 1: VGA File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file top_level.v
-    Info (12023): Found entity 1: top_level File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 235
+    Info (12023): Found entity 1: top_level File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 235
 Info (12021): Found 1 design units, including 1 entities, in source file rgb.v
-    Info (12023): Found entity 1: RGB File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/RGB.v Line: 25
+    Info (12023): Found entity 1: RGB File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/RGB.v Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file ov7670_registers.v
-    Info (12023): Found entity 1: ov7670_registers File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_registers.v Line: 41
+    Info (12023): Found entity 1: ov7670_registers File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_registers.v Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file ov7670_controller.v
-    Info (12023): Found entity 1: ov7670_controller File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_controller.v Line: 27
+    Info (12023): Found entity 1: ov7670_controller File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_controller.v Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file ov7670_capture.v
-    Info (12023): Found entity 1: ov7670_capture File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_capture.v Line: 31
+    Info (12023): Found entity 1: ov7670_capture File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_capture.v Line: 31
 Info (12021): Found 1 design units, including 1 entities, in source file my_frame_buffer_15to0.v
-    Info (12023): Found entity 1: my_frame_buffer_15to0 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 55
+    Info (12023): Found entity 1: my_frame_buffer_15to0 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file my_altpll.v
-    Info (12023): Found entity 1: my_altpll File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_altpll.v Line: 55
+    Info (12023): Found entity 1: my_altpll File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_altpll.v Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_sender.v
-    Info (12023): Found entity 1: i2c_sender File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/i2c_sender.v Line: 27
+    Info (12023): Found entity 1: i2c_sender File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/i2c_sender.v Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file frame_buffer.v
-    Info (12023): Found entity 1: frame_buffer File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/frame_buffer.v Line: 34
+    Info (12023): Found entity 1: frame_buffer File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/frame_buffer.v Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file address_generator.v
-    Info (12023): Found entity 1: Address_Generator File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/address_Generator.v Line: 25
+    Info (12023): Found entity 1: Address_Generator File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/address_Generator.v Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file camera_capture.sv
-    Info (12023): Found entity 1: camera_capture File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/camera_capture.sv Line: 1
+    Info (12023): Found entity 1: camera_capture File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/camera_capture.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.sv
-    Info (12023): Found entity 1: uart_tx File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at top_level.v(433): created implicit net for "CLOCK_50" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 433
+    Info (12023): Found entity 1: uart_tx File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at top_level.v(435): created implicit net for "CLOCK_50" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top_level.v(372): truncated value with size 32 to match size of target (17) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 372
-Warning (10230): Verilog HDL assignment warning at top_level.v(395): truncated value with size 32 to match size of target (18) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-Warning (10230): Verilog HDL assignment warning at top_level.v(397): truncated value with size 18 to match size of target (10) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 397
-Warning (10230): Verilog HDL assignment warning at top_level.v(427): truncated value with size 33 to match size of target (8) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 427
-Warning (10034): Output port "GPIO[1]" at top_level.v(257) has no driver File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 257
-Info (12128): Elaborating entity "my_altpll" for hierarchy "my_altpll:Inst_vga_pll" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 285
-Info (12128): Elaborating entity "altpll" for hierarchy "my_altpll:Inst_vga_pll|altpll:altpll_component" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_altpll.v Line: 82
-Info (12130): Elaborated megafunction instantiation "my_altpll:Inst_vga_pll|altpll:altpll_component" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_altpll.v Line: 82
-Info (12133): Instantiated megafunction "my_altpll:Inst_vga_pll|altpll:altpll_component" with the following parameter: File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_altpll.v Line: 82
+Warning (10230): Verilog HDL assignment warning at top_level.v(376): truncated value with size 32 to match size of target (17) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 376
+Warning (10230): Verilog HDL assignment warning at top_level.v(399): truncated value with size 32 to match size of target (18) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+Warning (10230): Verilog HDL assignment warning at top_level.v(401): truncated value with size 18 to match size of target (10) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 401
+Warning (10034): Output port "GPIO[1]" at top_level.v(256) has no driver File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 256
+Warning (10034): Output port "LEDR[5..2]" at top_level.v(257) has no driver File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 257
+Info (12128): Elaborating entity "my_altpll" for hierarchy "my_altpll:Inst_vga_pll" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 289
+Info (12128): Elaborating entity "altpll" for hierarchy "my_altpll:Inst_vga_pll|altpll:altpll_component" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_altpll.v Line: 82
+Info (12130): Elaborated megafunction instantiation "my_altpll:Inst_vga_pll|altpll:altpll_component" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_altpll.v Line: 82
+Info (12133): Instantiated megafunction "my_altpll:Inst_vga_pll|altpll:altpll_component" with the following parameter: File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_altpll.v Line: 82
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1874,21 +1920,21 @@ Info (12133): Instantiated megafunction "my_altpll:Inst_vga_pll|altpll:altpll_co
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/my_altpll_altpll.v
-    Info (12023): Found entity 1: my_altpll_altpll File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/my_altpll_altpll.v Line: 30
+    Info (12023): Found entity 1: my_altpll_altpll File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/my_altpll_altpll.v Line: 30
 Info (12128): Elaborating entity "my_altpll_altpll" for hierarchy "my_altpll:Inst_vga_pll|altpll:altpll_component|my_altpll_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "ov7670_controller" for hierarchy "ov7670_controller:Inst_ov7670_controller" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 309
-Info (12128): Elaborating entity "i2c_sender" for hierarchy "ov7670_controller:Inst_ov7670_controller|i2c_sender:Inst_i2c_sender" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_controller.v Line: 58
-Warning (10230): Verilog HDL assignment warning at i2c_sender.v(65): truncated value with size 32 to match size of target (8) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/i2c_sender.v Line: 65
-Warning (10230): Verilog HDL assignment warning at i2c_sender.v(191): truncated value with size 32 to match size of target (8) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/i2c_sender.v Line: 191
-Info (12128): Elaborating entity "ov7670_registers" for hierarchy "ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_controller.v Line: 70
-Warning (10230): Verilog HDL assignment warning at ov7670_registers.v(68): truncated value with size 32 to match size of target (8) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_registers.v Line: 68
-Info (12128): Elaborating entity "ov7670_capture" for hierarchy "ov7670_capture:Inst_ov7670_capture" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 318
-Warning (10230): Verilog HDL assignment warning at ov7670_capture.v(59): truncated value with size 32 to match size of target (17) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/ov7670_capture.v Line: 59
-Info (12128): Elaborating entity "frame_buffer" for hierarchy "frame_buffer:Inst_frame_buffer" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 327
-Info (12128): Elaborating entity "my_frame_buffer_15to0" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/frame_buffer.v Line: 61
-Info (12128): Elaborating entity "altsyncram" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 78
-Info (12130): Elaborated megafunction instantiation "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 78
-Info (12133): Instantiated megafunction "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 78
+Info (12128): Elaborating entity "ov7670_controller" for hierarchy "ov7670_controller:Inst_ov7670_controller" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 313
+Info (12128): Elaborating entity "i2c_sender" for hierarchy "ov7670_controller:Inst_ov7670_controller|i2c_sender:Inst_i2c_sender" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_controller.v Line: 58
+Warning (10230): Verilog HDL assignment warning at i2c_sender.v(65): truncated value with size 32 to match size of target (8) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/i2c_sender.v Line: 65
+Warning (10230): Verilog HDL assignment warning at i2c_sender.v(191): truncated value with size 32 to match size of target (8) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/i2c_sender.v Line: 191
+Info (12128): Elaborating entity "ov7670_registers" for hierarchy "ov7670_controller:Inst_ov7670_controller|ov7670_registers:Inst_ov7670_registers" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_controller.v Line: 70
+Warning (10230): Verilog HDL assignment warning at ov7670_registers.v(68): truncated value with size 32 to match size of target (8) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_registers.v Line: 68
+Info (12128): Elaborating entity "ov7670_capture" for hierarchy "ov7670_capture:Inst_ov7670_capture" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 322
+Warning (10230): Verilog HDL assignment warning at ov7670_capture.v(59): truncated value with size 32 to match size of target (17) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/ov7670_capture.v Line: 59
+Info (12128): Elaborating entity "frame_buffer" for hierarchy "frame_buffer:Inst_frame_buffer" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 331
+Info (12128): Elaborating entity "my_frame_buffer_15to0" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/frame_buffer.v Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 78
+Info (12130): Elaborated megafunction instantiation "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 78
+Info (12133): Instantiated megafunction "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/my_frame_buffer_15to0.v Line: 78
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
@@ -1908,26 +1954,26 @@ Info (12133): Instantiated megafunction "frame_buffer:Inst_frame_buffer|my_frame
     Info (12134): Parameter "width_b" = "12"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eik1.tdf
-    Info (12023): Found entity 1: altsyncram_eik1 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_eik1 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_eik1" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rsa.tdf
-    Info (12023): Found entity 1: decode_rsa File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/decode_rsa.tdf Line: 23
-Info (12128): Elaborating entity "decode_rsa" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|decode_rsa:decode2" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 46
+    Info (12023): Found entity 1: decode_rsa File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/decode_rsa.tdf Line: 23
+Info (12128): Elaborating entity "decode_rsa" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|decode_rsa:decode2" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_k8a.tdf
-    Info (12023): Found entity 1: decode_k8a File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/decode_k8a.tdf Line: 23
-Info (12128): Elaborating entity "decode_k8a" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|decode_k8a:rden_decode_b" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 47
+    Info (12023): Found entity 1: decode_k8a File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/decode_k8a.tdf Line: 23
+Info (12128): Elaborating entity "decode_k8a" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|decode_k8a:rden_decode_b" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_mob.tdf
-    Info (12023): Found entity 1: mux_mob File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/mux_mob.tdf Line: 23
-Info (12128): Elaborating entity "mux_mob" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|mux_mob:mux3" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 49
-Info (12128): Elaborating entity "vga_demo" for hierarchy "vga_demo:u_vga_demo" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 424
-Info (12128): Elaborating entity "vga_demo_video_scaler_0" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 51
-Info (12128): Elaborating entity "altera_up_video_scaler_multiply_height" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v Line: 177
-Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_height.v(208): truncated value with size 32 to match size of target (9) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 208
-Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_height.v(224): truncated value with size 32 to match size of target (9) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 224
-Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_height.v(235): truncated value with size 32 to match size of target (1) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 235
-Info (12128): Elaborating entity "scfifo" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 297
-Info (12130): Elaborated megafunction instantiation "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 297
-Info (12133): Instantiated megafunction "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO" with the following parameter: File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 297
+    Info (12023): Found entity 1: mux_mob File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/mux_mob.tdf Line: 23
+Info (12128): Elaborating entity "mux_mob" for hierarchy "frame_buffer:Inst_frame_buffer|my_frame_buffer_15to0:Inst_buffer_top|altsyncram:altsyncram_component|altsyncram_eik1:auto_generated|mux_mob:mux3" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_eik1.tdf Line: 49
+Info (12128): Elaborating entity "vga_demo" for hierarchy "vga_demo:u_vga_demo" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 428
+Info (12128): Elaborating entity "vga_demo_video_scaler_0" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 51
+Info (12128): Elaborating entity "altera_up_video_scaler_multiply_height" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v Line: 177
+Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_height.v(208): truncated value with size 32 to match size of target (9) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 208
+Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_height.v(224): truncated value with size 32 to match size of target (9) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 224
+Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_height.v(235): truncated value with size 32 to match size of target (1) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 235
+Info (12128): Elaborating entity "scfifo" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 297
+Info (12130): Elaborated megafunction instantiation "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 297
+Info (12133): Instantiated megafunction "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO" with the following parameter: File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_height.v Line: 297
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_numwords" = "321"
@@ -1939,64 +1985,80 @@ Info (12133): Instantiated megafunction "vga_demo:u_vga_demo|vga_demo_video_scal
     Info (12134): Parameter "underflow_checking" = "OFF"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_ci31.tdf
-    Info (12023): Found entity 1: scfifo_ci31 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/scfifo_ci31.tdf Line: 25
+    Info (12023): Found entity 1: scfifo_ci31 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/scfifo_ci31.tdf Line: 25
 Info (12128): Elaborating entity "scfifo_ci31" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_v931.tdf
-    Info (12023): Found entity 1: a_dpfifo_v931 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 33
-Info (12128): Elaborating entity "a_dpfifo_v931" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/scfifo_ci31.tdf Line: 37
+    Info (12023): Found entity 1: a_dpfifo_v931 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 33
+Info (12128): Elaborating entity "a_dpfifo_v931" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/scfifo_ci31.tdf Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5tb1.tdf
-    Info (12023): Found entity 1: altsyncram_5tb1 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_5tb1" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 45
+    Info (12023): Found entity 1: altsyncram_5tb1 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_5tb1" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ms8.tdf
-    Info (12023): Found entity 1: cmpr_ms8 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cmpr_ms8.tdf Line: 23
-Info (12128): Elaborating entity "cmpr_ms8" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cmpr_ms8:almost_full_comparer" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 54
-Info (12128): Elaborating entity "cmpr_ms8" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cmpr_ms8:three_comparison" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 55
+    Info (12023): Found entity 1: cmpr_ms8 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cmpr_ms8.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_ms8" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cmpr_ms8:almost_full_comparer" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 54
+Info (12128): Elaborating entity "cmpr_ms8" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cmpr_ms8:three_comparison" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_1ab.tdf
-    Info (12023): Found entity 1: cntr_1ab File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cntr_1ab.tdf Line: 26
-Info (12128): Elaborating entity "cntr_1ab" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cntr_1ab:rd_ptr_msb" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 56
+    Info (12023): Found entity 1: cntr_1ab File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cntr_1ab.tdf Line: 26
+Info (12128): Elaborating entity "cntr_1ab" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cntr_1ab:rd_ptr_msb" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 56
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ea7.tdf
-    Info (12023): Found entity 1: cntr_ea7 File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cntr_ea7.tdf Line: 26
-Info (12128): Elaborating entity "cntr_ea7" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cntr_ea7:usedw_counter" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 57
+    Info (12023): Found entity 1: cntr_ea7 File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cntr_ea7.tdf Line: 26
+Info (12128): Elaborating entity "cntr_ea7" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cntr_ea7:usedw_counter" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 57
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_2ab.tdf
-    Info (12023): Found entity 1: cntr_2ab File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/cntr_2ab.tdf Line: 26
-Info (12128): Elaborating entity "cntr_2ab" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cntr_2ab:wr_ptr" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 58
-Info (12128): Elaborating entity "altera_up_video_scaler_multiply_width" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_width:Multiply_Width" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v Line: 208
-Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_width.v(132): truncated value with size 2 to match size of target (1) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v Line: 132
-Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_width.v(175): truncated value with size 32 to match size of target (1) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v Line: 175
-Info (12128): Elaborating entity "vga_demo_video_vga_controller_0" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 69
-Info (12128): Elaborating entity "altera_up_avalon_video_vga_timing" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|altera_up_avalon_video_vga_timing:VGA_Timing" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v Line: 264
-Warning (10230): Verilog HDL assignment warning at altera_up_avalon_video_vga_timing.v(199): truncated value with size 32 to match size of target (10) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v Line: 199
-Warning (10230): Verilog HDL assignment warning at altera_up_avalon_video_vga_timing.v(200): truncated value with size 32 to match size of target (10) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v Line: 200
-Info (12128): Elaborating entity "vga_demo_avalon_st_adapter" for hierarchy "vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 102
-Info (12128): Elaborating entity "vga_demo_avalon_st_adapter_channel_adapter_0" for hierarchy "vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter|vga_demo_avalon_st_adapter_channel_adapter_0:channel_adapter_0" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v Line: 208
-Warning (10036): Verilog HDL or VHDL warning at vga_demo_avalon_st_adapter_channel_adapter_0.sv(78): object "out_channel" assigned a value but never read File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv Line: 78
-Warning (10230): Verilog HDL assignment warning at vga_demo_avalon_st_adapter_channel_adapter_0.sv(90): truncated value with size 2 to match size of target (1) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv Line: 90
-Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "vga_demo:u_vga_demo|altera_reset_controller:rst_controller" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 165
-Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v Line: 208
-Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v Line: 220
-Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:u_uart_tx" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 439
-Warning (10230): Verilog HDL assignment warning at uart_tx.sv(49): truncated value with size 32 to match size of target (9) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv Line: 49
-Warning (10230): Verilog HDL assignment warning at uart_tx.sv(52): truncated value with size 32 to match size of target (9) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv Line: 52
-Warning (10230): Verilog HDL assignment warning at uart_tx.sv(55): truncated value with size 32 to match size of target (9) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv Line: 55
-Warning (10230): Verilog HDL assignment warning at uart_tx.sv(58): truncated value with size 32 to match size of target (9) File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv Line: 58
-Warning (10270): Verilog HDL Case Statement warning at uart_tx.sv(70): incomplete case statement has no default case item File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/uart_tx.sv Line: 70
+    Info (12023): Found entity 1: cntr_2ab File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/cntr_2ab.tdf Line: 26
+Info (12128): Elaborating entity "cntr_2ab" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|cntr_2ab:wr_ptr" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/a_dpfifo_v931.tdf Line: 58
+Info (12128): Elaborating entity "altera_up_video_scaler_multiply_width" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_width:Multiply_Width" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_scaler_0.v Line: 208
+Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_width.v(132): truncated value with size 2 to match size of target (1) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v Line: 132
+Warning (10230): Verilog HDL assignment warning at altera_up_video_scaler_multiply_width.v(175): truncated value with size 32 to match size of target (1) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_video_scaler_multiply_width.v Line: 175
+Info (12128): Elaborating entity "vga_demo_video_vga_controller_0" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 69
+Info (12128): Elaborating entity "altera_up_avalon_video_vga_timing" for hierarchy "vga_demo:u_vga_demo|vga_demo_video_vga_controller_0:video_vga_controller_0|altera_up_avalon_video_vga_timing:VGA_Timing" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_video_vga_controller_0.v Line: 264
+Warning (10230): Verilog HDL assignment warning at altera_up_avalon_video_vga_timing.v(199): truncated value with size 32 to match size of target (10) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v Line: 199
+Warning (10230): Verilog HDL assignment warning at altera_up_avalon_video_vga_timing.v(200): truncated value with size 32 to match size of target (10) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_up_avalon_video_vga_timing.v Line: 200
+Info (12128): Elaborating entity "vga_demo_avalon_st_adapter" for hierarchy "vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 102
+Info (12128): Elaborating entity "vga_demo_avalon_st_adapter_channel_adapter_0" for hierarchy "vga_demo:u_vga_demo|vga_demo_avalon_st_adapter:avalon_st_adapter|vga_demo_avalon_st_adapter_channel_adapter_0:channel_adapter_0" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter.v Line: 208
+Warning (10036): Verilog HDL or VHDL warning at vga_demo_avalon_st_adapter_channel_adapter_0.sv(78): object "out_channel" assigned a value but never read File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv Line: 78
+Warning (10230): Verilog HDL assignment warning at vga_demo_avalon_st_adapter_channel_adapter_0.sv(90): truncated value with size 2 to match size of target (1) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/vga_demo_avalon_st_adapter_channel_adapter_0.sv Line: 90
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "vga_demo:u_vga_demo|altera_reset_controller:rst_controller" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 165
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v Line: 208
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "vga_demo:u_vga_demo|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/submodules/altera_reset_controller.v Line: 220
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:u_uart_tx" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 441
+Warning (10230): Verilog HDL assignment warning at uart_tx.sv(49): truncated value with size 32 to match size of target (9) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at uart_tx.sv(52): truncated value with size 32 to match size of target (9) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at uart_tx.sv(55): truncated value with size 32 to match size of target (9) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at uart_tx.sv(58): truncated value with size 32 to match size of target (9) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv Line: 58
+Warning (10270): Verilog HDL Case Statement warning at uart_tx.sv(70): incomplete case statement has no default case item File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/uart_tx.sv Line: 70
+Info (12128): Elaborating entity "camera_capture" for hierarchy "camera_capture:u_camera_capture" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 451
+Warning (10230): Verilog HDL assignment warning at camera_capture.sv(22): truncated value with size 32 to match size of target (15) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/camera_capture.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at camera_capture.sv(34): truncated value with size 32 to match size of target (15) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/camera_capture.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at camera_capture.sv(57): truncated value with size 32 to match size of target (15) File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/camera_capture.sv Line: 57
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "vga_demo:u_vga_demo|video_scaler_0_avalon_scaler_source_channel[1]" is missing source, defaulting to GND File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 27
+    Warning (12110): Net "CLOCK_50" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "vga_demo:u_vga_demo|video_scaler_0_avalon_scaler_source_channel[1]" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/vga_demo/synthesis/vga_demo.v Line: 27
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "CLOCK_50" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "CLOCK_50" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "CLOCK_50" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "CLOCK_50" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "CLOCK_50" is missing source, defaulting to GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 435
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[0]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 38
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[1]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 68
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[10]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 338
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[11]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 368
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[20]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 638
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[21]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 668
-        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[31]" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 968
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[0]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 38
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[1]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 68
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[10]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 338
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[11]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 368
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[20]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 638
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[21]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 668
+        Warning (14320): Synthesized away node "vga_demo:u_vga_demo|vga_demo_video_scaler_0:video_scaler_0|altera_up_video_scaler_multiply_height:Multiply_Height|scfifo:Multiply_Height_FIFO|scfifo_ci31:auto_generated|a_dpfifo_v931:dpfifo|altsyncram_5tb1:FIFOram|q_b[31]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/altsyncram_5tb1.tdf Line: 968
 Info (278001): Inferred 3 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult2" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-Info (12133): Instantiated megafunction "lpm_mult:Mult2" with the following parameter: File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult2" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+Info (12133): Instantiated megafunction "lpm_mult:Mult2" with the following parameter: File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
     Info (12134): Parameter "LPM_WIDTHA" = "10"
     Info (12134): Parameter "LPM_WIDTHB" = "5"
     Info (12134): Parameter "LPM_WIDTHP" = "15"
@@ -2010,14 +2072,14 @@ Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult2|multcore:mul
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult2|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult2" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult2" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bfh.tdf
-    Info (12023): Found entity 1: add_sub_bfh File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_bfh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_bfh File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_bfh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "lpm_mult:Mult2" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult2" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mgh.tdf
-    Info (12023): Found entity 1: add_sub_mgh File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_mgh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_mgh File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_mgh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult2|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult2" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
     Info (12134): Parameter "LPM_WIDTHA" = "10"
     Info (12134): Parameter "LPM_WIDTHB" = "8"
     Info (12134): Parameter "LPM_WIDTHP" = "18"
@@ -2031,14 +2093,14 @@ Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mul
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult1" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult1" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lgh.tdf
-    Info (12023): Found entity 1: add_sub_lgh File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_lgh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_lgh File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_lgh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "lpm_mult:Mult1" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult1" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_pgh.tdf
-    Info (12023): Found entity 1: add_sub_pgh File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_pgh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_pgh File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_pgh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult1" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 395
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 399
     Info (12134): Parameter "LPM_WIDTHA" = "10"
     Info (12134): Parameter "LPM_WIDTHB" = "7"
     Info (12134): Parameter "LPM_WIDTHP" = "17"
@@ -2052,41 +2114,48 @@ Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mul
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_kgh.tdf
-    Info (12023): Found entity 1: add_sub_kgh File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_kgh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_kgh File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_kgh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ogh.tdf
-    Info (12023): Found entity 1: add_sub_ogh File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/db/add_sub_ogh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_ogh File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/db/add_sub_ogh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "vga_sync_N" is stuck at GND File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 245
-    Warning (13410): Pin "ov7670_pwdn" is stuck at GND File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 254
-    Warning (13410): Pin "ov7670_reset" is stuck at VCC File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 255
-    Warning (13410): Pin "GPIO[0]" is stuck at VCC File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 257
-    Warning (13410): Pin "GPIO[1]" is stuck at GND File: C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/top_level.v Line: 257
+    Warning (13410): Pin "vga_sync_N" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 245
+    Warning (13410): Pin "ov7670_pwdn" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 254
+    Warning (13410): Pin "ov7670_reset" is stuck at VCC File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 255
+    Warning (13410): Pin "GPIO[0]" is stuck at VCC File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 256
+    Warning (13410): Pin "GPIO[1]" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 256
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 257
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 257
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 257
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 257
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 44 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/output_files/VerilogCam.map.smsg
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/output_files/VerilogCam.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1372 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 36 output pins
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 259
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/top_level.v Line: 259
+Info (21057): Implemented 1380 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 41 output pins
     Info (21060): Implemented 1 bidirectional pins
     Info (21061): Implemented 1104 logic cells
     Info (21064): Implemented 217 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4813 megabytes
-    Info: Processing ended: Sun Oct 20 18:19:18 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 4894 megabytes
+    Info: Processing ended: Sun Oct 20 20:19:09 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/w1nd0/Documents/GitHub/MTRX3700A2/camera_2/output_files/VerilogCam.map.smsg.
+The suppressed messages can be found in C:/Users/61411/OneDrive/Desktop/Uni_Classes/MTRX3700/Assignment 2/MTRX3700A2/camera_2/output_files/VerilogCam.map.smsg.
 
 
