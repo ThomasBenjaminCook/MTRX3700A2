@@ -140,11 +140,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "ov7670_href",
+					"name" : "ov7670_data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ov7670_data[7]",
+					"name" : "ov7670_href",
 					"strict" : false
 				},
 				{
@@ -156,15 +156,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "ov7670_data[3]",
-					"strict" : false
-				},
-				{
 					"name" : "ov7670_data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ov7670_data[5]",
+					"name" : "ov7670_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ov7670_data[0]",
 					"strict" : false
 				},
 				{
@@ -172,7 +172,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ov7670_data[0]",
+					"name" : "ov7670_data[5]",
 					"strict" : false
 				}
 			]

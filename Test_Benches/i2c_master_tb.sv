@@ -47,7 +47,7 @@ module i2c_master_tb;
 		 read_ready = 0;          // Not ready for reading initially
 
 		 $dumpfile("waveform.vcd");
-		 $dumpvars(0, i2c_master_tb);
+		 $dumpvars();
 		 
 		 // Start a write transaction
 		 @(posedge clk);

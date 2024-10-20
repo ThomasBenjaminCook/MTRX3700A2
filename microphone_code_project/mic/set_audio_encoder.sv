@@ -8,7 +8,16 @@ module set_audio_encoder (
     logic error;
 
     // Instantiate I2C master module
-    i2c_master u1 (.clk(i2c_clk), .i2c_scl(I2C_SCLK), .i2c_sda(I2C_SDAT), .slav_addr(data[23-:7]), .read_not_write(data[16]), .reg_addr(data[15-:8]), .write_data(data[7:0]), .write_ready(ready), .write_valid(valid), .error(error));
+    i2c_master u1 (.clk(i2c_clk), 
+						.i2c_scl(I2C_SCLK),
+						.i2c_sda(I2C_SDAT),
+						.slav_addr(data[23-:7]),
+						.read_not_write(data[16]),
+						.reg_addr(data[15-:8]),
+						.write_data(data[7:0]),
+						.write_ready(ready),
+						.write_valid(valid),
+						.error(error));
 
     // Now, let's use a FSM to control the I2C master module.
     // We will feed the I2C module a set of instructions that determine the registers to set and values to set them to (see always_comb block at the bottom).

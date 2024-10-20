@@ -1,5 +1,5 @@
 Flow report for VerilogCam
-Thu Sep 19 16:44:01 2024
+Sun Oct 20 14:02:46 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 19 16:43:54 2024       ;
+; Flow Status                        ; Successful - Sun Oct 20 14:02:37 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; VerilogCam                                  ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 955 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 843 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 1,093 / 114,480 ( < 1 % )                   ;
+;     Total combinational functions  ; 978 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 545 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 545                                         ;
 ; Total pins                         ; 48 / 529 ( 9 % )                            ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2024 16:42:40 ;
+; Start date & time ; 10/20/2024 14:00:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VerilogCam          ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                      ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 38917505025.172672816004444                                ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 189559950239589.172939324414464                            ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                         ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                          ; --            ; --          ; --         ;
 ; MISC_FILE                           ; vga_demo/synthesis/../vga_demo.cmp                         ; --            ; --          ; --         ;
@@ -101,11 +101,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4814 MB             ; 00:00:12                           ;
-; Fitter               ; 00:00:49     ; 1.1                     ; 5705 MB             ; 00:00:24                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4701 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.4                     ; 4864 MB             ; 00:00:02                           ;
-; Total                ; 00:01:15     ; --                      ; --                  ; 00:00:41                           ;
+; Analysis & Synthesis ; 00:00:32     ; 1.0                     ; 4866 MB             ; 00:00:36                           ;
+; Fitter               ; 00:01:10     ; 1.1                     ; 6068 MB             ; 00:00:55                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4705 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.7                     ; 4928 MB             ; 00:00:05                           ;
+; Total                ; 00:01:55     ; --                      ; --                  ; 00:01:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,10 +114,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-LNG7ELV  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-LNG7ELV  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-LNG7ELV  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-LNG7ELV  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; LAPTOP-LRAHBKVC  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
