@@ -47,6 +47,8 @@ ov7670_sioc <= ov7670_controller:Inst_ov7670_controller.sioc
 ov7670_siod <> ov7670_controller:Inst_ov7670_controller.siod
 ov7670_pwdn <= ov7670_controller:Inst_ov7670_controller.pwdn
 ov7670_reset <= ov7670_controller:Inst_ov7670_controller.reset
+GPIO[0] <= uart_tx:u_uart_tx.uart_out
+GPIO[1] <= <GND>
 
 
 |top_level|my_altpll:Inst_vga_pll
@@ -9730,5 +9732,82 @@ clk => altera_reset_synchronizer_int_chain_out.CLK
 clk => altera_reset_synchronizer_int_chain[0].CLK
 clk => altera_reset_synchronizer_int_chain[1].CLK
 reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|uart_tx:u_uart_tx
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => bit_n[0].CLK
+clk => bit_n[1].CLK
+clk => bit_n[2].CLK
+clk => data_tx_temp[0].CLK
+clk => data_tx_temp[1].CLK
+clk => data_tx_temp[2].CLK
+clk => data_tx_temp[3].CLK
+clk => data_tx_temp[4].CLK
+clk => data_tx_temp[5].CLK
+clk => data_tx_temp[6].CLK
+clk => data_tx_temp[7].CLK
+clk => current_state[0].CLK
+clk => current_state[1].CLK
+clk => current_state[2].CLK
+clk => current_state[3].CLK
+clk => current_state[4].CLK
+clk => current_state[5].CLK
+clk => current_state[6].CLK
+clk => current_state[7].CLK
+clk => current_state[8].CLK
+clk => current_state[9].CLK
+clk => current_state[10].CLK
+clk => current_state[11].CLK
+clk => current_state[12].CLK
+clk => current_state[13].CLK
+clk => current_state[14].CLK
+clk => current_state[15].CLK
+clk => current_state[16].CLK
+clk => current_state[17].CLK
+clk => current_state[18].CLK
+clk => current_state[19].CLK
+clk => current_state[20].CLK
+clk => current_state[21].CLK
+clk => current_state[22].CLK
+clk => current_state[23].CLK
+clk => current_state[24].CLK
+clk => current_state[25].CLK
+clk => current_state[26].CLK
+clk => current_state[27].CLK
+clk => current_state[28].CLK
+clk => current_state[29].CLK
+clk => current_state[30].CLK
+clk => current_state[31].CLK
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => data_tx_temp.OUTPUTSELECT
+rst => bit_n.OUTPUTSELECT
+rst => bit_n.OUTPUTSELECT
+rst => bit_n.OUTPUTSELECT
+data_tx[0] => data_tx_temp.DATAB
+data_tx[1] => data_tx_temp.DATAB
+data_tx[2] => data_tx_temp.DATAB
+data_tx[3] => data_tx_temp.DATAB
+data_tx[4] => data_tx_temp.DATAB
+data_tx[5] => data_tx_temp.DATAB
+data_tx[6] => data_tx_temp.DATAB
+data_tx[7] => data_tx_temp.DATAB
+uart_out <= Selector15.DB_MAX_OUTPUT_PORT_TYPE
+valid => Selector2.IN7
+ready <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
 
 
